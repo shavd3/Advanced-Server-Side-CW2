@@ -17,11 +17,12 @@
             </div>
         </div>
         <div class='rightdiv'>
-            <div class='usernameimgdiv'></div>
+            <div class='titlediv'></div>
             <div class='captiondiv'></div>
+            <div class='usernameimgdiv'></div>
             <div class='commentareadiv'>
                 <textarea onkeyup='checkinputs();' name="comment" id="comment" maxlength="50"></textarea>
-                <button onclick='postcomment();' id='commentbtn' disabled="disabled">Comment</button>
+                <button onclick='postcomment();' id='commentbtn' disabled="disabled">Answer</button>
             </div>
             <div class='commentsdiv'></div>
         </div>
@@ -39,19 +40,20 @@
             url: "<?php echo base_url() ?>index.php/posts/post/action/view?postid="+postid,
             method: "GET"
             }).done(function (data) {//display post details
-                var div ="<img class='postimage' src='<?php echo base_url() ?>images/userposts/"+data.PostImage+"' alt='picture'/>";
-                $('.postimagediv').append(div);
+                // var div ="<img class='postimage' src='<?php echo base_url() ?>images/userposts/"+data.PostImage+"' alt='picture'/>";
+                // $('.postimagediv').append(div);
                 var div2 ="<a href='<?php echo base_url() ?>index.php/posts/locations?locationid="
                 + data.LocationId +"'><span><i class='fa-solid'></i>"+ data.LocationName +"</span></a>";
                 $('.locationdiv').append(div2);
-                var div3 ="<div class= 'userimagediv'><img class='userimage' src='<?php echo base_url() ?>images/profilepics/"
-                         +data.UserImage+"'/></div><div class='usernamediv'><a href='<?php echo base_url() ?>index.php/users/userprofile/?username="
+                var div3 ="<div class='usernamediv'><a href='<?php echo base_url() ?>index.php/users/userprofile/?username="
                          +data.Username +"'><span>"+ data.Username +"</span></a></div>";
                 $('.usernameimgdiv').append(div3);
                 var div4 ="<i onclick='like();' class='fa-solid fa-star-half-stroke'></i>";
                 $('.likediv').append(div4);
-                var div5 =data.Caption ;
-                $('.captiondiv').append(div5);
+                var div5 =data.Title ;
+                $('.titlediv').append(div5);
+                var div6 =data.Caption ;
+                $('.captiondiv').append(div6);
             });
             $.ajax({//check if user has already liked the post
                 url: "<?php echo base_url() ?>index.php/home/checklikes?username="+username+"&postid="+postid,

@@ -67,17 +67,23 @@
             html += "<div class='postdiv'>" + 
 
             "<div class='userlikediv'>" + 
-            "<div class='usernamediv'><a href='<?php echo base_url() ?>index.php/users/userprofile/?username=" + m.get('Username') + "'>" + 
-            "<span>" + m.get('Username') + "</span></a></div>" + 
+
+                // "<div class='usernamediv'><a href='<?php echo base_url() ?>index.php/users/userprofile/?username=" + m.get('Username') + "'>" + 
+                // "<span>" + m.get('Username') + "</span></a></div>" + 
+
+                "<div class='usernamediv'><a href='<?php echo base_url() ?>index.php/posts/post?postid=" + m.get('PostId') + "'>" + m.get('Title') + "</span></a></div>" +
 
             "<div class='likediv' id='likediv" + m.get('PostId') + "'><i onclick='like(" + m.get('PostId') + ");' class='fa-solid fa-solid fa-star-half-stroke'></i></div></div>" + 
 
             "<div class='captiondiv'>" + 
 
-            "<a href='<?php echo base_url() ?>index.php/posts/post?postid=" + m.get('PostId') + "'>"
-             + m.get('Title') + "</span></a>" +
-            "<br>" + 
+            // "<a href='<?php echo base_url() ?>index.php/posts/post?postid=" + m.get('PostId') + "'>"
+            //  + m.get('Title') + "</span></a>" +
+            // "<br>" + 
             m.get('Caption') + "</div>" + 
+
+            "<div class='usernamediv'><a href='<?php echo base_url() ?>index.php/users/userprofile/?username=" + m.get('Username') + "'>" + 
+                "<span>" + m.get('Username') + "</span></a></div>" + 
 
             "<div class='locationdiv'>" + 
                 "<a href='<?php echo base_url() ?>index.php/posts/locations?locationid=" + m.get('LocationId') + "'>" + 
