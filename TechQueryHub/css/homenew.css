@@ -1,0 +1,105 @@
+/* Styles for feedcontainer */
+.feedcontainer {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Styles for postdiv */
+.postdiv {
+    border: 1px solid #164795;
+    border-radius: 8px;
+    background-color: #8bb0de;
+    box-shadow: 0 2px 4px rgba(22, 6, 69, 0.258);
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+/* Styles for userlikediv */
+.userlikediv {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Styles for usernamediv */
+.usernamediv {
+    margin-right: 10px;
+    font-weight: bold;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Styles for likediv */
+.likediv {
+    cursor: pointer;
+    color: #666;
+    transition: color 0.3s ease;
+}
+
+.likediv:hover {
+    color: #FC6464;
+}
+
+/* Styles for captiondiv */
+.captiondiv {
+    margin-top: 20px;
+    font-size: 16px;
+    line-height: 1.5;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Styles for locationdiv */
+.locationdiv {
+    margin-top: 10px;
+}
+
+/* Styles for locationtag */
+.locationtag {
+    display: inline-block;
+    background-color: #f3f3f3;
+    border-radius: 15px;
+    padding: 5px 10px;
+    margin-right: 10px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #666;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Styles for commentsdiv */
+.commentsdiv {
+    margin-top: 20px;
+}
+
+/* Styles for commuserlink */
+.commuserlink {
+    font-weight: bold;
+    color: #333;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Styles for notfollowing */
+.notfollowing {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+/* Styles for heading */
+.heading {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Styles for userlisting */
+.userlisting {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 10px;
+}
+
+/* Add more styles as needed */
