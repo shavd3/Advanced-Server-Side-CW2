@@ -21,6 +21,20 @@ body {
     margin: 0 0 0 2%;
     width: 18%;
 }
+.logoname{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 2.25rem;
+    height: auto;
+    width: 100%;
+    text-align: right;
+}
+.logoname a{
+    color: #52B2CF;
+    text-decoration: none;
+}
+
 .logoimage{
     height:auto;
     width: 25%;

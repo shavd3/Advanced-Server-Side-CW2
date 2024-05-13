@@ -1,0 +1,109 @@
+.feedcontainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.locationdiv{
+    margin:  1% 5%;
+    font-size: 16px;
+    letter-spacing: 0.5px;
+
+}
+.locationdiv a{
+    color: #666666;
+    text-decoration: none;
+    transition: color .4s;
+}
+.locationdiv a:hover{
+    color: #52B2CF;
+    text-decoration: none;
+}
+.fa-solid{
+    margin-right: 3%;
+}
+.captiondiv{
+    margin:  0 5% 5px 5%;
+    font-size: 14px;
+    text-align: justify;
+    color: #666666;
+}
+.locationcontainer{
+    width: 100%;
+    display: block;
+    overflow: auto;
+}
+.locationlistdiv{
+    width: 20%;
+    float: left;
+    position: fixed;
+    display: flex;
+    flex-flow: column;
+}
+.postlocadiv{
+    box-shadow: 0px 0px 10px 0px  rgba(152, 162, 203, 0.25) ;
+    width: 80%;
+    float: right;
+}
+.imagelocdiv{
+    aspect-ratio : 1 / 0.2;
+    margin-left: 4%;
+    float: none;
+    border: 1px solid #164795;
+    border-radius: 30px;
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px rgba(22, 6, 69, 0.258);
+    padding: 20px;
+    margin-bottom: 20px;
+    max-width: 1000px;
+    width: 80%;
+    box-sizing: border-box;
+}
+.locpostimage{
+    width: 96%;
+    aspect-ratio : 1 / 1;
+    margin-top: 20px;
+    border-radius: 10px;
+    object-fit: cover;
+    transition: transform .4s;
+}
+.locpostimage:hover{
+    transform: scale(1.03);
+}
+#locationname{
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin: 20px 0 0 10%;
+    color: #52B2CF;
+}
+#locationlist{
+    font-size: 16px;
+    letter-spacing: 1px;
+    margin: 20px 0 0 10%;
+}
+#locationlist a{
+    color: #666666;
+    text-decoration: none;
+}
+#locationlist a:hover{
+    color: #52B2CF;
+    text-decoration: none;
+}
+.imagelocdiv {
+    margin-right: 10px;
+    font-weight: bold;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-decoration: none;
+    color: #680a0a;
+    font-size: 20px;
+}
+
+.imagelocdiv a{
+    color: #000000;
+    text-decoration: none;
+    transition: color .4s;
+}
+.imagelocdiv a:hover{
+    color: #2cba91;
+    text-decoration: none;
+}

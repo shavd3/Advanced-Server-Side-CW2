@@ -13,12 +13,12 @@
     <div class="profiledeetdiv">
         <div class="topdiv">
             <div class="profpicdiv"></div>
-            <div class="followdiv">
-                <div class="flabel">FOLLOWING</div>
-                <div class="fcount" id="followingc"></div>
-                <div class="flabel">FOLLOWERS</div>
-                <div class="fcount" id="followerc"></div>
-            </div>
+<!--            <div class="followdiv">-->
+<!--                <div class="flabel">FOLLOWING</div>-->
+<!--                <div class="fcount" id="followingc"></div>-->
+<!--                <div class="flabel">FOLLOWERS</div>-->
+<!--                <div class="fcount" id="followerc"></div>-->
+<!--            </div>-->
         </div>
         <div class="usernamediv"><?php echo $username ?></div>
         <div class="namediv"></div>
@@ -48,13 +48,13 @@
             var bio ="<span>"+data.UserBio+"</span>";
             $('.biodiv').append(bio);
         });
-        $.ajax({//get follower/following counts
-            url: "<?php echo base_url() ?>index.php/myprofile/followcount?username="+username,
-            method: "GET"
-        }).done(function (data) {
-            document.getElementById("followingc").innerHTML = data.following
-            document.getElementById("followerc").innerHTML = data.followers
-        });
+        //$.ajax({//get follower/following counts
+        //    url: "<?php //echo base_url() ?>//index.php/myprofile/followcount?username="+username,
+        //    method: "GET"
+        //}).done(function (data) {
+        //    document.getElementById("followingc").innerHTML = data.following
+        //    document.getElementById("followerc").innerHTML = data.followers
+        //});
     });
    
     var Post = Backbone.Model.extend({
@@ -83,10 +83,19 @@
 
                 html = html + "<div class='postimagediv'><a href='<?php echo base_url() ?>index.php/posts/post?postid=" 
                 + m.get('PostId') + "'>"
-                + m.get('Title') + "</span></a>" +
-                "<br>" + 
-                m.get('Caption') + 
-                "</div>";
+                + "<div class='titlediv'><a href='<?php echo base_url() ?>index.php/posts/post?postid=" + m.get('PostId') + "'>" + m.get('Title') + "</span></a></div>" +
+
+
+                    "<div class='captiondiv'>" +
+
+                    m.get('Caption') + "</div><br>" +
+                    "<div class='locationtag'>" +
+                        "<div class='locationdiv'>" +
+                        "<a href='<?php echo base_url() ?>index.php/posts/locations?locationid=" + m.get('LocationId') + "'>" +
+                        "<span><i class='fa-solid'></i>" + m.get('LocationName') +
+                    "</span></a></div></div>" +
+
+                    "</div>";
             });
             this.$el.html(html);
         }

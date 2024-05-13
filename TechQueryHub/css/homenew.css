@@ -9,13 +9,38 @@
 .postdiv {
     border: 1px solid #164795;
     border-radius: 30px;
-    background-color: #8bb0de;
+    background-color: #ffffff;
     box-shadow: 0 2px 4px rgba(22, 6, 69, 0.258);
     padding: 20px;
     margin-bottom: 20px;
-    max-width: 800px;
-    width: 100%;
+    max-width: 100%;
+    width: 95%;
     box-sizing: border-box;
+}
+
+.locationdiv a{
+    color: #666666;
+    text-decoration: none;
+    transition: color .4s;
+}
+.locationdiv a:hover{
+    color: #52B2CF;
+    text-decoration: none;
+}
+
+.usernamediv a{
+    color: #000000;
+    text-decoration: none;
+    transition: color .4s;
+}
+.usernamediv a:hover{
+    color: #2cba91;
+    text-decoration: none;
+}
+
+.commentsdiv a{
+    color: #9A618E;
+    text-decoration: none;
 }
 
 /* Styles for userlikediv */
@@ -30,7 +55,29 @@
     margin-right: 10px;
     font-weight: bold;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-decoration: none;
+    color: #333;
 }
+
+.titlediv {
+    margin-right: 10px;
+    font-weight: bold;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-decoration: none;
+    color: #680a0a;
+    font-size: 25px;
+}
+
+.titlediv a{
+    color: #000000;
+    text-decoration: none;
+    transition: color .4s;
+}
+.titlediv a:hover{
+    color: #2cba91;
+    text-decoration: none;
+}
+
 
 /* Styles for likediv */
 .likediv {
@@ -43,10 +90,14 @@
     color: #FC6464;
 }
 
+.likediv i {
+    font-size: 30px;
+}
+
 /* Styles for captiondiv */
 .captiondiv {
     margin-top: 20px;
-    font-size: 16px;
+    font-size: 18px;
     line-height: 1.5;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
@@ -54,14 +105,15 @@
 /* Styles for locationdiv */
 .locationdiv {
     margin-top: 10px;
+    font-family: 'Roboto', sans-serif;
 }
 
 /* Styles for locationtag */
 .locationtag {
     display: inline-block;
-    background-color: #f3f3f3;
+    background-color: #81d1c5;
     border-radius: 15px;
-    padding: 5px 10px;
+    padding: 1px 10px 10px;
     margin-right: 10px;
     font-size: 14px;
     font-weight: bold;
@@ -80,31 +132,6 @@
     color: #333;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin-right: 3%;
-}
-
-/* Styles for notfollowing */
-.notfollowing {
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    background-color: #f9f9f9;
-    padding: 20px;
-    margin-bottom: 20px;
-}
-
-/* Styles for heading */
-.heading {
-    font-size: 20px;
-    font-weight: bold;
-    margin-bottom: 10px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-/* Styles for userlisting */
-.userlisting {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    gap: 10px;
 }
 
 /* Add more styles as needed */

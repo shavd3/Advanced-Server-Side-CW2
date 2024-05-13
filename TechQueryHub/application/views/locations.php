@@ -6,7 +6,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js" type="text/javascript"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/backbone.js/1.2.3/backbone-min.js" type="text/javascript"></script>
     <script src="https://kit.fontawesome.com/b9008b61cc.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" type="text/css" href="<?php echo base_url()?>css/home.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url()?>css/location.css">
 </head>
 
 <body>
@@ -15,6 +15,7 @@
             <span id='locationname'></span>
             <div id="locationlist"> </div>
         </div>
+
         <div class="postlocadiv"></div>
     </div>
 
@@ -58,9 +59,14 @@
             // +m.get('PostId')+"'><img class='locpostimage' src='<?php echo base_url() ?>images/userposts/"+m.get('PostImage')+"'/></a></div>";
             // this.$el.html(html);
 
-            html = html + "<div class='imagelocdiv'><a href='<?php echo base_url() ?>index.php/posts/post?postid="+
-            "<a href='<?php echo base_url() ?>index.php/posts/post?postid=" + m.get('PostId') + "'></br>" +
-            "<span><i class='fa-solid fa-post_id'></i>" + m.get('Title') + "</a><br>" + m.get('Caption') + "</span></div>"
+            html = html +
+                "<div class='imagelocdiv'>" +
+                        "<a href='<?php echo base_url() ?>index.php/posts/post?postid="+
+                        "<a href='<?php echo base_url() ?>index.php/posts/post?postid=" + m.get('PostId') + "'></br>" +
+                        "<span><i class='fa-solid fa-post_id'></i>" + m.get('Title') + "</a><br>" +
+                        m.get('Caption') + "</span>" +
+                "</div>"
+
             this.$el.html(html);
         }
     });

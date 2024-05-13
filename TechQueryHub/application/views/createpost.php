@@ -3,7 +3,7 @@
 <html>
 <head>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js" type="text/javascript"></script>
-    <link rel="stylesheet" type="text/css" href="<?php echo base_url()?>css/createpost.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url()?>css/createpostnew.css">
 </head>
 <body>
     <div class="uppostcontainer">
@@ -16,22 +16,24 @@
         <div class="dummy"><p>Select Picture</p></div>     
     </div> -->
 
-    <div class="titlediv">   
-        <div class="caplabel"> <label for="title">Title</label></div>
+    <div class="captiondiv">
+        <div class="caplabel"> <label for="title">Question Title</label></div>
         <div><textarea name="title" id="title"  maxlength="100"></textarea></div>
     </div>
 
-    <div class="captiondiv">   
+    <div class="titlediv">
         <div class="caplabel"> <label for="caption">Description</label></div>
         <div><textarea name="caption" id="caption"  maxlength="1000"></textarea></div>
-        
-        <!-- <div class="loclabel"><label for="locations">Location</label></div>
-        <div>
-            <select onchange='getlocation();' id="locations">
-                <option id ='locationName' value=""></option>
-            </select>
-        </div> -->
-    </div>
+        <br>
+
+        <div class="caplabel"><label for="locations">Category</label></div>
+            <div>
+                <select onchange='getlocation();' id="locations">
+                    <option id ='locationName' value=""></option>
+                </select>
+            </div>
+        </div>
+
     <div class="postsubmitdiv"><div id="uploadpost" >POST</div></div>
     </div>
 
@@ -39,16 +41,16 @@
         var postImage="";
         var $locationid = "1";
         //load loaction posts at start and display in drop down
-        // $.ajax({
-        //     url: "<?php echo base_url() ?>index.php/posts/location/action/all",
-        //     method: "GET"
-        // }).done(function (data) {
-	    //     $('#locations option').remove(); 
-		// 	for (i = 0; i < data.length; i++) {
-		//     	var option ="<option id ='locationName' value="+data[i].LocationId+">"+data[i].LocationName+"</option>";
-		// 	    $('#locations').append(option);
-		//     }                     
-        // });
+         $.ajax({
+             url: "<?php echo base_url() ?>index.php/posts/location/action/all",
+             method: "GET"
+         }).done(function (data) {
+	         $('#locations option').remove();
+		 	for (i = 0; i < data.length; i++) {
+		     	var option ="<option id ='locationName' value="+data[i].LocationId+">"+data[i].LocationName+"</option>";
+		 	    $('#locations').append(option);
+		     }
+         });
         //get location value from form element
         function getlocation() {
             $locationid = document.getElementById("locations").value;

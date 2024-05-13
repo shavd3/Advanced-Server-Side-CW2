@@ -10,7 +10,7 @@
 </head>
 
 <body>
-<div class="logodiv"><img class="logoimage" src="<?php echo base_url()?>images/logo.png" alt="Logo"/> </div>
+<div class="logodiv"><img class="logoimage" src="<?php echo base_url()?>images/new.png" alt="Logo"/> </div>
 
 <div class="loginform">
     <div class="logheading"><span>LOGIN</span></div>

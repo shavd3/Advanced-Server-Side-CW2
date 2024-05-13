@@ -5,18 +5,19 @@
 }
 .leftdiv{
     margin-top: 10px;
-    width: 55%;
-    max-width: 55%;
-    float: left;
+    margin-left: 70px;
+    width: 110%;
+    max-width: 100%;
+    float: none;
     position: fixed;
 }
-.rightdiv{
-    width: 45%;
-    float: right;
-    max-width: 45%;
-    display: block;
-    overflow: auto;
-}
+/*.rightdiv{*/
+/*    width: 45%;*/
+/*    float: right;*/
+/*    max-width: 45%;*/
+/*    display: block;*/
+/*    overflow: auto;*/
+/*}*/
 .postimagediv, .locationlikediv{
     margin: auto;
     display: block;
@@ -26,7 +27,7 @@
     width: 60%;
 }
 .locationlikediv{
-    width: 58%;
+    width: 100%;
 }
 .postimage{
     width: 100%;
@@ -35,14 +36,25 @@
     object-fit: cover;
 }
 .locationdiv{
-    width: 60%;
-    float: right;
+    width: 100%;
+    float: none;
     box-sizing: border-box;
-    text-align: right;
-    font-size: 25px;
+    text-align: center;
+    font-size: 16px;
     font-weight: 600;
     letter-spacing: 1px;
     padding-top: 4px;
+}
+.locationtag {
+    display: inline-block;
+    background-color: #81d1c5;
+    border-radius: 15px;
+    padding: 1px 10px 10px;
+    margin-right: 10px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #666;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 .likediv{
     width: fit-content;
@@ -70,13 +82,14 @@
     color: #52B2CF;
     text-decoration: none;
 }
-.fa-heart{
+.fa-thumbs-up{
     padding: 0;
     cursor: pointer;
     transition: transform .4s;
 }
-.fa-heart:hover{
+.fa-thumbs-up:hover{
     transform: scale(1.03);
+    color: #367ecf;
 }
 
 .usernameimgdiv{
@@ -98,8 +111,7 @@
 .usernamediv{
     width: 50%;
     float: left;
-    padding-left: 3%;
-    font-size: 24px;
+    font-size: 16px;
     letter-spacing: 0.5px;
     margin-top: 1%;
 }
@@ -112,9 +124,14 @@
     color: #32AFD5;
     text-decoration: none;
 }
+.titlediv{
+    width: 90%;
+    font-size: 35px;
+    color: #666666;
+}
 .captiondiv{
     width: 90%;
-    font-size: 18px;
+    font-size: 25px;
     color: #666666;
 }
 .commentareadiv{
@@ -125,21 +142,23 @@
 }
 .commentsdiv{
     width: 90%;
-    font-size: 15px;
+    font-size: 16px;
     color: #666666;
 }
 .commentsdiv a{
     color: #9A618E;
     text-decoration: none;
     padding-right: 2%;
+    padding-left: 10px;
 }
 .commentsdiv a:hover{
-    color: #9A618E;
-    text-decoration: underline;
+    color: #6c0c57;
 }
 .comments{
     padding: 15px 0 12px 0;
-    border-bottom: 1px solid #52B2CF;
+    border: 2px solid #52B2CF;
+    border-radius: 20px;
+    margin-bottom: 10px;
 }
 textarea{
     width: 60%;
@@ -162,8 +181,8 @@ textarea:focus{
 button{
     height: 40px;
     float: left;
-    width: 25%;
-    border-radius: 20px;
+    width: 12%;
+    border-radius: 30px;
     margin-left: 2%;
     margin-top: 15px;
     border: none;

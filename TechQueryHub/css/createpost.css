@@ -9,8 +9,8 @@
     position: relative;
   }
 .captiondiv{
-    width: 45%;
-    float: right;
+    width: 100%;
+    float: none;
 }
 input[type=file] {
     position: absolute;

@@ -10,7 +10,7 @@ class Postmod extends CI_Model
         $this->load->database();
     }
     //insert rows to post table
-    function createPost($username, $locationid, $postImage, $title, $caption)
+    function createPost($username, $locationid, $title, $caption)
     {
         $users = $this->db->get_where('users', array('Username' => $username));
         $userId= $users->row()->UserId;

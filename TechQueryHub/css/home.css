@@ -1,7 +1,7 @@
 .feedcontainer{
-    width: 100%;
-    display: block;
-    overflow: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 .postdiv{
     width: 30%;
@@ -105,10 +105,18 @@
     float: right;
 }
 .imagelocdiv{
-    width: 28%;
-    aspect-ratio : 1 / 1;
+    aspect-ratio : 1 / 0.2;
     margin-left: 4%;
-    float: left;
+    float: none;
+    border: 1px solid #164795;
+    border-radius: 30px;
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px rgba(22, 6, 69, 0.258);
+    padding: 20px;
+    margin-bottom: 20px;
+    max-width: 1000px;
+    width: 80%;
+    box-sizing: border-box;
 }
 .locpostimage{
     width: 96%;

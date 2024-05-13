@@ -8,24 +8,29 @@
 </head>
 <body>
    <div class='postcontainer'>
-        <div class='leftdiv'>            
+        <div class='leftdiv'>
             <!-- <div class='postimagediv'></div> -->
+
+<!--        </div>-->
+<!--        <div class='rightdiv'>-->
+                <div class='titlediv'></div>
+                <div class='captiondiv'></div>
+            <br>
             <div class='locationlikediv'>
                 <div class='likediv' id='likediv'></div>
                 <div class='likecount'></div>
-                <div class='locationdiv'></div>
+                <div class="locationtag">
+                    <div class='locationdiv'></div>
+                </div>
             </div>
-        </div>
-        <div class='rightdiv'>
-            <div class='titlediv'></div>
-            <div class='captiondiv'></div>
+
             <div class='usernameimgdiv'></div>
-            <div class='commentareadiv'>
-                <textarea onkeyup='checkinputs();' name="comment" id="comment" maxlength="50"></textarea>
-                <button onclick='postcomment();' id='commentbtn' disabled="disabled">Answer</button>
+                <div class='commentareadiv'>
+                    <textarea onkeyup='checkinputs();' name="comment" id="comment" maxlength="500"></textarea>
+                    <button onclick='postcomment();' id='commentbtn' disabled="disabled">Answer</button>
+                </div>
+                <div class='commentsdiv'></div>
             </div>
-            <div class='commentsdiv'></div>
-        </div>
    </div>
 
 <script type="text/javascript" lang="javascript">
@@ -48,7 +53,7 @@
                 var div3 ="<div class='usernamediv'><a href='<?php echo base_url() ?>index.php/users/userprofile/?username="
                          +data.Username +"'><span>"+ data.Username +"</span></a></div>";
                 $('.usernameimgdiv').append(div3);
-                var div4 ="<i onclick='like();' class='fa-solid fa-star-half-stroke'></i>";
+                var div4 ="<i onclick='like();' class='fa-regular fa-thumbs-up'></i>";
                 $('.likediv').append(div4);
                 var div5 =data.Title ;
                 $('.titlediv').append(div5);
@@ -142,7 +147,7 @@
         }).done(function (res) {
             $('.likecount span').remove();       
             if(res==1){
-                var div ="<span>"+res+" like</span>";
+                var div ="<span>"+res+" Ratings</span>";
             }
             else{
                 var div ="<span>"+res+" Ratings</span>";

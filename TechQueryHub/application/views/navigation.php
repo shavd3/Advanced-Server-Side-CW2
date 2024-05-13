@@ -10,8 +10,14 @@
      <div class="navigationdiv">
           <div class="logodiv">
                <a href="<?php echo base_url()?>index.php/home">
-               <img class="logoimage" src="<?php echo base_url() ?>images/new.png" alt="Logo" />TechQueryHub</a>
+               <img class="logoimage" src="<?php echo base_url() ?>images/new.png" alt="Logo" />
+                <div class="logoname">
+                    <a href="<?php echo base_url()?>index.php/home" <span> TechQueryHub </span></a>
+                </div>
           </div>
+<!--          <div class="logodiv">-->
+<!--             <a href="--><?php //echo base_url()?><!--index.php/home" <span> TechQueryHub </span></a>-->
+<!--          </div>-->
           <div class="searchdiv"> 
                <input type="text" class="search" id="search" placeholder="Search for question..." onkeyup='searchusers()'/>
           </div>

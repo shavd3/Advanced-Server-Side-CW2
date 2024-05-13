@@ -11,37 +11,22 @@
 
 <body>
 <div class="feedcontainer">
-    <div class='notfollowing'>
+    <!-- <div class='userlisting'></div> -->
+    <!-- <div class='notfollowing'>
         <div class='heading'></div>
         <div class='userlisting'></div>
-    </div>
+    </div> -->
+<!--    <div class="locationlistdiv">-->
+<!--        <span id='locationname'></span>-->
+<!--        <div id="locationlist"> </div>-->
+<!--    </div>-->
+
 <div>
 
 <script type="text/javascript" lang="javascript">
     var username="<?php echo $username ?>";
     $(document).ready(function () {
         event.preventDefault();
-        // $.ajax({//get follow count
-        //     url: "<?php echo base_url() ?>index.php/myprofile/followcount?username="+username,
-        //     method: "GET"
-        // }).done(function (data) {
-        //     // if (data.following==0){//if follow count is 0, display no posts and suggest users to follow
-        //         // $.ajax({
-        //         //     url: "<?php echo base_url() ?>index.php/users/user",
-        //         //     method: "GET"
-        //         // }).done(function (data) {
-        //         //     for (i = 0; i < 5; i++) {
-        //         //         var div ="<a href='<?php echo base_url() ?>index.php/users/userprofile/?username="
-        //         //          +data[i].Username+"'><div class='users'><div class= 'profilepicdiv'><img class='profilepic' src='<?php echo base_url() ?>images/profilepics/"
-        //         //          +data[i].UserImage+"'/></div>"+data[i].Username+"</br>"+data[i].Name+"</div></a>";
-        //         //         $('.userlisting').append(div);
-        //         //     } 
-        //         // });
-        //     //}
-        //     // else{
-        //     //     $('.notfollowing').remove(); 
-        //     // }
-        // });
         postCollection.fetch();//fetch backbone collection on start
     });
 
@@ -55,40 +40,28 @@
             this.listenTo(this.model, "add", this.showResults);
         },
         showResults: function (m) {//display all posts in backbone view
-            // html = html + "<div class='postdiv'><div class='locationdiv'><a href='<?php echo base_url() ?>index.php/posts/locations?locationid="
-            // + m.get('LocationId') +"'><span><i class='fa-solid fa-location-dot'></i>"
-            // + m.get('LocationName') +"</span></a></div><div class='userlikediv'><div class='usernamediv'><a href='<?php echo base_url() ?>index.php/users/userprofile/?username="
-            // + m.get('Username') +"'><span>"+ m.get('Username') +"</span></a></div><div class='likediv' id='likediv"
-            // + m.get('PostId') +"'><i onclick='like("+m.get('PostId')+");' class='fa-solid fa-heart'></i></div></div><div class='captiondiv'>"
-            // + m.get('Title') + "<br>"
-            // + m.get('Caption')+"</div><div class='commentsdiv' id='commentsdiv"
-            // + m.get('PostId') +"'></div></div>";
 
             html += "<div class='postdiv'>" + 
 
-            "<div class='userlikediv'>" + 
+            "<div class='userlikediv'>" +
 
-                // "<div class='usernamediv'><a href='<?php echo base_url() ?>index.php/users/userprofile/?username=" + m.get('Username') + "'>" + 
-                // "<span>" + m.get('Username') + "</span></a></div>" + 
+                "<div class='titlediv'><a href='<?php echo base_url() ?>index.php/posts/post?postid=" + m.get('PostId') + "'>" + m.get('Title') + "</span></a></div>" +
 
-                "<div class='usernamediv'><a href='<?php echo base_url() ?>index.php/posts/post?postid=" + m.get('PostId') + "'>" + m.get('Title') + "</span></a></div>" +
+            "<div class='likediv' id='likediv" + m.get('PostId') + "'><i onclick='like(" + m.get('PostId') + ");' class='fa-regular fa-thumbs-up'></i></div></div>" +
 
-            "<div class='likediv' id='likediv" + m.get('PostId') + "'><i onclick='like(" + m.get('PostId') + ");' class='fa-solid fa-solid fa-star-half-stroke'></i></div></div>" + 
-
-            "<div class='captiondiv'>" + 
-
-            // "<a href='<?php echo base_url() ?>index.php/posts/post?postid=" + m.get('PostId') + "'>"
-            //  + m.get('Title') + "</span></a>" +
-            // "<br>" + 
+            "<div class='captiondiv'>" +
+            
             m.get('Caption') + "</div>" + 
+            "<br>" + 
 
             "<div class='usernamediv'><a href='<?php echo base_url() ?>index.php/users/userprofile/?username=" + m.get('Username') + "'>" + 
                 "<span>" + m.get('Username') + "</span></a></div>" + 
-
-            "<div class='locationdiv'>" + 
+            "<br>" +
+            "<div class='locationtag'>" + 
+                "<div class='locationdiv'>" + 
                 "<a href='<?php echo base_url() ?>index.php/posts/locations?locationid=" + m.get('LocationId') + "'>" + 
                 "<span><i class='fa-solid'></i>" + m.get('LocationName') + 
-            "</span></a></div>" + 
+            "</span></a></div></div>" + 
 
             "<div class='commentsdiv' id='commentsdiv" + m.get('PostId') + "'></div></div>";
 
@@ -98,14 +71,14 @@
                 url: "<?php echo base_url() ?>index.php/home/comments?postid="+m.get('PostId'),
                 method: "GET"
             }).done(function (res) {
-                if(res.length!=0){             
+                if(res.length!==0){
                     for (i = 0; i < res.length; i++) {
                         if(i<2){
-                            var div ="<span><a class='commuserlink' href='<?php echo base_url() ?>index.php/users/userprofile/?username="+res[i].Username+"'>"+res[i].Username+"</a>"
+                            var div ="<span><a class='commuserlink' href='<?php echo base_url() ?>index.php/users/userprofile/?username="+res[i].Username+"'>"+"<br>"+res[i].Username+"</a>"
                             +res[i].CommentBody+"</span></br>";
                             $('#commentsdiv'+m.get('PostId')).append(div);
                         }
-		          } 
+		          }
                 }
             });
             $.ajax({//check if the user has already liked them or not and change color accordingly
@@ -113,7 +86,7 @@
                 method: "GET"
             }).done(function (res) {
                 if(res){
-                    document.getElementById("likediv"+m.get('PostId')).style.color = "#FC6464";
+                    document.getElementById("likediv"+m.get('PostId')).style.color = "#e6b800";
                 }
                 else{
                     document.getElementById("likediv"+m.get('PostId')).style.color = "#666666";

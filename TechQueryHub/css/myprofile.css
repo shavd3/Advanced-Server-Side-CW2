@@ -28,10 +28,17 @@ body {
     margin-left: 4%;
 }
 .postimagediv{
-    width: 30%;
-    aspect-ratio : 1 / 1;
+    width: 80%;
+    aspect-ratio : 1 / 0.2;
     float: left;
-    margin: 2% 2% 2% 1%;
+    border: 1px solid #164795;
+    border-radius: 30px;
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px rgba(22, 6, 69, 0.258);
+    padding: 20px;
+    margin-bottom: 20px;
+    max-width: 1000px;
+    box-sizing: border-box;
 }
 .postimage{
     width: 96%;
@@ -84,6 +91,30 @@ body {
     color: #8EA0E3;
     margin-top: 20px;
 }
+.captiondiv {
+    margin-top: 20px;
+    font-size: 18px;
+    line-height: 1.5;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.titlediv {
+    margin-right: 10px;
+    font-weight: bold;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-decoration: none;
+    color: #680a0a;
+    font-size: 25px;
+}
+
+.titlediv a{
+    color: #000000;
+    text-decoration: none;
+    transition: color .4s;
+}
+.titlediv a:hover{
+    color: #2cba91;
+    text-decoration: none;
+}
 .namediv{
     font-size: 20px;
     font-weight: 600;
@@ -132,4 +163,31 @@ a{
 .logoutlink{
     color: #EB9494;
     margin-left: 80px;
+}
+.locationdiv a{
+    color: #666666;
+    text-decoration: none;
+    transition: color .4s;
+}
+.locationdiv a:hover{
+    color: #52B2CF;
+    text-decoration: none;
+}
+/* Styles for locationdiv */
+.locationdiv {
+    margin-top: 10px;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Styles for locationtag */
+.locationtag {
+    display: inline-block;
+    background-color: #81d1c5;
+    border-radius: 15px;
+    padding: 1px 10px 10px;
+    margin-right: 10px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #666;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
