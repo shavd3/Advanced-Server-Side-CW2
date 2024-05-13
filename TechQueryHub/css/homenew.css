@@ -1,22 +1,60 @@
 /* Styles for feedcontainer */
+.postcontainer {
+    /*display: flex;*/
+    flex-direction: column;
+    align-items: center;
+    /*width: 100%;*/
+    display: block;
+    overflow: auto;
+}
 .feedcontainer {
     display: flex;
     flex-direction: column;
     align-items: center;
+    box-shadow: 0px 0px 10px 0px  rgba(152, 162, 203, 0.25) ;
+    width: 95%;
+    float: right;
 }
 
-/* Styles for postdiv */
+ /*Styles for postdiv */
 .postdiv {
-    border: 1px solid #164795;
+    /*border: 1px solid #164795;*/
     border-radius: 30px;
     background-color: #ffffff;
-    box-shadow: 0 2px 4px rgba(22, 6, 69, 0.258);
+    /*box-shadow: 0 2px 4px rgba(22, 6, 69, 0.258);*/
     padding: 20px;
     margin-bottom: 20px;
     max-width: 100%;
-    width: 95%;
+    /*width: 95%;*/
     box-sizing: border-box;
+    box-shadow: 0px 0px 10px 0px rgb(130, 172, 198);
+    width: 72%;
+    margin-left: 300px;
+    float: right;
 }
+/*.postdiv {*/
+/*    border: 1px solid #164795;*/
+/*    border-radius: 30px;*/
+/*    background-color: #ffffff;*/
+/*    padding: 20px;*/
+/*    margin-bottom: 20px;*/
+/*    box-sizing: border-box;*/
+/*    box-shadow: 0px 0px 10px 0px rgba(152, 162, 203, 0.25);*/
+/*}*/
+
+/*!* Add a container to hold the .postdiv *!*/
+/*.post-container {*/
+/*    display: flex;*/
+/*    justify-content: flex-end; !* Align .postdiv to the right *!*/
+/*    max-width: 100%; !* Allow .postdiv to take full width *!*/
+/*    margin: 0 auto; !* Center .post-container horizontally *!*/
+/*}*/
+
+/*!* Adjust .postdiv width to make it responsive *!*/
+/*.postdiv {*/
+/*    width: 70%; !* Adjust width as needed *!*/
+/*}*/
+
 
 .locationdiv a{
     color: #666666;
@@ -26,6 +64,48 @@
 .locationdiv a:hover{
     color: #52B2CF;
     text-decoration: none;
+}
+.locationcontainer{
+    width: 100%;
+    display: block;
+    overflow: auto;
+}
+.locationlistdiv{
+    margin-top: 150px;
+    margin-left: 20px;
+    width: 18%;
+    height: 84%;
+    overflow-y: auto;
+    position: fixed;
+    left: 0;
+    top: 0;
+    padding: 20px;
+    background: #ffffff;
+    /*border: 2px solid #164795;*/
+    box-sizing: border-box;
+    box-shadow: 0px 0px 10px 0px rgb(130, 172, 198);
+    border-radius: 10px;
+}
+
+/* Style for scrollbar */
+.locationlistdiv::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+.locationlistdiv::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+/* Handle */
+.locationlistdiv::-webkit-scrollbar-thumb {
+    background: #3780ae;
+    border-radius: 5px;
+}
+
+/* Handle on hover */
+.locationlistdiv::-webkit-scrollbar-thumb:hover {
+    background: #0f3859;
 }
 
 .usernamediv a{
@@ -132,6 +212,27 @@
     color: #333;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin-right: 3%;
+}
+#locationname{
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin: 20px 0 0 10%;
+    color: #52B2CF;
+}
+#locationlist{
+    font-size: 16px;
+    letter-spacing: 1px;
+    /*margin: 10px 0 0 10%;*/
+    text-align: center;
+}
+#locationlist a{
+    color: #666666;
+    text-decoration: none;
+}
+#locationlist a:hover{
+    color: #52B2CF;
+    text-decoration: none;
 }
 
 /* Add more styles as needed */

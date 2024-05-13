@@ -7,61 +7,94 @@
     <link rel="stylesheet" type="text/css" href="<?php echo base_url()?>css/navigation.css">
 </head>
 <body>
-    <div class="navigationupperdiv">
-        <div class="logodiv">
-            <a href="<?php echo base_url()?>index.php/home">
+     <div class="navigationdiv">
+          <div class="logodiv">
+               <a href="<?php echo base_url()?>index.php/home">
+<!--               <img class="logoimage" src="--><?php //echo base_url() ?><!--images/new.png" alt="Logo" />-->
                 <div class="navname">
-                    <a href="<?php echo base_url()?>index.php/home"><span> HOME </span></a>
+                    <a href="<?php echo base_url()?>index.php/home" <span> HOME </span></a>
                 </div>
-            </a>
-        </div>
-        <div class="logodiv">
-            <div class="navname">
-                <a href="<?php echo base_url()?>index.php/posts"><span> QUESTION </span></a>
-            </div>
-        </div>
-        <div class="logodiv">
-            <div class="navname">
-                <a href="<?php echo base_url()?>index.php/posts/locations?locationid=1"><span> TAGS </span></a>
-            </div>
-        </div>
-        <div class="logodiv">
-            <div class="navname">
-                <a href="<?php echo base_url()?>index.php/myprofile" class="profilelink"><span><?php echo $username ?></span></a>
-            </div>
-        </div>
-        <div class="linkdiv">
-            <div class="linkelement">
-                <img style="cursor:pointer" onclick='notifications();' class="linkimage" src="<?php echo base_url() ?>images/bell.png"/>
-            </div>
-        </div>
-    </div>
+          </div>
+         <div class="logodiv">
+                 <div class="navname">
+                     <a href="<?php echo base_url()?>index.php/posts" <span> QUESTION </span></a>
+                 </div>
+         </div>
+         <div class="logodiv">
+             <div class="navname">
+                 <a href="<?php echo base_url()?>index.php/posts/locations?locationid=1" <span> TAGS </span></a>
+             </div>
+         </div>
+         <div class="logodiv">
+             <div class="navname">
+                 <a href="<?php echo base_url()?>index.php/myprofile" class="profilelink"><span><?php echo $username ?></span></a></div>
+         </div>
+<!--          <div class="logodiv">-->
+<!--             <a href="--><?php //echo base_url()?><!--index.php/home" <span> TechQueryHub </span></a>-->
+<!--          </div>-->
+<!--          <div class="searchdiv">-->
+<!--               <input type="text" class="search" id="search" placeholder="Search for question..." onkeyup='searchusers()'/>-->
+<!--          </div>-->
+          <div class="linkdiv">
+<!--               <div class="linkelement">-->
+<!--                    <a href="--><?php //echo base_url()?><!--index.php/posts">-->
+<!--                    <img class="linkimage" src="--><?php //echo base_url() ?><!--images/add.png"/></a>-->
+<!--               </div>-->
+<!--               <div class="linkelement">-->
+<!--                    <a href="--><?php //echo base_url()?><!--index.php/home">-->
+<!--                    <img class="linkimage" src="--><?php //echo base_url() ?><!--images/home.png"/></a>-->
+<!--               </div>-->
+               <div class="linkelement">
+                    <img style="cursor:pointer" onclick='notifications();' class="linkimage" src="<?php echo base_url() ?>images/bell.png"/>
+               </div>
+          </div>
 
-    <div class="navigationdiv">
-        <div class="askdiv">
-            <div class="askname"><a href="<?php echo base_url()?>index.php/posts"><span> ASK </span></a></div>
-        </div>
-        <div class="searchdiv">
-            <input type="text" class="search" id="search" placeholder="Search for question..." onkeyup='searchusers()'/>
-        </div>
-        <div class="logomaindiv">
-                <div class="logoname">
-                    <a href="<?php echo base_url()?>index.php/home"><span> TechQueryHub </span></a>
-                </div>
-            <div class="logoname">
-                <a href="<?php echo base_url()?>index.php/home">
-                    <img class="logoimage" src="<?php echo base_url() ?>images/new.png" alt="Logo" />
-                </a>
-            </div>
-        </div>
-    </div>
-
-    <!-- search and notification overlays -->
-    <div class="searchresults" id="searchresults"></div>
-    <div class="notifications" id="notifications"></div>
+     </div>
 
 
-<script type="text/javascript" lang="javascript">
+     <div class="navigationdiv">
+         <div class="askdiv">
+             <div class="logoname"><a href="<?php echo base_url()?>index.php/posts" <span> Ask </span></a></div>
+         </div>
+
+         <!--          <div class="logodiv">-->
+         <!--             <a href="--><?php //echo base_url()?><!--index.php/home" <span> TechQueryHub </span></a>-->
+         <!--          </div>-->
+         <div class="searchdiv">
+             <input type="text" class="search" id="search" placeholder="Search for question..." onkeyup='searchusers()'/>
+         </div>
+<!--         <div class="linkdiv">-->
+<!--             <div class="linkelement">-->
+<!--                 <a href="--><?php //echo base_url()?><!--index.php/posts">-->
+<!--                     <img class="linkimage" src="--><?php //echo base_url() ?><!--images/add.png"/></a>-->
+<!--             </div>-->
+<!--             <div class="linkelement">-->
+<!--                 <a href="--><?php //echo base_url()?><!--index.php/home">-->
+<!--                     <img class="linkimage" src="--><?php //echo base_url() ?><!--images/home.png"/></a>-->
+<!--             </div>-->
+<!--             <div class="linkelement">-->
+<!--                 <img style="cursor:pointer" onclick='notifications();' class="linkimage" src="--><?php //echo base_url() ?><!--images/bell.png"/>-->
+<!--             </div>-->
+<!--         </div>-->
+<!--         <div class="profilediv">-->
+<!--             <div class="userlink">-->
+<!--                 <a href="--><?php //echo base_url()?><!--index.php/myprofile" class="profilelink"><span>--><?php //echo $username ?><!--</span></a></div>-->
+<!--         </div>-->
+         <div class="logomaindiv">
+             <a href="<?php echo base_url()?>index.php/home">
+                 <img class="logoimage" src="<?php echo base_url() ?>images/new.png" alt="Logo" />
+                 <div class="logoname">
+                     <a href="<?php echo base_url()?>index.php/home" <span> TechQueryHub </span></a>
+         </div>
+     </div>
+     </div>
+
+
+     <!-- search and notification overlays -->
+     <div class="searchresults" id="searchresults"></div>
+     <div class="notifications" id="notifications"></div>
+
+     <script type="text/javascript" lang="javascript">
      var username="<?php echo $username ?>";
      function searchusers() {
           if($('#search').val().length==0){

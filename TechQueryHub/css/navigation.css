@@ -4,22 +4,67 @@ body {
 	background-color: #ffffff;
     margin: 0px;
   }
+.navigationupperdiv{
+    max-height: 45px;
+    height: 45px;
+    margin: 0 0 0 0;
+    position:sticky;
+    top: 0px;
+    box-shadow: 0px 5px 5px -3px rgba(82, 178, 207, 0.3) ;
+    background-color: #ffffff;
+    z-index: 2;
+    border-bottom: 2px solid #92c6ec;
+}
 .navigationdiv{
     max-height: 85px;
     height: 85px;
     margin: 0 0 20px 0;
     position:sticky;
-    top: 0px;
+    top: 46px;
     box-shadow: 0px 5px 5px -3px rgba(82, 178, 207, 0.3) ;
     background-color: #ffffff;
-    z-index: 2; 
+    z-index: 2;
+    border-top: 2px solid #92c6ec;
 }
+/*.navigationnewdiv{*/
+/*    max-height: 85px;*/
+/*    height: 85px;*/
+/*    margin: 0 0 20px 0;*/
+/*    position:sticky;*/
+/*    top: 100px;*/
+/*    box-shadow: 0px 5px 5px -3px rgba(82, 178, 207, 0.3) ;*/
+/*    background-color: #ffffff;*/
+/*    z-index: 1000;*/
+/*}*/
 .logodiv{
     float: left;
     height: 100%;
     position: relative;
     margin: 0 0 0 2%;
     width: 18%;
+}
+.logomaindiv{
+    float: right;
+    height: 100%;
+    position: relative;
+    margin: 0 5% 2% 2%;
+    width: 18%;
+}
+.askdiv{
+    float: left;
+    height: 60%;
+    position: relative;
+    margin: 1% 1% 0 2%;
+    margin-left: 120px;
+    width: 7%;
+    display: inline-block;
+    background-color: #81d1c5;
+    border-radius: 35px;
+    /*padding: 1px 10px 10px;*/
+    font-size: 14px;
+    font-weight: bold;
+    color: #666;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 .logoname{
     position: absolute;
@@ -30,7 +75,33 @@ body {
     width: 100%;
     text-align: right;
 }
+.askname{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 2.25rem;
+    height: auto;
+    width: 100%;
+    text-align: center;
+}
+.navname{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 16px;
+    height: auto;
+    width: 100%;
+    text-align: right;
+}
+.navname a{
+    color: #52B2CF;
+    text-decoration: none;
+}
 .logoname a{
+    color: #52B2CF;
+    text-decoration: none;
+}
+.askname a{
     color: #52B2CF;
     text-decoration: none;
 }
@@ -47,10 +118,10 @@ body {
     width: 25%;
     height: 100%;
     position:relative;
-    margin: 0 0 0 23%;
+    margin: 0 0 0 18%;
 }
 .search{
-    width: 95%;
+    width: 150%;
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -74,7 +145,7 @@ body {
 .linkelement{
     height: 100%;
     width: 30%;
-    float: left;
+    float: right;
 }
 .linkimage{
     height: 40%;

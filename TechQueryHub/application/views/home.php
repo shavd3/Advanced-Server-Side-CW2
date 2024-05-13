@@ -10,20 +10,41 @@
 </head>
 
 <body>
-<div class="feedcontainer">
+
+<div class="postcontainer">
     <!-- <div class='userlisting'></div> -->
     <!-- <div class='notfollowing'>
         <div class='heading'></div>
         <div class='userlisting'></div>
     </div> -->
-<!--    <div class="locationlistdiv">-->
-<!--        <span id='locationname'></span>-->
-<!--        <div id="locationlist"> </div>-->
-<!--    </div>-->
+        <div class="locationlistdiv">
+<!--            <span id='locationname'></span>-->
+            <div id="locationlist"> </div>
+        </div>
 
+    <div class="feedcontainer"></div>
 <div>
 
 <script type="text/javascript" lang="javascript">
+
+    var locationid=1;
+    $(document).ready(function () {
+        event.preventDefault();
+        $.ajax({
+            url: "<?php echo base_url() ?>index.php/posts/location/action/all",
+            method: "GET"
+        })
+        .done(function (data) {
+            for (i = 0; i<data.length; i++) {
+                if(data[i]!=null){//display few other locations in the list for easier browsing
+                    var span ="<a href='<?php echo base_url() ?>index.php/posts/locations?locationid="
+                        +data[i].LocationId+"'><span>"+data[i].LocationName+"</span></a></br>"
+                    $('#locationlist').append(span);
+                }
+            }
+        });
+    });
+
     var username="<?php echo $username ?>";
     $(document).ready(function () {
         event.preventDefault();

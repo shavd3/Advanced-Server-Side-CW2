@@ -10,42 +10,41 @@
 </head>
 
 <body>
-    <div class="locationcontainer">
+<div class="locationcontainer">
 
-        <div class="locationlistdiv">
-            <span id='locationname'></span>
-            <div id="locationlist"> </div>
-        </div>
-
-        <div class="postlocadiv"></div>
+    <div class="locationlistdiv">
+        <span id='locationname'></span>
+        <div id="locationlist"> </div>
     </div>
 
+    <div class="postlocadiv"></div>
+</div>
+
 <script type="text/javascript" lang="javascript">
-    var locationid="<?php echo $locationid ?>";    
+    var locationid="<?php echo $locationid ?>";
     $(document).ready(function () {
         event.preventDefault();
         $.ajax({//get all posts from the given location id at start and display the posts
             url: "<?php echo base_url() ?>index.php/posts/location/action/id?locationid="+locationid,
             method: "GET"
-            }).done(function (data) {
-                document.getElementById("locationname").innerHTML = "<i class='fa-solid fa-location-dot'></i>"+data.LocationName;
-            });
+        }).done(function (data) {
+            document.getElementById("locationname").innerHTML = "<i class='fa-solid fa-location-dot'></i>"+data.LocationName;
+        });
         $.ajax({
             url: "<?php echo base_url() ?>index.php/posts/location/action/all",
             method: "GET"
         })
-        .done(function (data) {
-            for (i = (locationid-8); i < (+locationid+8); i++) {
-                if(data[i]!=null){//display few other locations in the list for easier browsing
-                    var span ="<a href='<?php echo base_url() ?>index.php/posts/locations?locationid="
-                    +data[i].LocationId+"'><span>"+data[i].LocationName+"</span></a></br>";
-			        $('#locationlist').append(span);
+            .done(function (data) {
+                for (i = (locationid-8); i < (+locationid+8); i++) {
+                    if(data[i]!=null){//display few other locations in the list for easier browsing
+                        var span ="<a href='<?php echo base_url() ?>index.php/posts/locations?locationid="
+                            +data[i].LocationId+"'><span>"+data[i].LocationName+"</span></a></br>";
+                        $('#locationlist').append(span);
+                    }
                 }
-		    }  
-        });
+            });
         postCollection.fetch();//backbone fetch to get the posts
     });
-
     var PostCollection = Backbone.Collection.extend({
         url: "<?php echo base_url() ?>index.php/posts/locationposts?locationid="+locationid,
     });
@@ -63,10 +62,10 @@
 
             html = html +
                 "<div class='imagelocdiv'>" +
-                        "<a href='<?php echo base_url() ?>index.php/posts/post?postid="+
-                        "<a href='<?php echo base_url() ?>index.php/posts/post?postid=" + m.get('PostId') + "'></br>" +
-                        "<span><i class='fa-solid fa-post_id'></i>" + m.get('Title') + "</a><br>" +
-                        m.get('Caption') + "</span>" +
+                "<a href='<?php echo base_url() ?>index.php/posts/post?postid="+
+                "<a href='<?php echo base_url() ?>index.php/posts/post?postid=" + m.get('PostId') + "'></br>" +
+                "<span><i class='fa-solid fa-post_id'></i>" + m.get('Title') + "</a><br>" +
+                m.get('Caption') + "</span>" +
                 "</div>"
 
             this.$el.html(html);
