@@ -14,36 +14,45 @@
 </head>
 
 <body>
-    <div class="logodiv"><img class="logoimage" src="<?php echo base_url() ?>images/new.png" alt="Logo" /> </div>
-
-    <div class="signform">
-        <form class="authforms" name="signupform">
-            <div class="errormsg" id="errormsg"></div>
-            <div class="input">
-                <input class="signfield" type=text id="username" name='username'
-                    onkeyup='checkusername(); checkinputs();' required />
-                <label class="signlabel">Username <span style="color:#EB9494">*</span></label>
+    <div class="postcontainer">
+        <div class="rightdiv">
+            <div class="logodiv"><img class="logoimage" src="<?php echo base_url() ?>images/new.png" alt="Logo" /> </div>
+            <div class="logodiv">
+                <span> TechQueryHub </span>
             </div>
-            <div class="input">
-                <input class="signfield" type=text id="email" name='email' onkeyup='checkinputs(); validateemail()'
-                    required />
-                <label class="signlabel">Email <span style="color:#EB9494">*</span></label>
+        </div>
+        <div class="leftregdiv"
+            <div class="signform">
+                <div class="logheading"><span>REGISTER</span></div>
+                <form class="authforms" name="signupform">
+                    <div class="errormsg" id="errormsg"></div>
+                    <div class="input">
+                        <input class="signfield" type=text id="username" name='username'
+                            onkeyup='checkusername(); checkinputs();' required />
+                        <label class="signlabel">Username <span style="color:#EB9494">*</span></label>
+                    </div>
+                    <div class="input">
+                        <input class="signfield" type=text id="email" name='email' onkeyup='checkinputs(); validateemail()'
+                            required />
+                        <label class="signlabel">Email <span style="color:#EB9494">*</span></label>
+                    </div>
+                    <div class="input">
+                        <input class="signfield" type=text id="name" name='name' onkeyup='checkinputs();' required />
+                        <label class="signlabel">Name</label>
+                    </div>
+                    <div class="input">
+                        <input class="signfield" type=password id="password" name='password' onkeyup='checkinputs();'
+                            required />
+                        <label class="signlabel">Password <span style="color:#EB9494">*</span></label>
+                    </div>
+                    <div class="action">
+                        <input class="signupbtn" type=submit id="createUser" disabled="disabled" value="SIGN UP" />
+                    </div>
+                </form>
+                <div class="signspandiv">
+                    <span>Already have an account? <a href="<?php echo base_url() ?>index.php/users/login">Login</a> </span>
+                </div>
             </div>
-            <div class="input">
-                <input class="signfield" type=text id="name" name='name' onkeyup='checkinputs();' required />
-                <label class="signlabel">Name</label>
-            </div>
-            <div class="input">
-                <input class="signfield" type=password id="password" name='password' onkeyup='checkinputs();'
-                    required />
-                <label class="signlabel">Password <span style="color:#EB9494">*</span></label>
-            </div>
-            <div class="action">
-                <input class="signupbtn" type=submit id="createUser" disabled="disabled" value="SIGN UP" />
-            </div>
-        </form>
-        <div class="signspandiv">
-            <span>Already have an account? <a href="<?php echo base_url() ?>index.php/users/login">Login</a> </span>
         </div>
     </div>
 

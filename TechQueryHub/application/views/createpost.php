@@ -7,34 +7,34 @@
 </head>
 <body>
     <div class="uppostcontainer">
-    <!-- <div class="filediv">
-        <div class="errormsg" id="errormsg"></div>
-            <div class="postpicdiv">
-                <img id='postpicid' src='<?php echo base_url() ?>images/userposts/default.jpg' alt='picture'/>
-            </div>
-        <input type="file" id="image" name="image" required="required" onchange="readURL(this);"/>  
-        <div class="dummy"><p>Select Picture</p></div>     
-    </div> -->
+        <!-- <div class="filediv">
+            <div class="errormsg" id="errormsg"></div>
+                <div class="postpicdiv">
+                    <img id='postpicid' src='<?php echo base_url() ?>images/userposts/default.jpg' alt='picture'/>
+                </div>
+            <input type="file" id="image" name="image" required="required" onchange="readURL(this);"/>
+            <div class="dummy"><p>Select Picture</p></div>
+        </div> -->
 
-    <div class="captiondiv">
-        <div class="caplabel"> <label for="title">Question Title</label></div>
-        <div><textarea name="title" id="title"  maxlength="100"></textarea></div>
-    </div>
-
-    <div class="titlediv">
-        <div class="caplabel"> <label for="caption">Description</label></div>
-        <div><textarea name="caption" id="caption"  maxlength="1000"></textarea></div>
-        <br>
-
-        <div class="caplabel"><label for="locations">Category</label></div>
-            <div>
-                <select onchange='getlocation();' id="locations">
-                    <option id ='locationName' value=""></option>
-                </select>
-            </div>
+        <div class="captiondiv">
+            <div class="caplabel"> <label for="title">Question Title</label></div>
+            <div><textarea name="title" id="title"  maxlength="100"></textarea></div>
         </div>
 
-    <div class="postsubmitdiv"><div id="uploadpost" >POST</div></div>
+        <div class="titlediv">
+            <div class="caplabel"> <label for="caption">Description</label></div>
+            <div><textarea name="caption" id="caption"  maxlength="1000"></textarea></div>
+            <br>
+
+            <div class="caplabel"><label for="locations">Category</label></div>
+                <div>
+                    <select onchange='getlocation();' id="locations">
+                        <option id ='locationName' value=""></option>
+                    </select>
+                </div>
+            </div>
+
+        <div class="postsubmitdiv"><div id="uploadpost" >POST</div></div>
     </div>
 
     <script type="text/javascript" lang="javascript">

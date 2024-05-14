@@ -28,14 +28,14 @@
             url: "<?php echo base_url() ?>index.php/posts/location/action/id?locationid="+locationid,
             method: "GET"
             }).done(function (data) {
-                document.getElementById("locationname").innerHTML = "<i class='fa-solid fa-location-dot'></i>"+data.LocationName;
+                document.getElementById("locationname").innerHTML = "<i class='fa-solid fa-microchip'></i>"+data.LocationName;
             });
         $.ajax({
             url: "<?php echo base_url() ?>index.php/posts/location/action/all",
             method: "GET"
         })
         .done(function (data) {
-            for (i = (locationid-8); i < (+locationid+8); i++) {
+            for (i = (locationid-20); i < (+locationid+20); i++) {
                 if(data[i]!=null){//display few other locations in the list for easier browsing
                     var span ="<a href='<?php echo base_url() ?>index.php/posts/locations?locationid="
                     +data[i].LocationId+"'><span>"+data[i].LocationName+"</span></a></br>";
@@ -61,13 +61,24 @@
             // +m.get('PostId')+"'><img class='locpostimage' src='<?php echo base_url() ?>images/userposts/"+m.get('PostImage')+"'/></a></div>";
             // this.$el.html(html);
 
-            html = html +
-                "<div class='imagelocdiv'>" +
-                        "<a href='<?php echo base_url() ?>index.php/posts/post?postid="+
-                        "<a href='<?php echo base_url() ?>index.php/posts/post?postid=" + m.get('PostId') + "'></br>" +
-                        "<span><i class='fa-solid fa-post_id'></i>" + m.get('Title') + "</a><br>" +
-                        m.get('Caption') + "</span>" +
-                "</div>"
+            //html = html +
+            //    "<div class='imagelocdiv'>" +
+            //            "<a href='<?php //echo base_url() ?>//index.php/posts/post?postid="+
+            //            "<a href='<?php //echo base_url() ?>//index.php/posts/post?postid=" + m.get('PostId') + "'></br>" +
+            //            "<span><i class='fa-solid fa-post_id'></i>" + m.get('Title') + "</a><br>" +
+            //            m.get('Caption') + "</span>" +
+            //    "</div>"
+
+            html = html + "<div class='postimagediv'><a href='<?php echo base_url() ?>index.php/posts/post?postid="
+                + m.get('PostId') + "'>"
+                + "<div class='titlediv'><a href='<?php echo base_url() ?>index.php/posts/post?postid=" + m.get('PostId') + "'>" + m.get('Title') + "</span></a></div>" +
+
+
+                "<div class='captiondiv'>" +
+
+                m.get('Caption') + "</div><br>" +
+
+                "</div>";
 
             this.$el.html(html);
         }

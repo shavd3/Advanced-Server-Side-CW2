@@ -8,27 +8,27 @@
 
 </head>
 <body>
-<div class="pwform">
-    <div class="pwresetheading"><span>RESET PASSWORD</span></div>
-    <div class="errormsg" id="errormsg"></div>
-    <form class="authforms" name="loginform">
-        <div class="input">
-            <input class="loginfield" type=text id="username" name='username' onkeyup='checkinputs();' required/>
-            <label class="loginlabel">Username<span style="color:#EB9494">*</label>
-        </div>
-        <div class="input">
-            <input class="loginfield" type=password id="password" name='password' onkeyup='checkinputs();' required/>
-            <label class="loginlabel">New Password<span style="color:#EB9494">*</label>
-        </div>
-        <div class="action">
-            <input class="loginbtn" type=submit disabled="disabled" id="changepw" value="RESET" />
-        </div>
-    </form>
+    <div class="pwform">
+        <div class="pwresetheading"><span>RESET PASSWORD</span></div>
+        <div class="errormsg" id="errormsg"></div>
+        <form class="authforms" name="loginform">
+            <div class="input">
+                <input class="loginfield" type=text id="username" name='username' onkeyup='checkinputs();' required/>
+                <label class="loginlabel">Username<span style="color:#EB9494">*</label>
+            </div>
+            <div class="input">
+                <input class="loginfield" type=password id="password" name='password' onkeyup='checkinputs();' required/>
+                <label class="loginlabel">New Password<span style="color:#EB9494">*</label>
+            </div>
+            <div class="action">
+                <input class="loginbtn" type=submit disabled="disabled" id="changepw" value="RESET" />
+            </div>
+        </form>
 
-    <div class="loginspandiv">
-        <span>Or <a href="<?php echo base_url()?>index.php/users/signup">Sign Up</a> here</span>
+        <div class="loginspandiv">
+            <span>Or <a href="<?php echo base_url()?>index.php/users/signup">Sign Up</a> here</span>
+        </div>
     </div>
-</div>
 
 <script type="text/javascript" lang="javascript">
 //check inputs to see if theyre are empty

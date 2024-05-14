@@ -1,7 +1,9 @@
 /* Styles for uppostcontainer */
 .uppostcontainer {
-    width: 60%;
+    width: 85%;
     margin: auto;
+    margin-top: 150px;
+    /*margin-left: 100px;*/
     padding: 20px;
     background-color: #f9f9f9;
     border-radius: 20px;

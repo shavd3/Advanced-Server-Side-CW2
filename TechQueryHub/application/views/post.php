@@ -13,7 +13,7 @@
 
 <!--        </div>-->
 <!--        <div class='rightdiv'>-->
-                <div class='titlediv'></div>
+                <div class='titlediv'></div><br>
                 <div class='captiondiv'></div>
             <br>
             <div class='locationlikediv'>

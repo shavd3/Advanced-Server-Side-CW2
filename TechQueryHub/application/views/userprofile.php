@@ -9,27 +9,27 @@
 </head>
 
 <body>
-<div class="profilecontainer">
-<div class="profiledeetdiv">
-    <div class="topdiv">
-        <div class="profpicdiv"></div>
-        <!-- <div class="followdiv">
-            <div class="flabel">FOLLOWING</div>
-            <div class="fcount" id="followingc"></div>
-            <div class="flabel">FOLLOWERS</div>
-            <div class="fcount" id="followerc"></div>
-        </div> -->
+    <div class="profilecontainer">
+        <div class="profiledeetdiv">
+            <div class="topdiv">
+                <div class="profpicdiv"></div>
+                <!-- <div class="followdiv">
+                    <div class="flabel">FOLLOWING</div>
+                    <div class="fcount" id="followingc"></div>
+                    <div class="flabel">FOLLOWERS</div>
+                    <div class="fcount" id="followerc"></div>
+                </div> -->
+            </div>
+            <div class="usernamediv"><?php echo $username ?></div>
+            <div class="namediv"></div>
+            <div class="biodiv"></div>
+            <!-- <div class="profbottomdiv">
+            <a href="#" onclick='follow();'><div id="followbutton">  </div></a>
+            </div> -->
+        </div>
+
+        <div class="postsdiv" id="postsdiv"></div>
     </div>
-    <div class="usernamediv"><?php echo $username ?></div>
-    <div class="namediv"></div>
-    <div class="biodiv"></div>
-    <!-- <div class="profbottomdiv">
-    <a href="#" onclick='follow();'><div id="followbutton">  </div></a>
-    </div> -->
-</div>
-<div class="postsdiv" id="postsdiv">
-</div>
-</div>
 
 <script type="text/javascript" lang="javascript">
     var username="<?php echo $username ?>";

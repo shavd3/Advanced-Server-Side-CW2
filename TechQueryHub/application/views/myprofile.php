@@ -23,6 +23,7 @@
         <div class="usernamediv"><?php echo $username ?></div>
         <div class="namediv"></div>
         <div class="biodiv"></div>
+
         <div class="profbottomdiv">
             <a class="editprlink" href="<?php echo base_url()?>index.php/myprofile/editprofile">EDIT PROFILE</a>
             <a class="logoutlink" href="<?php echo base_url()?>index.php/users/logout">LOGOUT</a>

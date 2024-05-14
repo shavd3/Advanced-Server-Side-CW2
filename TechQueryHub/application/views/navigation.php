@@ -25,16 +25,17 @@
                 <a href="<?php echo base_url()?>index.php/posts/locations?locationid=1"><span> TAGS </span></a>
             </div>
         </div>
+<!--        <i class="fa-solid fa-user"></i>-->
         <div class="logodiv">
-            <div class="navname">
+            <div class="navname fa-solid fa-user">
                 <a href="<?php echo base_url()?>index.php/myprofile" class="profilelink"><span><?php echo $username ?></span></a>
             </div>
         </div>
-        <div class="linkdiv">
-            <div class="linkelement">
-                <img style="cursor:pointer" onclick='notifications();' class="linkimage" src="<?php echo base_url() ?>images/bell.png"/>
-            </div>
-        </div>
+<!--        <div class="linkdiv">-->
+<!--            <div class="linkelement">-->
+<!--                <img style="cursor:pointer" onclick='notifications();' class="linkimage" src="--><?php //echo base_url() ?><!--images/bell.png"/>-->
+<!--            </div>-->
+<!--        </div>-->
     </div>
 
     <div class="navigationdiv">

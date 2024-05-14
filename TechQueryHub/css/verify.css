@@ -9,17 +9,55 @@ input:-webkit-autofill:focus,
 input:-webkit-autofill:active{
   -webkit-box-shadow: 0 0 0 30px white inset !important;
 }
+.postcontainer{
+	width: 100%;
+	display: block;
+	/*overflow: auto;*/
+	margin-top: 10%;
+	/*margin-left: 6%;*/
+}
+.leftdiv{
+	margin-top: 4%;
+	margin-left: 18%;
+	width: 30%;
+	max-width: 35%;
+	float: left;
+	position: fixed;
+	/*margin: 1% auto;*/
+	/*box-shadow: 0 0 10px 4px rgba(199, 182, 237, 0.25);*/
+}
+.leftregdiv{
+	/*margin-top: 1%;*/
+	margin-left: 18%;
+	width: 30%;
+	max-width: 35%;
+	float: left;
+	position: fixed;
+	/*margin: 1% auto;*/
+	/*box-shadow: 0 0 10px 4px rgba(199, 182, 237, 0.25);*/
+}
+.rightdiv{
+	width: 25%;
+	float: right;
+	max-width: 45%;
+	display: block;
+	overflow: auto;
+	margin-right: 18%;
+}
 .logodiv  {
-    margin:3% auto 0 auto;
+    margin:0 auto 0 auto;
     height:fit-content;
     width:fit-content;
+	color: #52B2CF;
+	font-weight: bold;
+	font-size: 2.65rem;
 }
 .logoimage  {
     width: 350px;
     height: auto;
 }
 
-.signform, .loginform, .pwform {
+.signform, .loginform{
 	display: flex;
 	flex-direction: column;
 	width: 100%;
@@ -28,17 +66,26 @@ input:-webkit-autofill:active{
 	border-radius: 10px;
 	padding: 1.5%;
 }
+.pwform {
+	display: flex;
+	flex-direction: column;
+	width: 35%;
+	max-width: 35%;
+	background-color: #fff;
+	border-radius: 10px;
+	padding: 1.5%;
+}
 .signform{
 	margin: 1% auto;
 	box-shadow: 0 0 10px 4px rgba(236, 182, 213, 0.25);
 }
-.loginform{
+.loginform{;
 	margin: 1% auto;
 	box-shadow: 0 0 10px 4px rgba(199, 182, 237, 0.25);
 }
 .pwform{
 	margin:8% auto;
-	box-shadow: 0 0 10px 4px rgba(199, 182, 237, 0.25);
+	/*box-shadow: 0 0 10px 4px rgba(199, 182, 237, 0.25);*/
 }
   
   .authforms {

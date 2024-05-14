@@ -4,7 +4,7 @@
     overflow: auto;
 }
 .leftdiv{
-    margin-top: 10px;
+    margin-top: 150px;
     margin-left: 70px;
     width: 110%;
     max-width: 100%;
@@ -156,8 +156,9 @@
 }
 .comments{
     padding: 15px 0 12px 0;
-    border: 2px solid #52B2CF;
-    border-radius: 20px;
+    /*border: 2px solid #52B2CF;*/
+    box-shadow: 2px 0 2px 1px rgb(21, 161, 221);
+    border-radius: 15px;
     margin-bottom: 10px;
 }
 textarea{

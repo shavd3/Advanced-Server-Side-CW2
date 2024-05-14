@@ -17,7 +17,11 @@
         <div class='heading'></div>
         <div class='userlisting'></div>
     </div> -->
+
         <div class="locationlistdiv">
+            <div class="cattag">CATEGORIES</div>
+            <br>
+            <br>
 <!--            <span id='locationname'></span>-->
             <div id="locationlist"> </div>
         </div>
@@ -68,7 +72,7 @@
 
                 "<div class='titlediv'><a href='<?php echo base_url() ?>index.php/posts/post?postid=" + m.get('PostId') + "'>" + m.get('Title') + "</span></a></div>" +
 
-            "<div class='likediv' id='likediv" + m.get('PostId') + "'><i onclick='like(" + m.get('PostId') + ");' class='fa-regular fa-thumbs-up'></i></div></div>" +
+                "<div class='likediv' id='likediv" + m.get('PostId') + "'><i onclick='like(" + m.get('PostId') + ");' class='fa-regular fa-thumbs-up'></i></div></div>" +
 
             "<div class='captiondiv'>" +
             
@@ -84,24 +88,25 @@
                 "<span><i class='fa-solid'></i>" + m.get('LocationName') + 
             "</span></a></div></div>" + 
 
-            "<div class='commentsdiv' id='commentsdiv" + m.get('PostId') + "'></div></div>";
+            // "<div class='commentsdiv' id='commentsdiv" + m.get('PostId') + "'></div>
+            "</div>";
 
             this.$el.html(html);
             //get comments for each post and display them
-            $.ajax({
-                url: "<?php echo base_url() ?>index.php/home/comments?postid="+m.get('PostId'),
-                method: "GET"
-            }).done(function (res) {
-                if(res.length!==0){
-                    for (i = 0; i < res.length; i++) {
-                        if(i<2){
-                            var div ="<span><a class='commuserlink' href='<?php echo base_url() ?>index.php/users/userprofile/?username="+res[i].Username+"'>"+"<br>"+res[i].Username+"</a>"
-                            +res[i].CommentBody+"</span></br>";
-                            $('#commentsdiv'+m.get('PostId')).append(div);
-                        }
-		          }
-                }
-            });
+            //$.ajax({
+            //    url: "<?php //echo base_url() ?>//index.php/home/comments?postid="+m.get('PostId'),
+            //    method: "GET"
+            //}).done(function (res) {
+            //    if(res.length!==0){
+            //        for (i = 0; i < res.length; i++) {
+            //            if(i<2){
+            //                var div ="<span><a class='commuserlink' href='<?php //echo base_url() ?>//index.php/users/userprofile/?username="+res[i].Username+"'>"+"<br>"+res[i].Username+"</a>"
+            //                +res[i].CommentBody+"</span></br>";
+            //                $('#commentsdiv'+m.get('PostId')).append(div);
+            //            }
+		    //      }
+            //    }
+            //});
             $.ajax({//check if the user has already liked them or not and change color accordingly
                 url: "<?php echo base_url() ?>index.php/home/checklikes?username="+username+"&postid="+m.get('PostId'),
                 method: "GET"

@@ -7,8 +7,9 @@ body {
 .navigationupperdiv{
     max-height: 45px;
     height: 45px;
+    width: 100%;
     margin: 0 0 0 0;
-    position:sticky;
+    position:fixed;
     top: 0px;
     box-shadow: 0px 5px 5px -3px rgba(82, 178, 207, 0.3) ;
     background-color: #ffffff;
@@ -18,8 +19,9 @@ body {
 .navigationdiv{
     max-height: 85px;
     height: 85px;
+    width: 100%;
     margin: 0 0 20px 0;
-    position:sticky;
+    position:fixed;
     top: 46px;
     box-shadow: 0px 5px 5px -3px rgba(82, 178, 207, 0.3) ;
     background-color: #ffffff;
@@ -54,13 +56,14 @@ body {
     float: left;
     height: 60%;
     position: relative;
-    margin: 1% 1% 0 2%;
-    margin-left: 120px;
+    /*margin: 1% 1% 1% 2%;*/
+    margin-left: 170px;
+    margin-top: 12px;
     width: 7%;
     display: inline-block;
     background-color: #81d1c5;
     border-radius: 35px;
-    /*padding: 1px 10px 10px;*/
+    padding: 10px 10px 0 0;
     font-size: 14px;
     font-weight: bold;
     color: #666;
@@ -77,7 +80,7 @@ body {
 }
 .askname{
     position: absolute;
-    top: 50%;
+    top: 40%;
     transform: translateY(-50%);
     font-size: 2.25rem;
     height: auto;
@@ -97,8 +100,13 @@ body {
     color: #52B2CF;
     text-decoration: none;
 }
+.fa-solid a:hover{
+    color: #52B2CF;
+    text-decoration: none;
+}
 .logoname a{
     color: #52B2CF;
+    font-weight: bold;
     text-decoration: none;
 }
 .askname a{
@@ -121,7 +129,7 @@ body {
     margin: 0 0 0 18%;
 }
 .search{
-    width: 150%;
+    width: 120%;
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -181,16 +189,16 @@ body {
 	text-decoration: underline;
 }
 .searchresults, .notifications{
-    position: fixed; 
+    position: fixed;
     display: none; 
     height: fit-content;
-    top: 70px;
+    top: 120px;
     right: 0;
     bottom: 0;
-    background-color: white; 
-    box-shadow: 0 0 10px 4px rgba(126, 196, 207, 0.25);
+    /*background-color: #330404;*/
+    /*box-shadow: 0 0 10px 4px rgba(126, 196, 207, 0.25);*/
     z-index: 2; 
-    border-radius: 10px;
+    border-radius: 30px;
 }
 .searchresults{
     width: 30%; 
@@ -206,8 +214,13 @@ body {
 }
 .user{
     height: 56px;
+    width: 98%;
     padding: 0 2%;
-    box-shadow: 0px 0px 4px 0px rgba(82, 178, 207, 0.25)
+    box-shadow: 0px 0px 4px 0px rgba(82, 178, 207, 0.25);
+    border-radius: 50px;
+    background-color: #ffffff;
+    margin-bottom: 5px;
+    border: 2px solid rgba(32, 181, 234, 0.25);
 }
 .userlinks{
     color: #666666;
@@ -226,7 +239,7 @@ body {
     object-fit: cover;
 }
 .searuserdeet{
-    padding: 3px 0 0 65px;
+    padding: 15px 0 0 65px;
     box-sizing: border-box;
 }
 .noresult{
