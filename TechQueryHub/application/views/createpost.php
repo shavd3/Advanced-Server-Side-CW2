@@ -49,7 +49,7 @@
 		 	for (i = 0; i < data.length; i++) {
 		     	var option ="<option id ='locationName' value="+data[i].LocationId+">"+data[i].LocationName+"</option>";
 		 	    $('#locations').append(option);
-		     }
+		    }
          });
         //get location value from form element
         function getlocation() {

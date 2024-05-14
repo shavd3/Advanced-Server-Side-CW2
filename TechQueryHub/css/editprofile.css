@@ -1,7 +1,8 @@
 .editprofcontainer{
+    margin-top: 180px;
     width: 100%;
     display: block;
-    overflow: auto;
+    /*overflow: auto;*/
 }
 .texteditdiv{
     width: 50%;

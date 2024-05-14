@@ -24,9 +24,14 @@ class Postmod extends CI_Model
     //query post table to get posts from a user
     function getPostsfromUsername($username)
     {
+        //"SELECT posts.*, users.Username, location.LocationName FROM posts JOIN users ON users.UserId=posts.UserId JOIN location ON location.LocationId=posts.LocationId ORDER BY Timestamp DESC");
+
+
         $users = $this->db->get_where('users', array('Username' => $username));
         $userId= $users->row()->UserId;
-        $query=$this->db->query( "SELECT * FROM posts WHERE UserId=".$userId." ORDER BY Timestamp DESC");
+//        $query=$this->db->query( "SELECT * FROM posts WHERE UserId=".$userId." ORDER BY Timestamp DESC");
+        $query=$this->db->query("SELECT posts.*, location.LocationName FROM posts JOIN location ON 
+                                    location.LocationId = posts.LocationId ORDER BY posts.Timestamp DESC");
         return $query->result();
     }
     //get all locations from db

@@ -27,7 +27,8 @@
         $.ajax({//get all posts from the given location id at start and display the posts
             url: "<?php echo base_url() ?>index.php/posts/location/action/id?locationid="+locationid,
             method: "GET"
-            }).done(function (data) {
+            })
+            .done(function (data) {
                 document.getElementById("locationname").innerHTML = "<i class='fa-solid fa-microchip'></i>"+data.LocationName;
             });
         $.ajax({

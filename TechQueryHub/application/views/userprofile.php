@@ -72,12 +72,28 @@
                 // + m.get('PostId') +"'><img class='postimage' src='<?php echo base_url() ?>images/userposts/"
                 // + m.get('PostImage') + "'/></a></div>";
 
-                html = html + "<div class='postimagediv'><a href='<?php echo base_url() ?>index.php/posts/post?postid=" 
-                + m.get('PostId') + "'>"
-                + m.get('Title') + "</span></a>" +
-                "<br>" + 
-                m.get('Caption') + 
-                "</div>";
+                //html = html + "<div class='postimagediv'><a href='<?php //echo base_url() ?>//index.php/posts/post?postid="
+                //                + m.get('PostId') + "'>"
+                //                + m.get('Title') + "</span></a>" +
+                //                "<br>" +
+                //                m.get('Caption') +
+                //            "</div>";
+
+                html = html + "<div class='postimagediv'><a href='<?php echo base_url() ?>index.php/posts/post?postid="
+                    + m.get('PostId') + "'>"
+                    + "<div class='titlediv'><a href='<?php echo base_url() ?>index.php/posts/post?postid=" + m.get('PostId') + "'>" + m.get('Title') + "</span></a></div>" +
+
+
+                    "<div class='captiondiv'>" +
+
+                    m.get('Caption') + "</div><br>" +
+                    "<div class='locationtag'>" +
+                    "<div class='locationdiv'>" +
+                    "<a href='<?php echo base_url() ?>index.php/posts/locations?locationid=1" + m.get('LocationId') + "'>" +
+                    "<span><i class='fa-solid'></i>" + m.get('LocationName') +
+                    "</span></a></div></div>" +
+
+                    "</div>";
             });
             this.$el.html(html);
         }
