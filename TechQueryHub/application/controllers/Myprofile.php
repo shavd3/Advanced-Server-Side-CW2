@@ -36,9 +36,9 @@ class Myprofile extends \Restserver\Libraries\REST_Controller {
     }
     //api to get users post details
     public function myposts_get(){
-            $username = $this->session->username;
-            $result = $this->postmod->getPostsfromUsername($username);
-            $this->response($result);
+        $username = $this->session->username;
+        $result = $this->postmod->getPostsfromUsername($username);
+        $this->response($result);
     }
     //api post to follow
     public function follow_post(){

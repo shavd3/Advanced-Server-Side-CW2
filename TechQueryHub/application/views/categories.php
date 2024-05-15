@@ -66,7 +66,7 @@
 
                 "<div class='captiondiv'>" +
 
-                m.get('Caption') + "</div><br>" +
+                m.get('Description') + "</div><br>" +
 
                 "</div>";
 

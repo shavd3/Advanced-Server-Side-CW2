@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-//model for post related database tasks
+//model for question related database tasks
 class Postmod extends CI_Model
 {
     public function __construct()
@@ -9,19 +9,19 @@ class Postmod extends CI_Model
         parent::__construct();
         $this->load->database();
     }
-    //insert rows to post table
-    function createPost($username, $tagid, $title, $caption)
+    //insert rows to questions table
+    function createPost($username, $tagid, $title, $Description)
     {
         $users = $this->db->get_where('users', array('Username' => $username));
         $userId= $users->row()->UserId;
-        $data = array('UserId' => $userId, 'TagId' => $tagid, 'Title' => $title, 'Caption' => $caption);
-        if ($this->db->insert('posts', $data)) {
+        $data = array('UserId' => $userId, 'TagId' => $tagid, 'Title' => $title, 'Description' => $Description);
+        if ($this->db->insert('questions', $data)) {
             return True;
         } else {
             return False;
         }
     }
-    //query post table to get posts from a user
+    //query post table to get questions from a user
     function getPostsfromUsername($username)
     {
         //"SELECT posts.*, users.Username, location.LocationName FROM posts JOIN users ON users.UserId=posts.UserId JOIN location ON location.LocationId=posts.LocationId ORDER BY Timestamp DESC");
@@ -29,8 +29,8 @@ class Postmod extends CI_Model
         $users = $this->db->get_where('users', array('Username' => $username));
         $userId= $users->row()->UserId;
 //        $query=$this->db->query( "SELECT * FROM posts WHERE UserId=".$userId." ORDER BY Timestamp DESC");
-        $query=$this->db->query("SELECT posts.*, tags.TagName FROM posts JOIN tags ON 
-                                    tags.TagId = posts.TagId WHERE UserId=".$userId." ORDER BY posts.Timestamp DESC");
+        $query=$this->db->query("SELECT questions.*, tags.TagName FROM questions JOIN tags ON 
+                                    tags.TagId = questions.TagId WHERE UserId=".$userId." ORDER BY questions.Timestamp DESC");
         return $query->result();
     }
     //get all tags from db
@@ -41,34 +41,39 @@ class Postmod extends CI_Model
         }
         return NULL;
     }
-    //query database to get posts from users following
+    //query database to get questions, users and tags
     function getPostsofFollowing($username){
         $users = $this->db->get_where('users', array('Username' => $username));
         $userId= $users->row()->UserId;
-        $query=$this->db->query("SELECT posts.*, users.Username, tags.TagName FROM posts JOIN users ON users.UserId=posts.UserId JOIN tags ON tags.TagId=posts.TagId ORDER BY Timestamp DESC");
-        // $query=$this->db->query("SELECT posts.* FROM posts");
+        $query=$this->db->query("SELECT questions.*, users.Username, tags.TagName FROM questions 
+                                JOIN users ON users.UserId=questions.UserId 
+                                JOIN tags ON tags.TagId=questions.TagId 
+                                ORDER BY Timestamp DESC");
         return $query->result();
     }
-    //query table to get the comments per post
-    function getComments($postid){
-        $comments = $this->db->query( "SELECT comments.*,users.Username FROM comments JOIN users ON users.UserId=comments.UserId WHERE PostId=".$postid." ORDER BY Timestamp DESC");
-        return $comments->result();
+    //query table to get the answers per post
+    function getComments($questionid){
+        $answers = $this->db->query( "SELECT answers.*,users.Username FROM answers 
+                                        JOIN users ON users.UserId=answers.UserId WHERE QuestionId=".$questionid." 
+                                        ORDER BY Timestamp DESC");
+        return $answers->result();
     }
     //insert rows to comments table
-    function addComments($postid, $comment, $username){
+    function addComments($questionid, $answer, $username){
         $users = $this->db->get_where('users', array('Username' => $username));
         $userId= $users->row()->UserId;
-        $posts = $this->db->get_where('posts', array('PostId' => $postid));
+        $posts = $this->db->get_where('questions', array('QuestionId' => $questionid));
         $postuser= $posts->row()->UserId;
-        $query=$this->db->insert('comments', array('UserId' => $userId,'PostId' => $postid,'CommentBody' => $comment));
-        $this->db->insert('notification', array('FromUser' => $userId,'UserId' => $postuser, 'PostId' => $postid, 'CommentBody' => $comment, 'Notification'=>'Commented on your post!'));
+        $query=$this->db->insert('answers', array('UserId' => $userId,'QuestionId' => $questionid,'AnswerBody' => $answer));
+        $this->db->insert('notification', array('FromUser' => $userId,'UserId' => $postuser, 'PostId' => $questionid,
+                            'CommentBody' => $questionid, 'Notification'=>'Commented on your post!'));
         return $query;
     }
     //query like table to check if a user has liked a post
     public function checklikes($username, $postid){
         $users = $this->db->get_where('users', array('Username' => $username));
         $userId= $users->row()->UserId;
-        $res = $this->db->get_where('likes', array('UserId' => $userId,'PostId' => $postid));
+        $res = $this->db->get_where('votes', array('UserId' => $userId,'QuestionId' => $postid));
         if ($res->num_rows() == 1){
             return true;
         }
@@ -76,27 +81,28 @@ class Postmod extends CI_Model
             return false;
         }
     }
-    //insert row to likes and notification tables
+    //insert row to votes and notification tables
     public function likepost($username, $postid){
         $users = $this->db->get_where('users', array('Username' => $username));
         $userId= $users->row()->UserId;
-        $posts = $this->db->get_where('posts', array('PostId' => $postid));
+        $posts = $this->db->get_where('questions', array('QuestionId' => $postid));
         $postuser= $posts->row()->UserId;
-        $res = $this->db->get_where('likes', array('UserId' => $userId,'PostId' => $postid));
+        $res = $this->db->get_where('votes', array('UserId' => $userId,'QuestionId' => $postid));
         if ($res->num_rows() == 1){
-            $query=$this->db->delete('likes', array('UserId' => $userId,'PostId' => $postid));
-            $this->db->delete('notification', array('FromUser' => $userId,'UserId' => $postuser, 'PostId' => $postid, 'Notification'=>'Liked your post!'));
+            $query=$this->db->delete('votes', array('UserId' => $userId,'QuestionId' => $postid));
+            $this->db->delete('notification', array('FromUser' => $userId,'UserId' => $postuser, 
+                                'PostId' => $postid, 'Notification'=>'Liked your post!'));
             return "deleted";
         }
         else{
-            $query=$this->db->insert('likes', array('UserId' => $userId,'PostId' => $postid));
+            $query=$this->db->insert('votes', array('UserId' => $userId,'QuestionId' => $postid));
             $this->db->insert('notification', array('FromUser' => $userId,'UserId' => $postuser, 'PostId' => $postid, 'Notification'=>'Liked your post!'));
             return "added";
         }
     }
-    //query post table to get posts from tag
+    //query questions table to get questions from tag
     public function questionsFromTags($tagId){
-        $res = $this->db->get_where('posts', array('TagId' => $tagId));
+        $res = $this->db->get_where('questions', array('TagId' => $tagId));
         return $res->result();
     }
     //query tags by tag Id
@@ -104,15 +110,18 @@ class Postmod extends CI_Model
         $res = $this->db->get_where('tags', array('TagId' => $tagId));
         return $res->row();
     }
-    //query posts by post id
+    //query questions by question id
     public function postfromid($postid){
-        $res = $this->db->query( "SELECT posts.*, users.Username, users.UserImage, tags.TagName FROM posts JOIN users ON users.UserId=posts.UserId JOIN tags ON tags.TagId=posts.TagId WHERE posts.PostId =".$postid);
+        $res = $this->db->query( "SELECT questions.*, users.Username, users.UserImage, tags.TagName 
+                                    FROM questions JOIN users ON users.UserId=questions.UserId 
+                                    JOIN tags ON tags.TagId=questions.TagId 
+                                    WHERE questions.QuestionId =".$postid);
         return $res->row();
     }
-    //get number of rows from likes table according to post id
+    //get number of rows from votes table according to question id
     public function likeCount($postid){
-        $res2 = $this->db->get_where('likes', array('PostId' => $postid));
-        $likes=$res2->num_rows();
-        return $likes;
+        $res2 = $this->db->get_where('votes', array('QuestionId' => $postid));
+        $votes=$res2->num_rows();
+        return $votes;
     }
 } 

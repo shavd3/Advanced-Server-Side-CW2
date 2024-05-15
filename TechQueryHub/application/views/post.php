@@ -26,7 +26,7 @@
 
             <div class='usernameimgdiv'></div>
                 <div class='commentareadiv'>
-                    <textarea onkeyup='checkinputs();' name="comment" id="comment" maxlength="500"></textarea>
+                    <textarea onkeyup='checkinputs();' name="comment" id="comment" maxlength="1000"></textarea>
                     <button onclick='postcomment();' id='commentbtn' disabled="disabled">Answer</button>
                 </div>
                 <div class='commentsdiv'></div>
@@ -35,7 +35,7 @@
 
 <script type="text/javascript" lang="javascript">
     var username="<?php echo $username ?>";
-    var postid="<?php echo $postid ?>";  
+    var postid="<?php echo $postid ?>";
     $(document).ready(function () {
         event.preventDefault();
         //get comments and like count on start
@@ -57,7 +57,7 @@
                 $('.likediv').append(div4);
                 var div5 =data.Title ;
                 $('.titlediv').append(div5);
-                var div6 =data.Caption ;
+                var div6 =data.Description ;
                 $('.captiondiv').append(div6);
             });
             $.ajax({//check if user has already liked the post
@@ -85,7 +85,7 @@
     function like(){
         $.ajax({
             url: "<?php echo base_url() ?>index.php/home/like",
-            data: JSON.stringify({username: username,postid:postid}),
+            data: JSON.stringify({username: username,questionid:postid}),
             contentType: "application/json",
             method: "POST"
         }).done(function (data) {
@@ -105,11 +105,11 @@
             });
         });
     }
-    //when comment button is clicked, add comment to database
+    //when answer button is clicked, add answer to database
     function postcomment(){
         var comment = {
-            postid: postid,
-            comment:$("#comment").val()
+            questionid: postid,
+            answer:$("#comment").val()
         };
         $.ajax({
             url: "<?php echo base_url() ?>index.php/home/comments",
@@ -117,7 +117,7 @@
             contentType: "application/json",
             method: "POST"
         }).done(function (data) {
-            if (data) { 
+            if (data) {
                 document.getElementById('comment').value = '';
                 getComments();
             }
@@ -126,14 +126,15 @@
     //get all comments in the post
     function getComments(){
         $.ajax({
-                url: "<?php echo base_url() ?>index.php/home/comments?postid="+postid,
+                url: "<?php echo base_url() ?>index.php/home/comments?questionid="+postid,
                 method: "GET"
         }).done(function (res) {
             if(res.length!=0){    
                 $('.commentsdiv div').remove();       
                 for (i = 0; i < res.length; i++) {
-                    var div ="<div class='comments'><a href='<?php echo base_url() ?>index.php/users/userprofile/?username="+res[i].Username+"'>"+res[i].Username+"</a>"
-                    +res[i].CommentBody+"</div>";
+                    var div ="<div class='comments'><a href='<?php echo base_url() ?>index.php/users/userprofile/?username="
+                                +res[i].Username+"'>"+res[i].Username+"</a>"
+                                +res[i].AnswerBody+"</div>";
                     $('.commentsdiv').append(div);
                 } 
             }

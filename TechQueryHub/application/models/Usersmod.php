@@ -75,7 +75,7 @@ class Usersmod extends CI_Model
     }
     //query user table to search users
     public function searchUser($title){
-        $query=$this->db->query("SELECT * FROM posts WHERE Title LIKE '".$title."%'");
+        $query=$this->db->query("SELECT * FROM questions WHERE Title LIKE '".$title."%'");
         return $query->result();
     }
 

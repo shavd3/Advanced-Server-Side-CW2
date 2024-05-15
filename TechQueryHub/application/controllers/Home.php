@@ -25,7 +25,7 @@ class Home extends \Restserver\Libraries\REST_Controller {
             $this->load->view('login');
         }
     }
-    //api to get posts of following users
+    //api to get questions of following users
     public function followingposts_get(){
         if ($this->usersmod->is_logged_in()) {
             $username = $this->get('username');
@@ -36,12 +36,12 @@ class Home extends \Restserver\Libraries\REST_Controller {
             $this->load->view('login');
         }
     }
-    //api to get comments of posts
+    //api to get answers for questions
     public function comments_get(){
         if ($this->usersmod->is_logged_in()) {
-            $postid = $this->get('postid');
-            $result=$this->postmod->getComments($postid);
-            $this->response($result); 
+            $questionid = $this->get('questionid');
+            $result=$this->postmod->getComments($questionid);
+            $this->response($result);
         }
         else {
             $this->load->view('login');
@@ -51,9 +51,9 @@ class Home extends \Restserver\Libraries\REST_Controller {
     public function comments_post(){
         if ($this->usersmod->is_logged_in()) {
             $username = $this->session->username;
-            $postid = $this->post('postid');
-            $comment = $this->post('comment');
-            $result=$this->postmod->addComments($postid, $comment, $username);
+            $questionid = $this->post('questionid');
+            $answer = $this->post('answer');
+            $result=$this->postmod->addComments($questionid, $answer, $username);
             $this->response($result); 
         }
         else {
@@ -72,13 +72,13 @@ class Home extends \Restserver\Libraries\REST_Controller {
             $this->load->view('login');
         }
     }
-    //post request to like posts
+    //post request to rate questions
     public function like_post(){
         if ($this->usersmod->is_logged_in()) {
             $username = $this->session->username;
             $username = $this->post('username');
-            $postid = $this->post('postid');
-            $result=$this->postmod->likepost($username, $postid);
+            $questionid = $this->post('questionid');
+            $result=$this->postmod->likepost($username, $questionid);
             $this->response($result); 
         }
         else {

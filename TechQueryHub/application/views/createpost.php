@@ -91,7 +91,7 @@
                         tagid: $tagId,
                         // postImage: $postImage,
                         title: $('#title').val(),
-                        caption: $('#caption').val()
+                        description: $('#caption').val()
                     };
                     $.ajax({
                         url: "<?php echo base_url() ?>index.php/posts/create", //sends data to databse

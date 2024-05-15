@@ -74,7 +74,7 @@
           var userdata = {
                 title: $('#search').val().toLowerCase()
           };
-          $.ajax({//get users from the search string
+          $.ajax({//get questions from the search string
                 url: "<?php echo base_url() ?>index.php/users/user/action/searchuser",
                 data: JSON.stringify(userdata),
                 contentType: "application/json",
@@ -89,7 +89,7 @@
                else{
                     for (i = 0; i < data.length; i++) {
                          var div ="<a class='userlinks' href='<?php echo base_url() ?>index.php/posts/post?postid="
-                         +data[i].PostId+"'><div class ='user'><div class='searuserdeet'>"+data[i].Title+"<br></div></div></a>";
+                         +data[i].QuestionId+"'><div class ='user'><div class='searuserdeet'>"+data[i].Title+"<br></div></div></a>";
                          $('#searchresults').append(div);
 		          } 
                }

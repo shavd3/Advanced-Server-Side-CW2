@@ -71,8 +71,8 @@ class Posts extends \Restserver\Libraries\REST_Controller {
             $username = $this->session->username;
             $tagId = $this->post('tagid');
             $title = $this->post('title');
-            $caption = $this->post('caption');
-            $result = $this->postmod->createPost($username, $tagId, $title, $caption);
+            $description = $this->post('description');
+            $result = $this->postmod->createPost($username, $tagId, $title, $description);
 
             if ($result) {
                 $this->response(array('result' => 'done'));
@@ -115,7 +115,7 @@ class Posts extends \Restserver\Libraries\REST_Controller {
                 $this->response(NULL);
             }
         }
-        // Action id get the post by its id
+        // Action id get the questions by its id
         if($this->get('action') == 'id') {
             $tagid = $this->get('tagid');
             $tags = $this->postmod->getTagbyId($tagid);
@@ -147,16 +147,16 @@ class Posts extends \Restserver\Libraries\REST_Controller {
         }
     }
 
-    // API to get post details or load the post view
+    // API to get questions details or load the questions view
     public function post_get() {
         if ($this->usersmod->is_logged_in()) {
             $postid = $this->get('postid');
-            // If action is view, get post details from id
+            // If action is view, get questions details from id
             if($this->get('action') == 'view') {
                 $result = $this->postmod->postfromid($postid);
                 $this->response($result);
             }
-            // Else load the post view
+            // Else load the questions view
             else{
                 $this->load->view('navigation', array('username' => $this->session->username));
                 $this->load->view('post', array('postid' => $postid,'username' => $this->session->username));

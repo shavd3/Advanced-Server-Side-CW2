@@ -70,13 +70,14 @@
 
             "<div class='userlikediv'>" +
 
-                "<div class='titlediv'><a href='<?php echo base_url() ?>index.php/posts/post?postid=" + m.get('PostId') + "'>" + m.get('Title') + "</span></a></div>" +
+                "<div class='titlediv'><a href='<?php echo base_url() ?>index.php/posts/post?postid=" 
+                + m.get('QuestionId') + "'>" + m.get('Title') + "</span></a></div>" +
 
-                "<div class='likediv' id='likediv" + m.get('PostId') + "'><i onclick='like(" + m.get('PostId') + ");' class='fa-regular fa-thumbs-up'></i></div></div>" +
+                "<div class='likediv' id='likediv" + m.get('QuestionId') + "'><i onclick='like(" + m.get('QuestionId') + ");' class='fa-regular fa-thumbs-up'></i></div></div>" +
 
             "<div class='captiondiv'>" +
             
-            m.get('Caption') + "</div>" + 
+            m.get('Description') + "</div>" + 
             "<br>" + 
 
             "<div class='usernamediv'><a href='<?php echo base_url() ?>index.php/users/userprofile/?username=" + m.get('Username') + "'>" + 
@@ -108,14 +109,14 @@
             //    }
             //});
             $.ajax({//check if the user has already liked them or not and change color accordingly
-                url: "<?php echo base_url() ?>index.php/home/checklikes?username="+username+"&postid="+m.get('PostId'),
+                url: "<?php echo base_url() ?>index.php/home/checklikes?username="+username+"&postid="+m.get('QuestionId'),
                 method: "GET"
             }).done(function (res) {
                 if(res){
-                    document.getElementById("likediv"+m.get('PostId')).style.color = "#e6b800";
+                    document.getElementById("likediv"+m.get('QuestionId')).style.color = "#e6b800";
                 }
                 else{
-                    document.getElementById("likediv"+m.get('PostId')).style.color = "#666666";
+                    document.getElementById("likediv"+m.get('QuestionId')).style.color = "#666666";
                 }
             });
         }
@@ -127,7 +128,7 @@
     function like($postid){
         $.ajax({
                 url: "<?php echo base_url() ?>index.php/home/like",
-                data: JSON.stringify({username: username,postid:$postid}),
+                data: JSON.stringify({username: username,questionid:$postid}),
                 contentType: "application/json",
                 method: "POST"
         }).done(function (data) {
