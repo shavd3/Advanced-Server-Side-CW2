@@ -31,18 +31,18 @@
 
 <script type="text/javascript" lang="javascript">
 
-    var locationid=1;
+    // var locationid=1;
     $(document).ready(function () {
         event.preventDefault();
         $.ajax({
-            url: "<?php echo base_url() ?>index.php/posts/location/action/all",
+            url: "<?php echo base_url() ?>index.php/posts/tags/action/all",
             method: "GET"
         })
         .done(function (data) {
             for (i = 0; i<data.length; i++) {
                 if(data[i]!=null){//display few other locations in the list for easier browsing
-                    var span ="<a href='<?php echo base_url() ?>index.php/posts/locations?locationid="
-                        +data[i].LocationId+"'><span>"+data[i].LocationName+"</span></a></br>"
+                    var span ="<a href='<?php echo base_url() ?>index.php/posts/tagView?tagid="
+                        +data[i].TagId+"'><span>"+data[i].TagName+"</span></a></br>"
                     $('#locationlist').append(span);
                 }
             }
@@ -84,8 +84,8 @@
             "<br>" +
             "<div class='locationtag'>" + 
                 "<div class='locationdiv'>" + 
-                "<a href='<?php echo base_url() ?>index.php/posts/locations?locationid=" + m.get('LocationId') + "'>" + 
-                "<span><i class='fa-solid'></i>" + m.get('LocationName') + 
+                "<a href='<?php echo base_url() ?>index.php/posts/tagView?tagid=" + m.get('TagId') + "'>" + 
+                "<span><i class='fa-solid'></i>" + m.get('TagName') + 
             "</span></a></div></div>" + 
 
             // "<div class='commentsdiv' id='commentsdiv" + m.get('PostId') + "'></div>

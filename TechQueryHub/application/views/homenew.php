@@ -1,4 +1,4 @@
-<?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
+<!-- <?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,14 +21,14 @@
 </div>
 
 <script type="text/javascript" lang="javascript">
-    var locationid="<?php echo $locationid ?>";
+    var locationid="<?php echo $tagid ?>";
     $(document).ready(function () {
         event.preventDefault();
         $.ajax({//get all posts from the given location id at start and display the posts
-            url: "<?php echo base_url() ?>index.php/posts/location/action/id?locationid="+locationid,
+            url: "<?php echo base_url() ?>index.php/posts/location/action/id?tagid="+locationid,
             method: "GET"
         }).done(function (data) {
-            document.getElementById("locationname").innerHTML = "<i class='fa-solid fa-location-dot'></i>"+data.LocationName;
+            document.getElementById("locationname").innerHTML = "<i class='fa-solid fa-location-dot'></i>"+data.TagName;
         });
         $.ajax({
             url: "<?php echo base_url() ?>index.php/posts/location/action/all",
@@ -37,8 +37,8 @@
             .done(function (data) {
                 for (i = (locationid-8); i < (+locationid+8); i++) {
                     if(data[i]!=null){//display few other locations in the list for easier browsing
-                        var span ="<a href='<?php echo base_url() ?>index.php/posts/locations?locationid="
-                            +data[i].LocationId+"'><span>"+data[i].LocationName+"</span></a></br>";
+                        var span ="<a href='<?php echo base_url() ?>index.php/posts/locations?tagid="
+                            +data[i].TagId+"'><span>"+data[i].TagName+"</span></a></br>";
                         $('#locationlist').append(span);
                     }
                 }
@@ -46,7 +46,7 @@
         postCollection.fetch();//backbone fetch to get the posts
     });
     var PostCollection = Backbone.Collection.extend({
-        url: "<?php echo base_url() ?>index.php/posts/locationposts?locationid="+locationid,
+        url: "<?php echo base_url() ?>index.php/posts/locationposts?tagid="+locationid,
     });
 
     var html = "";
@@ -77,4 +77,4 @@
 
 </script>
 </body>
-</html>
+</html> -->

@@ -47,8 +47,8 @@
             }).done(function (data) {//display post details
                 // var div ="<img class='postimage' src='<?php echo base_url() ?>images/userposts/"+data.PostImage+"' alt='picture'/>";
                 // $('.postimagediv').append(div);
-                var div2 ="<a href='<?php echo base_url() ?>index.php/posts/locations?locationid="
-                + data.LocationId +"'><span><i class='fa-solid'></i>"+ data.LocationName +"</span></a>";
+                var div2 ="<a href='<?php echo base_url() ?>index.php/posts/tagView?tagid="
+                + data.TagId +"'><span><i class='fa-solid'></i>"+ data.TagName +"</span></a>";
                 $('.locationdiv').append(div2);
                 var div3 ="<div class='usernamediv'><a href='<?php echo base_url() ?>index.php/users/userprofile/?username="
                          +data.Username +"'><span>"+ data.Username +"</span></a></div>";

@@ -10,11 +10,11 @@ class Postmod extends CI_Model
         $this->load->database();
     }
     //insert rows to post table
-    function createPost($username, $locationid, $title, $caption)
+    function createPost($username, $tagid, $title, $caption)
     {
         $users = $this->db->get_where('users', array('Username' => $username));
         $userId= $users->row()->UserId;
-        $data = array('UserId' => $userId, 'LocationId' => $locationid, 'Title' => $title, 'Caption' => $caption);
+        $data = array('UserId' => $userId, 'TagId' => $tagid, 'Title' => $title, 'Caption' => $caption);
         if ($this->db->insert('posts', $data)) {
             return True;
         } else {
@@ -26,17 +26,16 @@ class Postmod extends CI_Model
     {
         //"SELECT posts.*, users.Username, location.LocationName FROM posts JOIN users ON users.UserId=posts.UserId JOIN location ON location.LocationId=posts.LocationId ORDER BY Timestamp DESC");
 
-
         $users = $this->db->get_where('users', array('Username' => $username));
         $userId= $users->row()->UserId;
 //        $query=$this->db->query( "SELECT * FROM posts WHERE UserId=".$userId." ORDER BY Timestamp DESC");
-        $query=$this->db->query("SELECT posts.*, location.LocationName FROM posts JOIN location ON 
-                                    location.LocationId = posts.LocationId ORDER BY posts.Timestamp DESC");
+        $query=$this->db->query("SELECT posts.*, tags.TagName FROM posts JOIN tags ON 
+                                    tags.TagId = posts.TagId WHERE UserId=".$userId." ORDER BY posts.Timestamp DESC");
         return $query->result();
     }
-    //get all locations from db
-    function getLocations(){
-        $query = $this->db->get('location');
+    //get all tags from db
+    function getTags(){
+        $query = $this->db->get('tags');
         if ($query) {
             return $query->result();
         }
@@ -46,7 +45,7 @@ class Postmod extends CI_Model
     function getPostsofFollowing($username){
         $users = $this->db->get_where('users', array('Username' => $username));
         $userId= $users->row()->UserId;
-        $query=$this->db->query("SELECT posts.*, users.Username, location.LocationName FROM posts JOIN users ON users.UserId=posts.UserId JOIN location ON location.LocationId=posts.LocationId ORDER BY Timestamp DESC");
+        $query=$this->db->query("SELECT posts.*, users.Username, tags.TagName FROM posts JOIN users ON users.UserId=posts.UserId JOIN tags ON tags.TagId=posts.TagId ORDER BY Timestamp DESC");
         // $query=$this->db->query("SELECT posts.* FROM posts");
         return $query->result();
     }
@@ -95,19 +94,19 @@ class Postmod extends CI_Model
             return "added";
         }
     }
-    //query post table to get posts from location
-    public function postsFromLocation($locationid){
-        $res = $this->db->get_where('posts', array('LocationId' => $locationid));
+    //query post table to get posts from tag
+    public function questionsFromTags($tagId){
+        $res = $this->db->get_where('posts', array('TagId' => $tagId));
         return $res->result();
     }
-    //query locations by location Id
-    public function getLocationbyId($locationid){
-        $res = $this->db->get_where('location', array('LocationId' => $locationid));
+    //query tags by tag Id
+    public function getTagbyId($tagId){
+        $res = $this->db->get_where('tags', array('TagId' => $tagId));
         return $res->row();
     }
     //query posts by post id
     public function postfromid($postid){
-        $res = $this->db->query( "SELECT posts.*, users.Username, users.UserImage, location.LocationName FROM posts JOIN users ON users.UserId=posts.UserId JOIN location ON location.LocationId=posts.LocationId WHERE posts.PostId =".$postid);
+        $res = $this->db->query( "SELECT posts.*, users.Username, users.UserImage, tags.TagName FROM posts JOIN users ON users.UserId=posts.UserId JOIN tags ON tags.TagId=posts.TagId WHERE posts.PostId =".$postid);
         return $res->row();
     }
     //get number of rows from likes table according to post id

@@ -28,48 +28,47 @@
 
             <div class="caplabel"><label for="locations">Category</label></div>
                 <div>
-                    <select onchange='getlocation();' id="locations">
-                        <option id ='locationName' value=""></option>
+                    <select onchange='getTag();' id="locations">
+                        <option id ='TagName' value=""></option>
                     </select>
                 </div>
             </div>
-
         <div class="postsubmitdiv"><div id="uploadpost" >POST</div></div>
     </div>
 
     <script type="text/javascript" lang="javascript">
         var postImage="";
-        var $locationid = "1";
-        //load loaction posts at start and display in drop down
+        var $tagId = "1";
+        //load tags at start and display in drop down
          $.ajax({
-             url: "<?php echo base_url() ?>index.php/posts/location/action/all",
+             url: "<?php echo base_url() ?>index.php/posts/tags/action/all",
              method: "GET"
          }).done(function (data) {
 	         $('#locations option').remove();
 		 	for (i = 0; i < data.length; i++) {
-		     	var option ="<option id ='locationName' value="+data[i].LocationId+">"+data[i].LocationName+"</option>";
+		     	var option ="<option id ='tagName' value="+data[i].TagId+">"+data[i].TagName+"</option>";
 		 	    $('#locations').append(option);
 		    }
          });
-        //get location value from form element
-        function getlocation() {
-            $locationid = document.getElementById("locations").value;
+        //get tag value from form element
+        function getTag() {
+            $tagId = document.getElementById("locations").value;
         }
         //to display the image as its uploaded
         function readURL(input) {
         document.getElementById("errormsg").innerHTML = "";
-        if (input.files && input.files[0]) {
-            var reader = new FileReader();
-            var formdata = new FormData();
-            var files = $('#image')[0].files;
-            if(files.length > 0 ){
-                formdata.append('image',files[0]);
-                reader.onload = function (e) {
-                $('#postpicid').attr('src', e.target.result);
-                };
-                reader.readAsDataURL(input.files[0]);        
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+                var formdata = new FormData();
+                var files = $('#image')[0].files;
+                if(files.length > 0 ){
+                    formdata.append('image',files[0]);
+                    reader.onload = function (e) {
+                    $('#postpicid').attr('src', e.target.result);
+                    };
+                    reader.readAsDataURL(input.files[0]);
+                }
             }
-        }
         }
         //function calls when upload button is clicked
         $("#uploadpost").click(function(event) {
@@ -89,7 +88,7 @@
             //     if (result=="done") {
             //         $postImage = data.image_metadata.file_name;  //get filename from the saved image
                     var postdata = {
-                        locationid: $locationid,
+                        tagid: $tagId,
                         // postImage: $postImage,
                         title: $('#title').val(),
                         caption: $('#caption').val()

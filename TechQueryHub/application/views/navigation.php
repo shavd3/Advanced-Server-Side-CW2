@@ -22,7 +22,7 @@
         </div>
         <div class="logodiv">
             <div class="navname">
-                <a href="<?php echo base_url()?>index.php/posts/locations?locationid=1"><span> TAGS </span></a>
+                <a href="<?php echo base_url()?>index.php/posts/tagView?tagid=1"><span> TAGS </span></a>
             </div>
         </div>
 <!--        <i class="fa-solid fa-user"></i>-->

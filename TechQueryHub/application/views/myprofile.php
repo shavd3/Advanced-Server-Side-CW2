@@ -86,14 +86,13 @@
                 + m.get('PostId') + "'>"
                 + "<div class='titlediv'><a href='<?php echo base_url() ?>index.php/posts/post?postid=" + m.get('PostId') + "'>" + m.get('Title') + "</span></a></div>" +
 
-
                     "<div class='captiondiv'>" +
 
                     m.get('Caption') + "</div><br>" +
                     "<div class='locationtag'>" +
                         "<div class='locationdiv'>" +
-                        "<a href='<?php echo base_url() ?>index.php/posts/locations?locationid=" + m.get('LocationId') + "'>" +
-                        "<span><i class='fa-solid'></i>" + m.get('LocationName') +
+                        "<a href='<?php echo base_url() ?>index.php/posts/tagView?tagid=" + m.get('TagId') + "'>" +
+                        "<span><i class='fa-solid'></i>" + m.get('TagName') +
                     "</span></a></div></div>" +
 
                     "</div>";
