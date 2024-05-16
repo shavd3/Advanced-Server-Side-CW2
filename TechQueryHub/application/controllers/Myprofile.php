@@ -7,8 +7,8 @@ class Myprofile extends \Restserver\Libraries\REST_Controller {
 	
 	public function __construct() {
         parent::__construct();
-		$this->load->model('usersmod');
-        $this->load->model('postmod');
+		$this->load->model('UserModel');
+        $this->load->model('QuestionModel');
 
         Header('Access-Control-Allow-Origin: *');
         Header('Access-Control-Allow-Headers: *');
@@ -16,7 +16,7 @@ class Myprofile extends \Restserver\Libraries\REST_Controller {
     }
     //index method to view myprofile page
     public function index_get(){
-        if ($this->usersmod->is_logged_in()) {
+        if ($this->UserModel->is_logged_in()) {
             $this->load->view('navigation',array('username' => $this->session->username));
             $this->load->view('myprofile',array('username' => $this->session->username));
         }
@@ -26,7 +26,7 @@ class Myprofile extends \Restserver\Libraries\REST_Controller {
     }
     //edit profile view
     public function editprofile_get(){
-        if ($this->usersmod->is_logged_in()) {
+        if ($this->UserModel->is_logged_in()) {
             $this->load->view('navigation',array('username' => $this->session->username));
             $this->load->view('editprofile',array('username' => $this->session->username));
         }
@@ -37,7 +37,7 @@ class Myprofile extends \Restserver\Libraries\REST_Controller {
     //api to get users post details
     public function myposts_get(){
         $username = $this->session->username;
-        $result = $this->postmod->getPostsfromUsername($username);
+        $result = $this->QuestionModel->getPostsfromUsername($username);
         $this->response($result);
     }
     // //api post to follow

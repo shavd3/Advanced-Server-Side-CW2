@@ -48,7 +48,7 @@ input:-webkit-autofill:active{
     margin:0 auto 0 auto;
     height:fit-content;
     width:fit-content;
-	color: #52B2CF;
+	color: #1a617c;
 	font-weight: bold;
 	font-size: 2.65rem;
 }
@@ -103,7 +103,7 @@ input:-webkit-autofill:active{
   }
   
   .signlabel, .loginlabel {
-	color: #BABABA;
+	color: #d7d1ba;
 	position: absolute;
 	top: 1.5rem;
 	transition: 0.25s ease;
@@ -118,26 +118,26 @@ input:-webkit-autofill:active{
 	padding: 0.25rem 0;
   }
 .signfield{
-	border-bottom: 2px solid #B6E3EC;
+	border-bottom: 2px solid #1a617c;
 }
 .loginfield{
-	border-bottom: 2px solid #B6EDDA;
+	border-bottom: 2px solid #1a617c;
 }
 .signfield:focus, .signfield:valid, .signfield:hover {
 	outline: 0;
-	border-bottom-color: #95C2E5;
+	border-bottom-color: #124850;
 }
 .loginfield:focus, .loginfield:valid, .loginfield:hover {
 	outline: 0;
-	border-bottom-color: #7EC4CF;
+	border-bottom-color: #124850;
 }
 
 .signfield:focus + .signlabel, .signfield:valid + .signlabel,.signfield:hover + .signlabel{
-	color: #95C2E5;
+	color: #124850;
 	transform: translateY(-1.5rem);
   }
 .loginfield:focus + .loginlabel, .loginfield:valid + .loginlabel, .loginfield:hover + .loginlabel {
-	color: #7EC4CF;
+	color: #124850;
 	transform: translateY(-1.5rem);
   }
   
@@ -162,18 +162,18 @@ input:-webkit-autofill:active{
   }
   .signupbtn:disabled{
 	opacity: 0.4;
-	background-color: #ECB6D5;
+	background-color: #57acab;
   }
   .loginbtn:disabled{
 	opacity: 0.4;
-	background-color: #C7B6ED;
+	background-color: #57acab;
   }
 
   .signupbtn:enabled{
-	background-color: #ECB6D5;
+	background-color: #426054;
   }
   .loginbtn:enabled {
-	background-color: #C7B6ED;
+	background-color: #426054;
   }
  
   .signspandiv, .loginspandiv {
@@ -183,28 +183,28 @@ input:-webkit-autofill:active{
   }
   
   .signspandiv a {
-	color: #95C2E5;
+	color: #1a617c;
 	text-decoration: none;
   }
   .signspandiv a:hover {
-	color: #95C2E5;
+	color: #1a617c;
 	text-decoration:underline;
   }
   .loginspandiv a {
-	color: #7EC4CF;
+	color: #1a617c;
 	text-decoration: none;
   }
   .loginspandiv a:hover {
-	color: #7EC4CF;
+	color: #1a617c;
 	text-decoration:underline;
   }
   .logheading, .pwresetheading{
 	font-size: 2.5rem;
     font-weight: 550;
     letter-spacing: 1px;
-    color: #C7B6ED;
+    color: #426054;
 	text-align: center;
   }
   .errormsg{
-	color: #EB9494;
+	color: #a44122;
   }

@@ -26,7 +26,7 @@
     cursor: pointer;
     height: 50px;
     text-align: center;
-    background-color: #7EC4CF;
+    background-color: #426054;
     width: 22%;
     margin: 10px 0 0 17%;
     padding-top: 10px;
@@ -38,7 +38,7 @@
     transform:background-color 4s;
 }
 #editprofile:hover{
-    background-color: #8FD6C2;
+    background-color: #5e4337;
 }
 .profimagediv{
     width: 100%;
@@ -63,7 +63,7 @@ input[type=file] {
 .dummy {
     width: 50%;
     margin: 20px 0 0 25%;
-    background-color: #C7B6ED;
+    background-color: #1a617c;
     text-align: center;
     border-radius: 20px;
     height: 50px;
@@ -71,10 +71,10 @@ input[type=file] {
     box-sizing: border-box;
     font-size: 20px;
     letter-spacing: 1px;
-    color: #343139;
+    color: #ffffff;
 }
 .errormsg{
-    color: #EB9494;
+    color: #a44122;
     width: 100%;
     text-align: center;
     font-size: 18px;
@@ -90,7 +90,7 @@ input[type=file] {
     font-weight: 600;
     font-size: 24px;
     letter-spacing: 1px;
-    color: #95C2E5;
+    color: #57acab;
     width: 18%;
     margin-left: 20%;
     float: left;
@@ -110,17 +110,17 @@ input[type=file] {
     font-size: 16px;
     letter-spacing: 1px;
     line-height: normal;
-    border-bottom: 2px solid #C7B6ED;
+    border-bottom: 2px solid #d7d1ba;
     color: #666666;
 }
 .inputedit:focus{
-    border-bottom: 2px solid #A57DFF;
+    border-bottom: 2px solid #1a617c;
 }
 textarea{
     width: 80%;
     height: 100px;
     padding: 12px 20px;
-    border: 2px solid #C7B6ED;
+    border: 2px solid #d7d1ba;
     border-radius: 8px;
     font-size: 16px;
     letter-spacing: 1px;
@@ -131,7 +131,7 @@ textarea{
     font-family: "DM Sans", sans-serif;
 }
 textarea:focus{
-    border: 2px solid #A57DFF;
+    border: 2px solid #1a617c;
 }
 .changepwdiv{
     padding-top: 10px;
@@ -142,8 +142,8 @@ textarea:focus{
     color: #666666;
 }
 .changepwdiv a{
-    color: #E8A98A;
+    color: #1a617c;
 }
 .changepwdiv a:hover{
-    color: #DF83A2;
+    color: #a44122;
 }

@@ -17,21 +17,16 @@
     transition: color .4s;
 }
 .locationdiv a:hover{
-    color: #52B2CF;
+    color: #57acab;
     text-decoration: none;
 }
 .fa-solid{
     margin-right: 3%;
 }
 .captiondiv{
-    /*margin:  0 5% 5px 5%;*/
-    /*font-size: 14px;*/
-    /*text-align: justify;*/
-    /*color: #666666;*/
     margin-top: 20px;
     font-size: 18px;
     line-height: 1.5;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 .locationcontainer{
     width: 100%;
@@ -76,7 +71,7 @@
     max-width: 100%;
     /*width: 95%;*/
     box-sizing: border-box;
-    box-shadow: 0px 0px 10px 0px rgb(130, 172, 198);
+    box-shadow: 0px 0px 10px 0px rgb(215, 209, 186);
     width: 100%;
     /*margin-left: 300px;*/
     float: right;
@@ -97,7 +92,7 @@
     font-weight: 700;
     letter-spacing: 1px;
     margin: 20px 0 0 10%;
-    color: #52B2CF;
+    color: #426054;
 }
 #locationlist{
     font-size: 16px;
@@ -115,26 +110,25 @@
 .imagelocdiv {
     margin-right: 10px;
     font-weight: bold;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     text-decoration: none;
     color: #124363;
     font-size: 20px;
 }
 
 .imagelocdiv a{
-    color: #000000;
+    color: #124850;
     text-decoration: none;
     transition: color .4s;
 }
 .imagelocdiv a:hover{
-    color: #2cba91;
+    color: #57acab;
     text-decoration: none;
 }
 .postimagediv{
     width: 80%;
     /*aspect-ratio : 1 / 0.1;*/
     float: left;
-    border: 1px solid #164795;
+    border: 2px solid #426054;
     border-radius: 30px;
     background-color: #ffffff;
     box-shadow: 0 2px 4px rgba(22, 6, 69, 0.258);
@@ -146,24 +140,21 @@
 .titlediv {
     margin-right: 10px;
     font-weight: bold;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     text-decoration: none;
-    color: #680a0a;
     font-size: 25px;
 }
 
 .titlediv a{
-    color: #000000;
+    color: #124850;
     text-decoration: none;
     transition: color .4s;
 }
 .titlediv a:hover{
-    color: #2cba91;
+    color: #57acab;
     text-decoration: none;
 }
 .captiondiv {
     margin-top: 20px;
     font-size: 18px;
     line-height: 1.5;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }

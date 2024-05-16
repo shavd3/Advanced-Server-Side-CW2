@@ -33,30 +33,6 @@
     margin-left: 300px;
     float: right;
 }
-/*.postdiv {*/
-/*    border: 1px solid #164795;*/
-/*    border-radius: 30px;*/
-/*    background-color: #ffffff;*/
-/*    padding: 20px;*/
-/*    margin-bottom: 20px;*/
-/*    box-sizing: border-box;*/
-/*    box-shadow: 0px 0px 10px 0px rgba(152, 162, 203, 0.25);*/
-/*}*/
-
-/*!* Add a container to hold the .postdiv *!*/
-/*.post-container {*/
-/*    display: flex;*/
-/*    justify-content: flex-end; !* Align .postdiv to the right *!*/
-/*    max-width: 100%; !* Allow .postdiv to take full width *!*/
-/*    margin: 0 auto; !* Center .post-container horizontally *!*/
-/*}*/
-
-/*!* Adjust .postdiv width to make it responsive *!*/
-/*.postdiv {*/
-/*    width: 70%; !* Adjust width as needed *!*/
-/*}*/
-
-
 .locationdiv a{
     color: #124850;
     text-decoration: none;
@@ -101,7 +77,7 @@
 
 /* Handle */
 .locationlistdiv::-webkit-scrollbar-thumb {
-    background: #d7d1ba;
+    background: #e1ddca;
     border-radius: 5px;
 }
 

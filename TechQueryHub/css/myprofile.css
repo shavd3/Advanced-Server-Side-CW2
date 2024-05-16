@@ -10,11 +10,11 @@ body {
     width: 34%;
     max-width: 34%;
     float: left;
-    margin-left: 2%;
+    margin-left: 5%;
     margin-top: 150px;
     padding: 2%;
     position: fixed;
-    box-shadow: 0px 0px 10px 0px  rgba(152, 162, 203, 0.25) ;
+    /*box-shadow: 0px 0px 10px 0px  rgba(152, 162, 203, 0.25) ;*/
     border-radius: 10px;
     display: flex;
     flex-flow: column;
@@ -30,35 +30,36 @@ body {
     margin-top: 150px;
 }
 .postimagediv{
-    width: 80%;
+    width: 70%;
     aspect-ratio : 1 / 0.2;
     float: left;
-    border: 1px solid #164795;
+    border: 1px solid #426054;
     border-radius: 30px;
     background-color: #ffffff;
-    box-shadow: 0 2px 4px rgba(22, 6, 69, 0.258);
+    box-shadow: 0 0 10px 0 rgb(94, 67, 55);
     padding: 20px;
     margin-bottom: 20px;
     max-width: 1000px;
     box-sizing: border-box;
 }
-.postimage{
-    width: 96%;
-    aspect-ratio : 1 / 1;
-    border-radius: 10px;
-    object-fit: cover;
-    transition: transform .4s;
-}
-.postimage:hover{
-	transform: scale(1.05);
-  }
-  .topdiv{
-    width: 100%;
-  }
+/*.postimage{*/
+/*    width: 96%;*/
+/*    aspect-ratio : 1 / 1;*/
+/*    border-radius: 10px;*/
+/*    object-fit: cover;*/
+/*    transition: transform .4s;*/
+/*}*/
+/*.postimage:hover{*/
+/*	transform: scale(1.05);*/
+/*  }*/
+/*  .topdiv{*/
+/*    width: 100%;*/
+/*  }*/
 .profpicdiv{
     width: 62%;
     height: 250px;
     float: left;
+    margin-left: 15%;
     align-items: center;
 }
 .profileimage{
@@ -67,30 +68,30 @@ body {
     object-fit: cover;
     border-radius: 50%;
 }
-.followdiv{
-    float: left;
-    height: 250px;
-    width: 38%;
-    text-align: center;
-}
-.flabel{
-    margin-top: 50px;
-    font-weight: 600;
-    font-size: 18px;
-    letter-spacing: 1px;
-    color: #666666;
-}
-.fcount{
-    font-weight: 600;
-    font-size: 28px;
-    letter-spacing: 1px;
-    color: #90CDD6;
-}
+/*.followdiv{*/
+/*    float: left;*/
+/*    height: 250px;*/
+/*    width: 38%;*/
+/*    text-align: center;*/
+/*}*/
+/*.flabel{*/
+/*    margin-top: 50px;*/
+/*    font-weight: 600;*/
+/*    font-size: 18px;*/
+/*    letter-spacing: 1px;*/
+/*    color: #666666;*/
+/*}*/
+/*.fcount{*/
+/*    font-weight: 600;*/
+/*    font-size: 28px;*/
+/*    letter-spacing: 1px;*/
+/*    color: #90CDD6;*/
+/*}*/
 .usernamediv{
     font-weight: 600;
     font-size: 28px;
     letter-spacing: 1px;
-    color: #8EA0E3;
+    color: #1a617c;
     margin-top: 20px;
 }
 .captiondiv {
@@ -102,19 +103,17 @@ body {
 .titlediv {
     margin-right: 10px;
     font-weight: bold;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     text-decoration: none;
-    color: #680a0a;
     font-size: 25px;
 }
 
 .titlediv a{
-    color: #000000;
+    color: #426054;
     text-decoration: none;
     transition: color .4s;
 }
 .titlediv a:hover{
-    color: #2cba91;
+    color: #57acab;
     text-decoration: none;
 }
 .namediv{
@@ -136,43 +135,43 @@ body {
 a{
     text-decoration: none;
 }
-#followbutton{
-    padding: 10px;
-    background-color: #90CDD6;
-    width: 40%;
-    letter-spacing: 1px;
-    margin: auto;
-    font-weight: 500;
-    font-size: 18px;
-    text-align: center;
-    color: #ffffff;
-    border-radius: 20px;
-    transition: transform .4s;
-}
-#followbutton:hover{
-    transform: scale(1.05);
-}
+/*#followbutton{*/
+/*    padding: 10px;*/
+/*    background-color: #90CDD6;*/
+/*    width: 40%;*/
+/*    letter-spacing: 1px;*/
+/*    margin: auto;*/
+/*    font-weight: 500;*/
+/*    font-size: 18px;*/
+/*    text-align: center;*/
+/*    color: #ffffff;*/
+/*    border-radius: 20px;*/
+/*    transition: transform .4s;*/
+/*}*/
+/*#followbutton:hover{*/
+/*    transform: scale(1.05);*/
+/*}*/
 .logoutlink, .editprlink{
     font-size: 16px;
-    font-weight: 550;
+    font-weight: bold;
     letter-spacing: 1px;
     text-decoration: underline;
 }
 
 .editprlink{
-    color: #7EC4CF;
+    color: #57acab;
 }
 .logoutlink{
-    color: #EB9494;
+    color: #a44122;
     margin-left: 80px;
 }
 .locationdiv a{
-    color: #666666;
+    color: #124850;
     text-decoration: none;
     transition: color .4s;
 }
 .locationdiv a:hover{
-    color: #52B2CF;
+    color: #072127;
     text-decoration: none;
 }
 /* Styles for locationdiv */
@@ -184,12 +183,10 @@ a{
 /* Styles for locationtag */
 .locationtag {
     display: inline-block;
-    background-color: #81d1c5;
+    background-color: #87d3d2;
     border-radius: 15px;
     padding: 1px 10px 10px;
     margin-right: 10px;
     font-size: 14px;
     font-weight: bold;
-    color: #666;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }

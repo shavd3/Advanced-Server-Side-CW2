@@ -7,8 +7,8 @@ class Home extends \Restserver\Libraries\REST_Controller {
 	
 	public function __construct() {
         parent::__construct();
-		$this->load->model('usersmod');
-        $this->load->model('postmod');
+		$this->load->model('UserModel');
+        $this->load->model('QuestionModel');
 
         Header('Access-Control-Allow-Origin: *');
         Header('Access-Control-Allow-Headers: *');
@@ -17,7 +17,7 @@ class Home extends \Restserver\Libraries\REST_Controller {
     //home page
     public function index_get()
     {//check if user is logged in, otherwise redirect to login page
-        if ($this->usersmod->is_logged_in()) {
+        if ($this->UserModel->is_logged_in()) {
             $this->load->view('navigation',array('username' => $this->session->username));
             $this->load->view('home',array('username' => $this->session->username));
         }
@@ -27,9 +27,9 @@ class Home extends \Restserver\Libraries\REST_Controller {
     }
     //api to get questions of following users
     public function followingposts_get(){
-        if ($this->usersmod->is_logged_in()) {
+        if ($this->UserModel->is_logged_in()) {
             $username = $this->get('username');
-            $result=$this->postmod->getPostsofFollowing($username);
+            $result=$this->QuestionModel->getPostsofFollowing($username);
             $this->response($result); 
         }
         else {
@@ -38,9 +38,9 @@ class Home extends \Restserver\Libraries\REST_Controller {
     }
     //api to get answers for questions
     public function comments_get(){
-        if ($this->usersmod->is_logged_in()) {
+        if ($this->UserModel->is_logged_in()) {
             $questionid = $this->get('questionid');
-            $result=$this->postmod->getComments($questionid);
+            $result=$this->QuestionModel->getComments($questionid);
             $this->response($result);
         }
         else {
@@ -49,11 +49,11 @@ class Home extends \Restserver\Libraries\REST_Controller {
     }
     //api post request to add comments
     public function comments_post(){
-        if ($this->usersmod->is_logged_in()) {
+        if ($this->UserModel->is_logged_in()) {
             $username = $this->session->username;
             $questionid = $this->post('questionid');
             $answer = $this->post('answer');
-            $result=$this->postmod->addComments($questionid, $answer, $username);
+            $result=$this->QuestionModel->addComments($questionid, $answer, $username);
             $this->response($result); 
         }
         else {
@@ -62,10 +62,10 @@ class Home extends \Restserver\Libraries\REST_Controller {
     }
     //api to check if user has already liked a post
     public function checklikes_get(){
-        if ($this->usersmod->is_logged_in()) {
+        if ($this->UserModel->is_logged_in()) {
             $username = $this->session->username;
             $postid = $this->get('postid');
-            $result=$this->postmod->checklikes($username, $postid);
+            $result=$this->QuestionModel->checklikes($username, $postid);
             $this->response($result); 
         }
         else {
@@ -74,11 +74,11 @@ class Home extends \Restserver\Libraries\REST_Controller {
     }
     //post request to rate questions
     public function like_post(){
-        if ($this->usersmod->is_logged_in()) {
+        if ($this->UserModel->is_logged_in()) {
             $username = $this->session->username;
             $username = $this->post('username');
             $questionid = $this->post('questionid');
-            $result=$this->postmod->likepost($username, $questionid);
+            $result=$this->QuestionModel->likepost($username, $questionid);
             $this->response($result); 
         }
         else {
