@@ -113,10 +113,10 @@
                 method: "GET"
             }).done(function (res) {
                 if(res){
-                    document.getElementById("likediv"+m.get('QuestionId')).style.color = "#e6b800";
+                    document.getElementById("likediv"+m.get('QuestionId')).style.color = "#a44122";
                 }
                 else{
-                    document.getElementById("likediv"+m.get('QuestionId')).style.color = "#666666";
+                    document.getElementById("likediv"+m.get('QuestionId')).style.color = "#d7d1ba";
                 }
             });
         }
@@ -138,10 +138,10 @@
             })
             .done(function (res) {
                 if(res){
-                    document.getElementById("likediv"+$postid).style.color = "#e6b800";
+                    document.getElementById("likediv"+$postid).style.color = "#a44122";
                 }
                 else{
-                    document.getElementById("likediv"+$postid).style.color = "#666666";
+                    document.getElementById("likediv"+$postid).style.color = "#d7d1ba";
                 }
             });
         });

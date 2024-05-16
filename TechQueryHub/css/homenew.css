@@ -28,7 +28,7 @@
     max-width: 100%;
     /*width: 95%;*/
     box-sizing: border-box;
-    box-shadow: 0 0 10px 0 rgb(130, 172, 198);
+    box-shadow: 0 0 10px 0 rgb(215, 209, 186);
     width: 72%;
     margin-left: 300px;
     float: right;
@@ -58,12 +58,12 @@
 
 
 .locationdiv a{
-    color: #666666;
+    color: #124850;
     text-decoration: none;
     transition: color .4s;
 }
 .locationdiv a:hover{
-    color: #52B2CF;
+    color: #072127;
     text-decoration: none;
 }
 .locationcontainer{
@@ -84,7 +84,8 @@
     background: #ffffff;
     /*border: 2px solid #164795;*/
     box-sizing: border-box;
-    box-shadow: 2px 0 2px 1px rgb(207, 221, 227);
+    /*box-shadow: 2px 0 2px 1px rgb(215, 209, 186);*/
+    box-shadow: 0 0 10px 0 rgb(215, 209, 186);
     border-radius: 10px;
 }
 
@@ -100,29 +101,29 @@
 
 /* Handle */
 .locationlistdiv::-webkit-scrollbar-thumb {
-    background: #3780ae;
+    background: #d7d1ba;
     border-radius: 5px;
 }
 
-/* Handle on hover */
-.locationlistdiv::-webkit-scrollbar-thumb:hover {
-    background: #0f3859;
-}
+/*!* Handle on hover *!*/
+/*.locationlistdiv::-webkit-scrollbar-thumb:hover {*/
+/*    background: #5e4337;*/
+/*}*/
 
 .usernamediv a{
-    color: #000000;
+    color: #a44122;
     text-decoration: none;
     transition: color .4s;
 }
 .usernamediv a:hover{
-    color: #2cba91;
+    color: #124850;
     text-decoration: none;
 }
 
-.commentsdiv a{
-    color: #9A618E;
-    text-decoration: none;
-}
+/*.commentsdiv a{*/
+/*    color: #9A618E;*/
+/*    text-decoration: none;*/
+/*}*/
 
 /* Styles for userlikediv */
 .userlikediv {
@@ -135,7 +136,7 @@
 .usernamediv {
     margin-right: 10px;
     font-weight: bold;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    /*font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;*/
     text-decoration: none;
     color: #333;
 }
@@ -143,33 +144,33 @@
 .titlediv {
     margin-right: 10px;
     font-weight: bold;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    /*font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;*/
     text-decoration: none;
     color: #680a0a;
     font-size: 25px;
 }
 
 .titlediv a{
-    color: #000000;
+    color: #124850;
     text-decoration: none;
     transition: color .4s;
 }
 .titlediv a:hover{
-    color: #2cba91;
+    color: #57acab;
     text-decoration: none;
 }
 
 
-/* Styles for likediv */
-.likediv {
-    cursor: pointer;
-    color: #666;
-    transition: color 0.3s ease;
-}
+/*!* Styles for likediv *!*/
+/*.likediv {*/
+/*    cursor: pointer;*/
+/*    color: #d7d1ba;*/
+/*    transition: color 0.3s ease;*/
+/*}*/
 
-.likediv:hover {
-    color: #FC6464;
-}
+/*.likediv:hover {*/
+/*    color: #FC6464;*/
+/*}*/
 
 .likediv i {
     font-size: 30px;
@@ -180,7 +181,8 @@
     margin-top: 20px;
     font-size: 18px;
     line-height: 1.5;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #1a617c;
+    /*font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;*/
 }
 
 /* Styles for locationdiv */
@@ -192,29 +194,29 @@
 /* Styles for locationtag */
 .locationtag {
     display: inline-block;
-    background-color: #81d1c5;
+    background-color: #87d3d2;
     border-radius: 15px;
     padding: 1px 10px 10px;
     margin-right: 10px;
     font-size: 14px;
     font-weight: bold;
-    color: #666;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    /*color: #666;*/
+    /*font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;*/
 }
 
 .cattag {
     display: inline-block;
-    width: 95%;
-    background-color: #b9eae2;
+    width: 70%;
+    background-color: #d7d1ba;
     border-radius: 15px;
     padding: 10px 10px 10px;
-    margin-right: 8px;
-    /*margin-left: 5px;*/
+    /*margin-right: 5%;*/
+    margin-left: 13%;
     font-size: 18px;
     letter-spacing: 5px;
     font-weight: bold;
-    color: #666;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    /*color: #666;*/
+    /*font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;*/
     text-align: center;
 }
 
@@ -224,18 +226,18 @@
 }
 
 /* Styles for commuserlink */
-.commuserlink {
-    font-weight: bold;
-    color: #333;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    margin-right: 3%;
-}
+/*.commuserlink {*/
+/*    font-weight: bold;*/
+/*    color: #1a617c;*/
+/*    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;*/
+/*    margin-right: 3%;*/
+/*}*/
 #locationname{
     font-size: 24px;
     font-weight: 700;
     letter-spacing: 1px;
     margin: 20px 0 0 10%;
-    color: #52B2CF;
+    color: #57acab;
 }
 #locationlist{
     font-size: 16px;
@@ -248,7 +250,7 @@
     text-decoration: none;
 }
 #locationlist a:hover{
-    color: #52B2CF;
+    color: #57acab;
     text-decoration: none;
 }
 

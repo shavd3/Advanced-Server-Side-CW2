@@ -60,9 +60,9 @@
         showResults: function (m) {
 
             html = html + "<div class='postimagediv'><a href='<?php echo base_url() ?>index.php/posts/post?postid="
-                + m.get('PostId') + "'>"
-                + "<div class='titlediv'><a href='<?php echo base_url() ?>index.php/posts/post?postid=" + m.get('PostId') + "'>" + m.get('Title') + "</span></a></div>" +
-
+                + m.get('QuestionId') + "'>"
+                + "<div class='titlediv'><a href='<?php echo base_url() ?>index.php/posts/post?postid=" + m.get('QuestionId')
+                + "'>" + m.get('Title') + "</span></a></div>" +
 
                 "<div class='captiondiv'>" +
 

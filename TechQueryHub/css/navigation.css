@@ -11,10 +11,10 @@ body {
     margin: 0 0 0 0;
     position:fixed;
     top: 0px;
-    box-shadow: 0px 5px 5px -3px rgba(82, 178, 207, 0.3) ;
+    box-shadow: 0px 5px 5px -3px rgb(18, 72, 80);
     background-color: #ffffff;
     z-index: 2;
-    border-bottom: 2px solid #92c6ec;
+    border-bottom: 2px solid #ffffff;
 }
 .navigationdiv{
     max-height: 85px;
@@ -23,10 +23,12 @@ body {
     margin: 0 0 20px 0;
     position:fixed;
     top: 46px;
-    box-shadow: 0px 5px 5px -3px rgba(82, 178, 207, 0.3) ;
+    box-shadow: 0px 5px 5px -3px rgb(18, 72, 80);
     background-color: #ffffff;
     z-index: 2;
-    border-top: 2px solid #92c6ec;
+    border-top: 2px solid;
+    border-image: linear-gradient(to right, #a44122, #1a617c);
+    border-image-slice: 1;
 }
 /*.navigationnewdiv{*/
 /*    max-height: 85px;*/
@@ -61,12 +63,12 @@ body {
     margin-top: 12px;
     width: 7%;
     display: inline-block;
-    background-color: #81d1c5;
+    background-color: #57acab;
     border-radius: 35px;
     padding: 10px 10px 0 0;
     font-size: 14px;
     font-weight: bold;
-    color: #666;
+    /*color: #666;*/
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 .logoname{
@@ -80,8 +82,8 @@ body {
 }
 .askname{
     position: absolute;
-    top: 40%;
-    transform: translateY(-50%);
+    top: 41%;
+    transform: translateY(-45%);
     font-size: 2.25rem;
     height: auto;
     width: 100%;
@@ -97,20 +99,21 @@ body {
     text-align: right;
 }
 .navname a{
-    color: #52B2CF;
+    color: #1a617c;
+    font-weight: bold;
     text-decoration: none;
 }
 .fa-solid a:hover{
-    color: #52B2CF;
+    color: #a44122;
     text-decoration: none;
 }
 .logoname a{
-    color: #52B2CF;
+    color: #124850;
     font-weight: bold;
     text-decoration: none;
 }
 .askname a{
-    color: #52B2CF;
+    color: #124850;
     text-decoration: none;
 }
 
@@ -136,12 +139,12 @@ body {
     padding: 3% 0 3% 3%;
     border-radius: 50px;
     font-size: 1rem;
-    border: 2px solid #666666;
-    color: #666666;
+    border: 2px solid #d7d1ba;
+    color: #5e4337;
 }
 .search:focus, .search:hover{
     outline: none !important;
-    border:2px solid #52B2CF;
+    border:2px solid #1a617c;
 }
 .linkdiv{
     float: left;
@@ -185,10 +188,10 @@ body {
 	text-decoration: none;
 }
 .profilelink:hover{
-    color: #52B2CF;
+    color: #a44122;
 	text-decoration: underline;
 }
-.searchresults, .notifications{
+.searchresults{
     position: fixed;
     display: none; 
     height: fit-content;
@@ -204,7 +207,7 @@ body {
     width: 30%; 
     max-width: 30%;
     max-height: 400px; 
-    left: 40%;
+    left: 35%;
 }
 .notifications{
     width: 30%; 
@@ -216,30 +219,30 @@ body {
     height: 56px;
     /*width: 98%;*/
     padding: 0 2%;
-    box-shadow: 0px 0px 4px 0px rgba(82, 178, 207, 0.25);
+    box-shadow: 0px 0px 4px 0px rgb(66, 96, 84);
     border-radius: 50px;
     background-color: #ffffff;
     margin-bottom: 5px;
-    border: 2px solid rgba(32, 181, 234, 0.25);
+    border: 2px solid rgb(66, 96, 84);
 }
 .userlinks{
     color: #666666;
     text-decoration: none;
 }
-.seauserimagediv{
-    padding: 3px 0 0 2px;
-    width: 50px;
-    height: 50px;
-    float: left;
-}
-.seauserimage{
-    height: 50px;
-    width: 50px;
-    border-radius: 50%;
-    object-fit: cover;
-}
+/*.seauserimagediv{*/
+/*    padding: 3px 0 0 2px;*/
+/*    width: 50px;*/
+/*    height: 50px;*/
+/*    float: left;*/
+/*}*/
+/*.seauserimage{*/
+/*    height: 50px;*/
+/*    width: 50px;*/
+/*    border-radius: 50%;*/
+/*    object-fit: cover;*/
+/*}*/
 .searuserdeet{
-    padding: 15px 0 0 65px;
+    padding: 15px 0 0 15px;
     box-sizing: border-box;
 }
 .noresult{
@@ -248,20 +251,20 @@ body {
     padding-top: 15px;
     box-sizing: border-box;
 }
-.notifications div{
-    width: 100%;
-    box-sizing: border-box;
-    padding:10px 0 10px 5%;
-    height:fit-content;
-    box-shadow: 0px 0px 4px 0px rgba(82, 178, 207, 0.25)
-}
-.notifications a{
-    color: #666666;
-    text-decoration: none;
-}
-.notifications a:hover{
-    color: #52B2CF;
-}
+/*.notifications div{*/
+/*    width: 100%;*/
+/*    box-sizing: border-box;*/
+/*    padding:10px 0 10px 5%;*/
+/*    height:fit-content;*/
+/*    box-shadow: 0px 0px 4px 0px rgba(82, 178, 207, 0.25)*/
+/*}*/
+/*.notifications a{*/
+/*    color: #666666;*/
+/*    text-decoration: none;*/
+/*}*/
+/*.notifications a:hover{*/
+/*    color: #52B2CF;*/
+/*}*/
 .commentspam{
     font-size: 14px;
     color: #666666;

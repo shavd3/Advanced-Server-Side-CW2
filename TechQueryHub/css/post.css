@@ -47,13 +47,12 @@
 }
 .locationtag {
     display: inline-block;
-    background-color: #81d1c5;
+    background-color: #57acab;
     border-radius: 15px;
     padding: 1px 10px 10px;
     margin-right: 10px;
     font-size: 14px;
     font-weight: bold;
-    color: #666;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 .likediv{
@@ -67,19 +66,16 @@
     font-size: 17px;
     font-weight: 550;
     margin: 8px 0 0 10px;
-    color: #666666;
+    color: #5e4337;
 
 }
-.fa-location-dot{
-    margin-right: 3%;
-}
 .locationdiv a{
-    color: #666666;
+    color: #124850;
     text-decoration: none;
     transition: color .4s;
 }
 .locationdiv a:hover{
-    color: #52B2CF;
+    color: #5e4337;
     text-decoration: none;
 }
 .fa-thumbs-up{
@@ -89,7 +85,7 @@
 }
 .fa-thumbs-up:hover{
     transform: scale(1.03);
-    color: #367ecf;
+    color: #5e4337;
 }
 
 .usernameimgdiv{
@@ -116,18 +112,19 @@
     margin-top: 1%;
 }
 .usernamediv a{
-    color: #52B2CF;
+    color: #a44122;
     text-decoration: none;
     transition: color .4s;
+    font-weight: bold;
 }
 .usernamediv a:hover{
-    color: #32AFD5;
+    color: #124850;
     text-decoration: none;
 }
 .titlediv{
     width: 90%;
     font-size: 35px;
-    color: #666666;
+    color: #124850;
 }
 .captiondiv{
     width: 90%;
@@ -146,18 +143,19 @@
     color: #666666;
 }
 .commentsdiv a{
-    color: #9A618E;
+    color: #426054;
     text-decoration: none;
     padding-right: 2%;
     padding-left: 10px;
+    font-weight: bold;
 }
 .commentsdiv a:hover{
-    color: #6c0c57;
+    color: #a44122;
 }
 .comments{
     padding: 15px 0 12px 0;
     /*border: 2px solid #52B2CF;*/
-    box-shadow: 2px 0 2px 1px rgb(21, 161, 221);
+    box-shadow: 2px 0 2px 1px rgb(26, 97, 124);
     border-radius: 15px;
     margin-bottom: 10px;
 }
@@ -177,7 +175,7 @@ textarea{
     font-family: "DM Sans", sans-serif;
 }
 textarea:focus{
-    border: 2px solid #8FD6C2;
+    border: 2px solid #0f3859;
 }
 button{
     height: 40px;
@@ -196,6 +194,6 @@ button:disabled{
     color: #7C7D7C;
 }
 button:enabled{
-	background-color: #52B2CF;
+	background-color: #1a617c;
     color: white;
 }

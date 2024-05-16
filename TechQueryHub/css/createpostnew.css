@@ -21,18 +21,17 @@
 .caplabel, .titlediv .caplabel {
     margin-bottom: 5px;
     font-weight: bold;
-    color: #7ec4cf;
+    color: #1a617c;
 }
 
 /* Styles for textarea */
 textarea {
     width: 100%;
     padding: 10px;
-    border: 1px solid #ccc;
+    border: 1px solid #d7d1ba;
     border-radius: 15px;
     resize: none;
     font-size: 16px;
-    font-family: Arial, sans-serif;
 }
 
 /*!* Styles for postsubmitdiv *!*/
@@ -66,16 +65,15 @@ textarea {
 .usernamediv {
     margin-right: 10px;
     font-weight: bold;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 /* Additional styles for visual enhancement */
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
-    margin: 0;
-    padding: 0;
-}
+/*body {*/
+/*    font-family: Arial, sans-serif;*/
+/*    background-color: #f0f0f0;*/
+/*    margin: 0;*/
+/*    padding: 0;*/
+/*}*/
 
 select{
     width: 30%;
@@ -89,7 +87,7 @@ select{
     color: #666666;
 }
 select:focus{
-    border: 2px solid #000000;
+    border: 2px solid #426054;
 }
 
 .errormsg{
@@ -105,17 +103,17 @@ select:focus{
 }
 #uploadpost{
     width: 15%;
-    background-color: #8FD6C2;
+    /*background-color: #e1a271;*/
+    background-color: #57acab;
     font-size: 1.3rem;
     padding: 0.8rem 0.5rem;
     border-radius: 25px;
-    color: #fff;
     text-align: center;
     margin: auto;
     cursor: pointer;
     transition: background-color .4s;
 }
 #uploadpost:hover{
-    background-color: #7EC4CF
+    background-color: #426054
 }
 

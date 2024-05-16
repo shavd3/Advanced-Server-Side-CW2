@@ -4,6 +4,9 @@
 <head>
     <title>TechQueryHub</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js" type="text/javascript"></script>
+<!--    <link rel="preconnect" href="https://fonts.googleapis.com">-->
+<!--    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>-->
+<!--    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap" rel="stylesheet">-->
     <link rel="stylesheet" type="text/css" href="<?php echo base_url()?>css/navigation.css">
 </head>
 <body>

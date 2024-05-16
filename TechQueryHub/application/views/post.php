@@ -65,7 +65,7 @@
                 method: "GET"
             }).done(function (res) {
                 if(res){
-                    document.getElementById("likediv").style.color = "#FC6464";
+                    document.getElementById("likediv").style.color = "#a44122";
                 }
                 else{
                     document.getElementById("likediv").style.color = "#666666";
@@ -95,7 +95,7 @@
             })
             .done(function (res) {
                 if(res){
-                    document.getElementById("likediv").style.color = "#FC6464";
+                    document.getElementById("likediv").style.color = "#a44122";
                     likecount();
                 }
                 else{
