@@ -6,7 +6,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js" type="text/javascript"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/backbone.js/1.2.3/backbone-min.js" type="text/javascript"></script>
     <script src="https://kit.fontawesome.com/b9008b61cc.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" type="text/css" href="<?php echo base_url()?>css/homenew.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url()?>css/homePage.css">
 </head>
 
 <body>

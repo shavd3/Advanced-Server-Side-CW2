@@ -18,7 +18,7 @@ class Myprofile extends \Restserver\Libraries\REST_Controller {
     public function index_get(){
         if ($this->UserModel->is_logged_in()) {
             $this->load->view('navigation',array('username' => $this->session->username));
-            $this->load->view('myprofile',array('username' => $this->session->username));
+            $this->load->view('myProfile',array('username' => $this->session->username));
         }
         else {
             $this->load->view('login');
@@ -28,7 +28,7 @@ class Myprofile extends \Restserver\Libraries\REST_Controller {
     public function editprofile_get(){
         if ($this->UserModel->is_logged_in()) {
             $this->load->view('navigation',array('username' => $this->session->username));
-            $this->load->view('editprofile',array('username' => $this->session->username));
+            $this->load->view('editProfile',array('username' => $this->session->username));
         }
         else {
             $this->load->view('login');

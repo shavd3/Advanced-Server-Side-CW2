@@ -20,7 +20,7 @@ class Posts extends \Restserver\Libraries\REST_Controller {
     public function index_get(){
         if ($this->UserModel->is_logged_in()) {
             $this->load->view('navigation', array('username' => $this->session->username));
-            $this->load->view('createpost');
+            $this->load->view('addQuestion');
         }
         else {
             $this->load->view('login');

@@ -43,7 +43,7 @@ class Users extends \Restserver\Libraries\REST_Controller {
         if ($this->UserModel->is_logged_in()) {
             $username = $this->get('username');
             $this->load->view('navigation',array('username' => $this->session->username));
-            $this->load->view('userprofile',array('username' => $username));
+            $this->load->view('userProfile',array('username' => $username));
         }
         else {
             $this->load->view('login');
@@ -120,7 +120,7 @@ class Users extends \Restserver\Libraries\REST_Controller {
     }
     //load password reset view
     public function passwordreset_get(){
-        $this->load->view('passwordreset');
+        $this->load->view('resetPassword');
     }
     //api to get details from given user
     public function userdetails_get() {
