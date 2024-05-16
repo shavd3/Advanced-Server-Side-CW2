@@ -11,12 +11,10 @@
 
 <body>
     <div class="locationcontainer">
-
         <div class="locationlistdiv">
             <span id='locationname'></span>
             <div id="locationlist"> </div>
         </div>
-
         <div class="postlocadiv"></div>
     </div>
 
@@ -24,31 +22,31 @@
     var tagId="<?php echo $tagid ?>";    
     $(document).ready(function () {
         event.preventDefault();
-        $.ajax({//get all posts from the given location id at start and display the posts
-            url: "<?php echo base_url() ?>index.php/posts/tags/action/id?tagid="+tagId,
+        $.ajax({//get all questions from the given tag id at start and display the questions
+            url: "<?php echo base_url() ?>index.php/questions/tags/action/id?tagid="+tagId,
             method: "GET"
             })
             .done(function (data) {
                 document.getElementById("locationname").innerHTML = "<i class='fa-solid fa-microchip'></i>"+data.TagName;
             });
         $.ajax({
-            url: "<?php echo base_url() ?>index.php/posts/tags/action/all",
+            url: "<?php echo base_url() ?>index.php/questions/tags/action/all",
             method: "GET"
         })
         .done(function (data) {
             for (i = (tagId-20); i < (+tagId+20); i++) {
-                if(data[i]!=null){//display few other locations in the list for easier browsing
-                    var span ="<a href='<?php echo base_url() ?>index.php/posts/tagView?tagid="
+                if(data[i]!=null){//display few other tags in the list
+                    var span ="<a href='<?php echo base_url() ?>index.php/questions/tagView?tagid="
                     +data[i].TagId+"'><span>"+data[i].TagName+"</span></a></br>";
 			        $('#locationlist').append(span);
                 }
 		    }  
         });
-        postCollection.fetch();//backbone fetch to get the posts
+        postCollection.fetch();//backbone fetch to get the questions
     });
 
     var PostCollection = Backbone.Collection.extend({
-        url: "<?php echo base_url() ?>index.php/posts/tagQuestions?tagid="+tagId,
+        url: "<?php echo base_url() ?>index.php/questions/tagQuestions?tagid="+tagId,
     });
 
     var html = "";
@@ -59,9 +57,9 @@
         },
         showResults: function (m) {
 
-            html = html + "<div class='postimagediv'><a href='<?php echo base_url() ?>index.php/posts/post?postid="
+            html = html + "<div class='postimagediv'><a href='<?php echo base_url() ?>index.php/questions/question?questionid="
                 + m.get('QuestionId') + "'>"
-                + "<div class='titlediv'><a href='<?php echo base_url() ?>index.php/posts/post?postid=" + m.get('QuestionId')
+                + "<div class='titlediv'><a href='<?php echo base_url() ?>index.php/questions/question?questionid=" + m.get('QuestionId')
                 + "'>" + m.get('Title') + "</span></a></div>" +
 
                 "<div class='captiondiv'>" +

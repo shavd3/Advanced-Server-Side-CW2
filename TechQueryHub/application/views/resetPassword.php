@@ -5,7 +5,6 @@
     <title>HolidayGram</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js" type="text/javascript"></script>
     <link rel="stylesheet" type="text/css" href="../../css/verify.css">
-
 </head>
 <body>
     <div class="pwform">
@@ -30,41 +29,41 @@
         </div>
     </div>
 
-<script type="text/javascript" lang="javascript">
-//check inputs to see if theyre are empty
-function checkinputs() {
-    if (document.forms["loginform"]["username"].value != "" && document.forms["loginform"]["password"].value != "") {
-        document.getElementById('changepw').disabled = false;
+    <script type="text/javascript" lang="javascript">
+    //check inputs to see if they are empty
+    function checkinputs() {
+        if (document.forms["loginform"]["username"].value != "" && document.forms["loginform"]["password"].value != "") {
+            document.getElementById('changepw').disabled = false;
+        }
+        else{
+            document.getElementById('changepw').disabled = true;
+        }
     }
-    else{
-        document.getElementById('changepw').disabled = true;
-    }
-}
-//when button is clicked to change password
-$("#changepw").click(function(event) {
-    event.preventDefault();
-    var pwdata = {
-        username: "@" + $('#username').val().toLowerCase(),
-        password: $('#password').val()
-    };
-    $.ajax({
-        url: "<?php echo base_url() ?>index.php/users/user/action/passwordreset",
-        data: JSON.stringify(pwdata),
-        contentType: "application/json",
-        method: "POST"
-    }).done(function (data) {
-        var result = data.result;
-        if (result == "success") {
-            location.href = "<?php echo base_url() ?>index.php/users/login";
-        }
-        else if (result == "logged") {//if result is logged, means user is changing pw while logged in
-            location.href = "<?php echo base_url() ?>index.php/myprofile";
-        }
-        else {
-            document.getElementById("errormsg").innerHTML = "Username Doesn't Exist!"
-        }
+    //when button is clicked to change password
+    $("#changepw").click(function(event) {
+        event.preventDefault();
+        var pwdata = {
+            username: "@" + $('#username').val().toLowerCase(),
+            password: $('#password').val()
+        };
+        $.ajax({
+            url: "<?php echo base_url() ?>index.php/users/user/action/passwordreset",
+            data: JSON.stringify(pwdata),
+            contentType: "application/json",
+            method: "POST"
+        }).done(function (data) {
+            var result = data.result;
+            if (result == "success") {
+                location.href = "<?php echo base_url() ?>index.php/users/login";
+            }
+            else if (result == "logged") {//if result is logged, means user is changing pw while logged in
+                location.href = "<?php echo base_url() ?>index.php/myprofile";
+            }
+            else {
+                document.getElementById("errormsg").innerHTML = "Username Doesn't Exist!"
+            }
+        });
     });
-    });
-</script>
+    </script>
 </body>
 </html>

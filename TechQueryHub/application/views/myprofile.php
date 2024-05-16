@@ -9,32 +9,26 @@
 </head>
 
 <body>
-<div class="profilecontainer">
-    <div class="profiledeetdiv">
-        <div class="topdiv">
-            <div class="profpicdiv"></div>
-<!--            <div class="followdiv">-->
-<!--                <div class="flabel">FOLLOWING</div>-->
-<!--                <div class="fcount" id="followingc"></div>-->
-<!--                <div class="flabel">FOLLOWERS</div>-->
-<!--                <div class="fcount" id="followerc"></div>-->
-<!--            </div>-->
-        </div>
-        <div class="usernamediv"><?php echo $username ?></div>
-        <div class="namediv"></div>
-        <div class="biodiv"></div>
+    <div class="profilecontainer">
+        <div class="profiledeetdiv">
+            <div class="topdiv">
+                <div class="profpicdiv"></div>
+            </div>
+            <div class="usernamediv"><?php echo $username ?></div>
+            <div class="namediv"></div>
+            <div class="biodiv"></div>
 
-        <div class="profbottomdiv">
-            <a class="editprlink" href="<?php echo base_url()?>index.php/myprofile/editprofile">EDIT PROFILE</a>
-            <a class="logoutlink" href="<?php echo base_url()?>index.php/users/logout">LOGOUT</a>
+            <div class="profbottomdiv">
+                <a class="editprlink" href="<?php echo base_url()?>index.php/myprofile/editprofile">EDIT PROFILE</a>
+                <a class="logoutlink" href="<?php echo base_url()?>index.php/users/logout">LOGOUT</a>
+            </div>
         </div>
+        <div class="postsdiv" id="postsdiv"></div>
     </div>
-    <div class="postsdiv" id="postsdiv"></div>
-</div>
 
 <script type="text/javascript" lang="javascript">
     var username="<?php echo $username ?>";
-    //backbone fetch the post collection on start
+    //backbone fetch the question collection on start
     $(document).ready(function () {
         event.preventDefault();
         postCollection.fetch();
@@ -49,21 +43,14 @@
             var bio ="<span>"+data.UserBio+"</span>";
             $('.biodiv').append(bio);
         });
-        //$.ajax({//get follower/following counts
-        //    url: "<?php //echo base_url() ?>//index.php/myprofile/followcount?username="+username,
-        //    method: "GET"
-        //}).done(function (data) {
-        //    document.getElementById("followingc").innerHTML = data.following
-        //    document.getElementById("followerc").innerHTML = data.followers
-        //});
     });
    
     var Post = Backbone.Model.extend({
-        url: "<?php echo base_url() ?>index.php/myprofile/myposts"
+        url: "<?php echo base_url() ?>index.php/myprofile/myQuestions"
     });
 
     var PostCollection = Backbone.Collection.extend({
-        url: "<?php echo base_url() ?>index.php/myprofile/myposts",
+        url: "<?php echo base_url() ?>index.php/myprofile/myQuestions",
         model: Post,
         parse: function(data) {
             return data;
@@ -78,24 +65,21 @@
         showResults: function () {
             var html = "";
             this.model.each(function (m) {
-                // html = html + "<div class='postimagediv'><a href='<?php echo base_url() ?>index.php/posts/post?postid="
-                // + m.get('PostId') +"'><img class='postimage' src='<?php echo base_url() ?>images/userposts/"
-                // + m.get('PostImage') + "'/></a></div>";
 
-                html = html + "<div class='postimagediv'><a href='<?php echo base_url() ?>index.php/posts/post?postid=" 
-                + m.get('QuestionId') + "'>"
-                + "<div class='titlediv'><a href='<?php echo base_url() ?>index.php/posts/post?postid=" 
-                    + m.get('QuestionId') + "'>" + m.get('Title') + "</span></a></div>" +
+                html +=
+                    "<div class='postimagediv'><a href='<?php echo base_url() ?>index.php/questions/question?questionid="
+                        + m.get('QuestionId') + "'>"
+                        + "<div class='titlediv'><a href='<?php echo base_url() ?>index.php/questions/question?questionid="
+                        + m.get('QuestionId') + "'>" + m.get('Title') + "</span></a></div>" +
 
                     "<div class='captiondiv'>" +
-
-                    m.get('Description') + "</div><br>" +
+                        m.get('Description') + "</div><br>" +
                     "<div class='locationtag'>" +
                         "<div class='locationdiv'>" +
-                        "<a href='<?php echo base_url() ?>index.php/posts/tagView?tagid=" + m.get('TagId') + "'>" +
-                        "<span><i class='fa-solid'></i>" + m.get('TagName') +
-                    "</span></a></div></div>" +
-
+                            "<a href='<?php echo base_url() ?>index.php/questions/tagView?tagid="
+                            + m.get('TagId') + "'>" +
+                            "<span><i class='fa-solid'></i>" + m.get('TagName') +
+                        "</span></a></div></div>" +
                     "</div>";
             });
             this.$el.html(html);

@@ -80,7 +80,7 @@
             if(files.length > 0 ){
                 formdata.append('image',files[0]);
                 $.ajax({
-                    url: "<?php echo base_url() ?>index.php/posts/profpic",//store the image in folder
+                    url: "<?php echo base_url() ?>index.php/questions/profpic",//store the image in folder
                     data: formdata,
                     method: "POST",
                     contentType: false,

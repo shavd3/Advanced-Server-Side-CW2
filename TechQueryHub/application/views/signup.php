@@ -79,7 +79,7 @@
             checkinputs();
         }
     }
-    function checkusername() {//check if the username is taken or not
+    function checkusername() {//check if the username exists or not
         $.ajax({
             url: "<?php echo base_url() ?>index.php/users/user/action/checkuser",
             data: { 'username': "@" + $('#username').val().toLowerCase() },

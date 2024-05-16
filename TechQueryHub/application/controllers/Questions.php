@@ -4,7 +4,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 require APPPATH . '/libraries/REST_Controller.php';
 
-class Posts extends \Restserver\Libraries\REST_Controller {
+class Questions extends \Restserver\Libraries\REST_Controller {
 
     function __construct() {
         parent::__construct();
@@ -21,25 +21,6 @@ class Posts extends \Restserver\Libraries\REST_Controller {
         if ($this->UserModel->is_logged_in()) {
             $this->load->view('navigation', array('username' => $this->session->username));
             $this->load->view('addQuestion');
-        }
-        else {
-            $this->load->view('login');
-        }
-    }
-
-    // Function to save the post image in folder
-    public function store_post() {
-        if ($this->UserModel->is_logged_in()) {
-            $config['upload_path'] = "./images/userposts/";//path
-            $config['allowed_types'] = 'gif|jpg|png';//file types allowed
-            $this->load->library('upload', $config);
-            if (!$this->upload->do_upload('image')) {
-                $error = array('result' => 'failed', 'error' => $this->upload->display_errors());
-                $this->response($error);
-            } else {
-                $data = array('result' => 'done', 'image_metadata' => $this->upload->data());
-                $this->response($data);
-            }
         }
         else {
             $this->load->view('login');
@@ -65,14 +46,14 @@ class Posts extends \Restserver\Libraries\REST_Controller {
         }
     }
 
-    // Post request to create a post
-    public function create_post() {
+    // Post request to add a question
+    public function addQuestion_post() {
         if ($this->UserModel->is_logged_in()) {
             $username = $this->session->username;
             $tagId = $this->post('tagid');
             $title = $this->post('title');
             $description = $this->post('description');
-            $result = $this->QuestionModel->createPost($username, $tagId, $title, $description);
+            $result = $this->QuestionModel->addQuestion($username, $tagId, $title, $description);
 
             if ($result) {
                 $this->response(array('result' => 'done'));
@@ -85,10 +66,10 @@ class Posts extends \Restserver\Libraries\REST_Controller {
         }
     }
 
-    // API to get all posts from a user
-    public function userposts_get(){
+    // API to get all questions from a user
+    public function userQuestions_get(){
         $username = $this->get('username');
-        $result = $this->QuestionModel->getPostsfromUsername($username);
+        $result = $this->QuestionModel->getQuestionsfromUsername($username);
         $this->response($result);
     }
 
@@ -135,11 +116,11 @@ class Posts extends \Restserver\Libraries\REST_Controller {
         }
     }
 
-    // API to get the like count
-    public function likecount_get(){
+    // API to get the vote count
+    public function voteCount_get(){
         if ($this->UserModel->is_logged_in()) {
-            $postid = $this->get('postid');
-            $result = $this->QuestionModel->likeCount($postid);
+            $voteCount = $this->get('voteCount');
+            $result = $this->QuestionModel->voteCount($voteCount);
             $this->response($result);
         }
         else {
@@ -148,18 +129,18 @@ class Posts extends \Restserver\Libraries\REST_Controller {
     }
 
     // API to get questions details or load the questions view
-    public function post_get() {
+    public function question_get() {
         if ($this->UserModel->is_logged_in()) {
-            $postid = $this->get('postid');
+            $questionid = $this->get('questionid');
             // If action is view, get questions details from id
             if($this->get('action') == 'view') {
-                $result = $this->QuestionModel->postfromid($postid);
+                $result = $this->QuestionModel->getQuestionFromId($questionid);
                 $this->response($result);
             }
             // Else load the questions view
             else{
                 $this->load->view('navigation', array('username' => $this->session->username));
-                $this->load->view('post', array('postid' => $postid,'username' => $this->session->username));
+                $this->load->view('question', array('questionid' => $questionid,'username' => $this->session->username));
             }
         }
         else {
