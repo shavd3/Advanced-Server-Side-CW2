@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 16, 2024 at 04:35 PM
+-- Generation Time: May 17, 2024 at 09:01 PM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.12
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `holi`
+-- Database: `techqueryhub`
 --
 
 -- --------------------------------------------------------
@@ -52,11 +52,6 @@ INSERT INTO `answers` (`AnswerId`, `UserId`, `QuestionId`, `AnswerBody`, `Timest
 (10, 2, 41, 'Double-check the spelling and scope of the variable. Ensure it\'s declared before being accessed.', '2024-05-14 02:18:21'),
 (11, 2, 41, 'Use error reporting tools like error_reporting(E_ALL) to catch undefined variable errors during development.', '2024-05-14 02:18:29'),
 (12, 2, 41, 'Use isset() or empty() functions to check if a variable is defined before accessing it to avoid errors.', '2024-05-14 02:18:38'),
-(13, 2, 42, 'test answer', '2024-05-15 01:26:23'),
-(100, 2, 42, 'test answer 2', '2024-05-15 20:53:48'),
-(101, 2, 42, 'test answer 3', '2024-05-15 20:54:09'),
-(113, 2, 42, 'test', '2024-05-15 22:00:14'),
-(114, 2, 42, 'test2', '2024-05-16 05:31:24'),
 (115, 2, 41, 'Flexbox is a powerful layout mechanism, but aligning items as desired can sometimes be tricky. This issue can arise when the align-items or justify-content properties are not set correctly.Flexbox is a powerful layout mechanism, but aligning items as desired can sometimes be tricky. This issue can arise when the align-items or justify-content properties are not set correctly.Flexbox is a powerful layout mechanism, but aligning items as desired can sometimes be tricky. This issue can arise when the align-items or justify-content properties are not set correctly.Flexbox is a powerful layout mechanism, but aligning items as desired can sometimes be tricky. This issue can arise when the align-items or justify-content properties are not set correctly.Flexbox is a powerful layout mechanism, but aligning items as desired can sometimes be tricky. This issue can arise when the align-items or justify-content properties are not set correctly.Flexbox is a powerful layout mechanism, but aligning it', '2024-05-16 09:59:59');
 
 -- --------------------------------------------------------
@@ -80,19 +75,13 @@ CREATE TABLE `questions` (
 
 INSERT INTO `questions` (`QuestionId`, `UserId`, `TagId`, `Title`, `Description`, `Timestamp`) VALUES
 (31, 2, 34, 'What is version control and why is it important in software development?', 'Explain the concept of version control and its significance in managing codebases and collaborating on software projects.', '2024-05-11 12:42:14'),
-(32, 4, 1, 'Question 2', 'dddddddd', '2024-05-11 13:14:25'),
-(33, 4, 1, 'Question 3', 'swwwwww', '2024-05-11 13:23:22'),
 (34, 4, 30, 'What are RESTful APIs?', 'Describe RESTful APIs and their key principles for designing web services.', '2024-05-11 13:24:35'),
-(35, 4, 1, 'Question 5', 'nhtdn', '2024-05-11 13:27:20'),
-(36, 4, 1, 'Question 6', 'seeeeeeeeeaaaaa', '2024-05-11 13:47:40'),
 (37, 4, 1, 'What is the difference between Java and JavaScript?', 'Explain the key differences between Java and JavaScript, including their use cases, syntax, and execution environments.', '2024-05-11 15:18:59'),
 (38, 1, 12, 'What is the difference between SQL and NoSQL databases?', 'Differentiate between SQL (relational) and NoSQL (non-relational) databases, highlighting their characteristics, use cases, and advantages.', '2024-05-12 01:30:04'),
 (39, 2, 11, 'What is responsive web design?', 'Define responsive web design and explain its importance in modern web development.', '2024-05-12 01:39:08'),
 (40, 6, 12, 'Undefined variable: variable_name\' in PHP', 'This error typically occurs when trying to access a variable that has not been defined or is out of scope within a PHP script. It can happen due to misspelling variable names or accessing variables outside their scope.', '2024-05-12 01:40:32'),
 (41, 5, 14, 'CSS Flexbox not Aligning Items Properly', 'Flexbox is a powerful layout mechanism, but aligning items as desired can sometimes be tricky. This issue can arise when the align-items or justify-content properties are not set correctly.', '2024-05-13 06:53:49'),
-(42, 2, 4, 'Test Category', 'tags', '2024-05-15 01:05:02'),
-(100, 2, 5, 'test add', 'test db ', '2024-05-15 13:10:40'),
-(105, 2, 6, 'test db', 'qq', '2024-05-16 13:48:33');
+(42, 2, 4, 'Test Category', 'tags', '2024-05-15 01:05:02');
 
 -- --------------------------------------------------------
 
@@ -233,7 +222,7 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`UserId`, `Username`, `Name`, `Email`, `Password`, `UserBio`, `UserImage`) VALUES
 (1, '@aaa', 'shav', 'aaa@gmail.com', '$2y$10$bCXEr80Fas30kyiT1jaEAeVv1eAc9FEyCQ27/UKYpv3SKJB7Ele7e', '', 'default.jpg'),
-(2, '@Shav_D3', 'Shavin Fernando', 'shavin2001d@gmail.com', '$2y$10$HnVSdsqMe77IaRqx0agfE.GTl0DsRuQKqa5xQtUYCz1xsI3YTW48C', 'Hello Developers!', '20240318_220340.jpg'),
+(2, '@Shav_D3', 'Shavin Fernando', 'shavin2001d@gmail.com', '$2y$10$DlaU6MlXYf78K7kd6oD40uhViJpqGd.tZmMQex7QPElhXhDXrVJpy', 'Hello Developers!', '20240318_220340.jpg'),
 (3, '@test1', 'test1', 'aaa@gmail.com', '$2y$10$X6zL0PtPA1IPoeFspSUdieA9KaQsCTqXT9ocHkLF4mtRyMAHoLEri', '', 'default.jpg'),
 (4, '@bbbbb', 'bbb', 'aaa@gmail.com', '$2y$10$JNrMSjTfNVUUHtIYUeYRgu07U.eCiv7xwDszrgIxea78xMukcQNa.', '', 'default.jpg'),
 (5, '@abc', 'abc', 'aaa@gmail.com', '$2y$10$WvBCLoezByEESsS6FLp68OktAB5RYWrMhDmRe36e8xumvhzTqkKwa', '', 'default.jpg'),
@@ -258,8 +247,8 @@ CREATE TABLE `votes` (
 --
 
 INSERT INTO `votes` (`VoteId`, `UserId`, `QuestionId`, `Timestamp`) VALUES
-(148, 2, 42, '2024-05-16 14:27:33'),
-(149, 2, 105, '2024-05-16 14:27:39');
+(300, 2, 39, '2024-05-17 09:28:44'),
+(307, 2, 40, '2024-05-17 17:10:50');
 
 --
 -- Indexes for dumped tables
@@ -310,13 +299,13 @@ ALTER TABLE `votes`
 -- AUTO_INCREMENT for table `answers`
 --
 ALTER TABLE `answers`
-  MODIFY `AnswerId` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=116;
+  MODIFY `AnswerId` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=127;
 
 --
 -- AUTO_INCREMENT for table `questions`
 --
 ALTER TABLE `questions`
-  MODIFY `QuestionId` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=106;
+  MODIFY `QuestionId` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=121;
 
 --
 -- AUTO_INCREMENT for table `users`
@@ -328,7 +317,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `votes`
 --
 ALTER TABLE `votes`
-  MODIFY `VoteId` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=150;
+  MODIFY `VoteId` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=312;
 
 --
 -- Constraints for dumped tables
