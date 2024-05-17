@@ -1,55 +1,56 @@
-/* Styles for feedcontainer */
+/* Styles for questioncontainer */
 .questioncontainer {
-    /*display: flex;*/
     flex-direction: column;
     align-items: center;
-    /*width: 100%;*/
     display: block;
     margin-top: 150px;
-    /*overflow: auto;*/
 }
+
+/* Styles for feedcontainer */
 .feedcontainer {
     display: flex;
     flex-direction: column;
     align-items: center;
-    /*box-shadow: 0 0 10px 0 rgba(152, 162, 203, 0.25) ;*/
     width: 95%;
     float: right;
 }
 
- /*Styles for postdiv */
+/* Styles for questiondiv */
 .questiondiv {
-    /*border: 1px solid #164795;*/
     border-radius: 30px;
     background-color: #ffffff;
-    /*box-shadow: 0 2px 4px rgba(22, 6, 69, 0.258);*/
     padding: 20px;
     margin-bottom: 20px;
     max-width: 100%;
-    /*width: 95%;*/
     box-sizing: border-box;
     box-shadow: 0 0 10px 0 rgb(215, 209, 186);
     width: 72%;
     margin-left: 300px;
     float: right;
 }
-.tagdiv a{
+
+/* Styles for tagdiv */
+.tagdiv a {
     color: #124850;
     text-decoration: none;
     transition: color .4s;
 }
-.tagdiv a:hover{
+
+.tagdiv a:hover {
     color: #072127;
     text-decoration: none;
 }
-.tagcontainer{
+
+/* Styles for tagcontainer */
+.tagcontainer {
     width: 100%;
     display: block;
     overflow: auto;
 }
-.taglistdiv{
+
+/* Styles for taglistdiv */
+.taglistdiv {
     margin-top: 150px;
-    /*margin-left: 55px;*/
     width: 25%;
     height: 84%;
     overflow-y: auto;
@@ -58,11 +59,10 @@
     top: 0;
     padding: 20px;
     background: #ffffff;
-    /*border: 2px solid #164795;*/
     box-sizing: border-box;
-    /*box-shadow: 2px 0 2px 1px rgb(215, 209, 186);*/
     box-shadow: 0 0 10px 0 rgb(215, 209, 186);
     border-radius: 10px;
+    font-weight: bold;
 }
 
 /* Style for scrollbar */
@@ -81,27 +81,19 @@
     border-radius: 5px;
 }
 
-/*!* Handle on hover *!*/
-/*.locationlistdiv::-webkit-scrollbar-thumb:hover {*/
-/*    background: #5e4337;*/
-/*}*/
-
-.usernamediv a{
+/* Styles for usernamediv */
+.usernamediv a {
     color: #a44122;
     text-decoration: none;
     transition: color .4s;
 }
-.usernamediv a:hover{
+
+.usernamediv a:hover {
     color: #124850;
     text-decoration: none;
 }
 
-/*.commentsdiv a{*/
-/*    color: #9A618E;*/
-/*    text-decoration: none;*/
-/*}*/
-
-/* Styles for userlikediv */
+/* Styles for uservotediv */
 .uservotediv {
     display: flex;
     align-items: center;
@@ -112,62 +104,50 @@
 .usernamediv {
     margin-right: 10px;
     font-weight: bold;
-    /*font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;*/
     text-decoration: none;
     color: #333;
 }
 
+/* Styles for titlediv */
 .titlediv {
     margin-right: 10px;
     font-weight: bold;
-    /*font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;*/
     text-decoration: none;
     color: #680a0a;
     font-size: 25px;
 }
 
-.titlediv a{
+.titlediv a {
     color: #124850;
     text-decoration: none;
     transition: color .4s;
 }
-.titlediv a:hover{
+
+.titlediv a:hover {
     color: #57acab;
     text-decoration: none;
 }
 
-
-/*!* Styles for likediv *!*/
-/*.likediv {*/
-/*    cursor: pointer;*/
-/*    color: #d7d1ba;*/
-/*    transition: color 0.3s ease;*/
-/*}*/
-
-/*.likediv:hover {*/
-/*    color: #FC6464;*/
-/*}*/
-
+/* Styles for votediv */
 .votediv i {
     font-size: 30px;
 }
 
-/* Styles for captiondiv */
+/* Styles for descdiv */
 .descdiv {
     margin-top: 20px;
     font-size: 18px;
     line-height: 1.5;
     color: #1a617c;
-    /*font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;*/
 }
 
-/* Styles for locationdiv */
+/* Styles for tagdiv */
 .tagdiv {
     margin-top: 10px;
     font-family: 'Roboto', sans-serif;
 }
 
-/* Styles for locationtag */
+/* Styles for tagbox */
 .tagbox {
     display: inline-block;
     background-color: #c0e6e5;
@@ -176,58 +156,44 @@
     margin-right: 10px;
     font-size: 14px;
     font-weight: bold;
-    /*color: #666;*/
-    /*font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;*/
 }
 
+/* Styles for cattag */
 .cattag {
     display: inline-block;
     width: 70%;
     background-color: #d7d1ba;
     border-radius: 15px;
     padding: 10px 10px 10px;
-    /*margin-right: 5%;*/
     margin-left: 13%;
     font-size: 18px;
     letter-spacing: 5px;
     font-weight: bold;
-    /*color: #666;*/
-    /*font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;*/
     text-align: center;
 }
 
-/* Styles for commentsdiv */
-/*.commentsdiv {*/
-/*    margin-top: 20px;*/
-/*}*/
-
-/* !*Styles for commuserlink *!*/
-/*.commuserlink {*/
-/*    font-weight: bold;*/
-/*    color: #1a617c;*/
-/*    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;*/
-/*    margin-right: 3%;*/
-/*}*/
-#tagname{
+/* Styles for tagname */
+#tagname {
     font-size: 24px;
     font-weight: 700;
     letter-spacing: 1px;
     margin: 20px 0 0 10%;
     color: #57acab;
 }
-#taglist{
+
+/* Styles for taglist */
+#taglist {
     font-size: 16px;
     letter-spacing: 1px;
-    /*margin: 10px 0 0 10%;*/
     text-align: center;
 }
-#taglist a{
+
+#taglist a {
     color: #666666;
     text-decoration: none;
 }
-#taglist a:hover{
+
+#taglist a:hover {
     color: #57acab;
     text-decoration: none;
 }
-
-/* Add more styles as needed */

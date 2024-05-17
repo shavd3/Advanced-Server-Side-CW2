@@ -1,9 +1,12 @@
-.questioncontainer{
+/* Styles for questioncontainer */
+.questioncontainer {
     width: 100%;
     display: block;
     overflow: auto;
 }
-.centerdiv{
+
+/* Styles for centerdiv */
+.centerdiv {
     margin-top: 150px;
     margin-left: 70px;
     width: 110%;
@@ -11,24 +14,17 @@
     float: none;
     position: fixed;
 }
-.tagvotediv{
+
+/* Styles for tagvotediv */
+.tagvotediv {
     margin: auto;
     display: block;
     overflow: auto;
-}
-/* .postimagediv{
-    width: 60%;
-} */
-.tagvotediv{
     width: 100%;
 }
-/* .postimage{
-    width: 100%;
-    aspect-ratio : 1 / 1;
-    border-radius: 10px;
-    object-fit: cover;
-} */
-.tagdiv{
+
+/* Styles for tagdiv */
+.tagdiv {
     width: 100%;
     float: none;
     box-sizing: border-box;
@@ -38,6 +34,8 @@
     letter-spacing: 1px;
     padding-top: 4px;
 }
+
+/* Styles for tagbox */
 .tagbox {
     display: inline-block;
     background-color: #57acab;
@@ -48,111 +46,149 @@
     font-weight: bold;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
-.votediv{
+
+/* Styles for votediv */
+.votediv {
     width: fit-content;
     float: left;
     font-size: 30px;
 }
-.votecount{
+
+/* Styles for votecount */
+.votecount {
     width: 20%;
     float: left;
     font-size: 17px;
     font-weight: 550;
     margin: 8px 0 0 10px;
     color: #5e4337;
-
 }
-.tagdiv a{
+
+/* Styles for tagdiv a */
+.tagdiv a {
     color: #124850;
     text-decoration: none;
     transition: color .4s;
 }
-.tagdiv a:hover{
+
+/* Styles for tagdiv a:hover */
+.tagdiv a:hover {
     color: #5e4337;
     text-decoration: none;
 }
-.fa-thumbs-up{
+
+/* Styles for fa-thumbs-up */
+.fa-thumbs-up {
     padding: 0;
     cursor: pointer;
     transition: transform .4s;
 }
-.fa-thumbs-up:hover{
+
+/* Styles for fa-thumbs-up:hover */
+.fa-thumbs-up:hover {
     transform: scale(1.03);
     color: #5e4337;
 }
 
-.usernameimgdiv{
+/* Styles for usernameimgdiv */
+.usernameimgdiv {
     width: 100%;
     display: block;
     overflow: auto;
 }
-.userimagediv{
+
+/* Styles for userimagediv */
+.userimagediv {
     width: 12%;
-    aspect-ratio : 1 / 1;
+    aspect-ratio: 1 / 1;
     float: left;
 }
-.userimage{
+
+/* Styles for userimage */
+.userimage {
     width: 100%;
-    aspect-ratio : 1 / 1;
+    aspect-ratio: 1 / 1;
     border-radius: 50%;
     object-fit: cover;
 }
-.usernamediv{
+
+/* Styles for usernamediv */
+.usernamediv {
     width: 50%;
     float: left;
     font-size: 16px;
     letter-spacing: 0.5px;
     margin-top: 1%;
 }
-.usernamediv a{
+
+/* Styles for usernamediv a */
+.usernamediv a {
     color: #a44122;
     text-decoration: none;
     transition: color .4s;
     font-weight: bold;
 }
-.usernamediv a:hover{
+
+/* Styles for usernamediv a:hover */
+.usernamediv a:hover {
     color: #124850;
     text-decoration: none;
 }
-.titlediv{
+
+/* Styles for titlediv */
+.titlediv {
     width: 90%;
     font-size: 35px;
     color: #124850;
 }
-.descdiv{
+
+/* Styles for descdiv */
+.descdiv {
     width: 90%;
     font-size: 25px;
     color: #666666;
 }
-.answerareadiv{
+
+/* Styles for answerareadiv */
+.answerareadiv {
     margin: 15px 0;
     width: 95%;
     display: block;
     overflow: auto;
 }
-.answersdiv{
+
+/* Styles for answersdiv */
+.answersdiv {
     width: 90%;
     font-size: 16px;
     color: #666666;
 }
-.answersdiv a{
+
+/* Styles for answersdiv a */
+.answersdiv a {
     color: #426054;
     text-decoration: none;
     padding-right: 2%;
     padding-left: 10px;
     font-weight: bold;
 }
-.answersdiv a:hover{
+
+/* Styles for answersdiv a:hover */
+.answersdiv a:hover {
     color: #a44122;
 }
-.answer{
+
+/* Styles for answer */
+.answer {
     padding: 15px 0 12px 0;
     /*border: 2px solid #52B2CF;*/
     box-shadow: 2px 0 2px 1px rgb(26, 97, 124);
     border-radius: 15px;
     margin-bottom: 10px;
 }
-textarea{
+
+/* Styles for textarea */
+textarea {
     width: 60%;
     height: 50px;
     padding: 8px;
@@ -167,10 +203,14 @@ textarea{
     outline: none;
     font-family: "DM Sans", sans-serif;
 }
-textarea:focus{
+
+/* Styles for textarea:focus */
+textarea:focus {
     border: 2px solid #0f3859;
 }
-button{
+
+/* Styles for button */
+button {
     height: 40px;
     float: left;
     width: 12%;
@@ -182,11 +222,15 @@ button{
     transition: background-color .4s;
     cursor: pointer;
 }
-button:disabled{
-	background-color: #cccccc;
+
+/* Styles for button:disabled */
+button:disabled {
+    background-color: #cccccc;
     color: #7C7D7C;
 }
-button:enabled{
-	background-color: #1a617c;
+
+/* Styles for button:enabled */
+button:enabled {
+    background-color: #1a617c;
     color: white;
 }

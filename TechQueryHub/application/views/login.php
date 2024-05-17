@@ -11,17 +11,16 @@
 
     <div>
     <div class="postcontainer">
+        <!-- Right div containing logo -->
         <div class="rightdiv">
-
             <div class="logodiv">
                 <img class="logoimage" src="<?php echo base_url()?>images/new.png" alt="Logo"/>
             </div>
-
             <div class="logodiv">
                 <span> TechQueryHub </span>
             </div>
-
         </div>
+        <!-- Left div containing login form -->
         <div class="leftdiv"
             <div class="loginform">
                 <div class="logheading"><span>LOGIN</span></div>
@@ -34,11 +33,11 @@
                 <form class="authforms" name="loginform">
                     <div class="input">
                         <input class="loginfield" type=text id="username" name='username' onkeyup='checkinputs();' required/>
-                        <label class="loginlabel">Username<span style="color:#EB9494"></span></label>
+                        <label class="loginlabel">Username<span style="color:#a44122"></span></label>
                     </div>
                     <div class="input">
                         <input class="loginfield" type=password id="password" name='password' onkeyup='checkinputs();' required/>
-                        <label class="loginlabel">Password<span style="color:#EB9494"></span></label>
+                        <label class="loginlabel">Password<span style="color:#a44122"></span></label>
                     </div>
 
                     <div class="action">
@@ -55,39 +54,49 @@
     </div>
 
     <script type="text/javascript" lang="javascript">
-        //check if all inputs are not empty
+        // Function to enable/disable login button based on input fields
         function checkinputs() {
             if (document.forms["loginform"]["username"].value != "" && document.forms["loginform"]["password"].value != "") {
                 document.getElementById('login').disabled = false;
-            }
-            else{
+            } else {
                 document.getElementById('login').disabled = true;
             }
         }
+
         $(document).ready(function () {
-            //when login is clicked
+            // Event listener for login button click
             $('#login').click(function (event) {
                 event.preventDefault();
                 userLogin();
             });
         });
+
+        // Backbone Model for login
         var Login = Backbone.Model.extend({
             url:"<?php echo base_url()?>index.php/users/user/action/login"
         });
+
+        // Backbone Collection for login
         var LoginCollection = Backbone.Collection.extend({
             model: Login,
         });
+
         var loginCollection = new LoginCollection();
+
+        // Function to handle user login
         function userLogin() {
             var newLogin = new Login();
-            newLogin.set('username', "@"+$("#username").val().toLowerCase());//username is converted to lowercase
+            newLogin.set('username', "@"+$("#username").val().toLowerCase()); // Username is converted to lowercase
             newLogin.set('password', $("#password").val());
             loginCollection.create(newLogin,{
                 success: function(response){
                     var result=response.changed.result;
-                    if (result=="success") {//redirect to home on success
-                        location.href="<?php echo base_url()?>index.php/home/";  
-                    } else {//else redirect back to login
+                    // Redirect based on login result
+                    if (result=="success") {
+                        // Redirect to home on success
+                        location.href="<?php echo base_url()?>index.php/home/";
+                    } else {
+                        // Redirect back to login on failure
                         location.href="<?php echo base_url()?>index.php/users/login";
                     }
                 }

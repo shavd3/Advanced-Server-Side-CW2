@@ -1,24 +1,25 @@
-/* Styles for uppostcontainer */
+/* Styles for questioncontainer */
 .questioncontainer {
     width: 85%;
     margin: auto;
     margin-top: 150px;
-    /*margin-left: 100px;*/
     padding: 20px;
     background-color: #f9f9f9;
     border-radius: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Styles for titlediv */
-.titlediv, .descdiv {
+/* Styles for titlediv and descdiv */
+.titlediv,
+.descdiv {
     margin-bottom: 20px;
     margin-right: 20px;
     font-family: "DM Sans", sans-serif;
 }
 
-/* Styles for caplabel */
-.desclabel, .titlediv .desclabel {
+/* Styles for desclabel */
+.desclabel,
+.titlediv .desclabel {
     margin-bottom: 5px;
     font-weight: bold;
     color: #1a617c;
@@ -46,7 +47,8 @@ textarea {
     font-weight: bold;
 }
 
-select{
+/* Styles for select */
+select {
     width: 30%;
     height: 30px;
     border-radius: 8px;
@@ -57,21 +59,26 @@ select{
     line-height: normal;
     color: #666666;
 }
-select:focus{
+
+select:focus {
     border: 2px solid #426054;
 }
-.errormsg{
-    margin:20px auto;
+
+/* Additional Styles */
+.errormsg {
+    margin: 20px auto;
     width: 40%;
-    color: #EB9494;
+    color: #a44122;
     text-align: center;
 }
-.questionsubmitdiv{
+
+.questionsubmitdiv {
     margin-top: 40px;
     width: 100%;
     float: left;
 }
-#uploadquestion{
+
+#uploadquestion {
     width: 15%;
     background-color: #57acab;
     font-size: 1.3rem;
@@ -80,9 +87,9 @@ select:focus{
     text-align: center;
     margin: auto;
     cursor: pointer;
-    transition: background-color .4s;
-}
-#uploadquestion:hover{
-    background-color: #426054
+    transition: background-color 0.4s;
 }
 
+#uploadquestion:hover {
+    background-color: #426054;
+}

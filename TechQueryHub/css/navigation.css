@@ -3,8 +3,9 @@ body {
 	line-height: 1.5;
 	background-color: #ffffff;
     margin: 0px;
-  }
-.navigationupperdiv{
+}
+
+.navigationupperdiv {
     max-height: 45px;
     height: 45px;
     width: 100%;
@@ -16,7 +17,8 @@ body {
     z-index: 2;
     border-bottom: 2px solid #ffffff;
 }
-.navigationdiv{
+
+.navigationdiv {
     max-height: 85px;
     height: 85px;
     width: 100%;
@@ -30,35 +32,27 @@ body {
     border-image: linear-gradient(to right, #a44122, #1a617c);
     border-image-slice: 1;
 }
-/*.navigationnewdiv{*/
-/*    max-height: 85px;*/
-/*    height: 85px;*/
-/*    margin: 0 0 20px 0;*/
-/*    position:sticky;*/
-/*    top: 100px;*/
-/*    box-shadow: 0px 5px 5px -3px rgba(82, 178, 207, 0.3) ;*/
-/*    background-color: #ffffff;*/
-/*    z-index: 1000;*/
-/*}*/
-.logodiv{
+
+.logodiv {
     float: left;
     height: 100%;
     position: relative;
     margin: 0 0 0 2%;
     width: 18%;
 }
-.logomaindiv{
+
+.logomaindiv {
     float: right;
     height: 100%;
     position: relative;
     margin: 0 5% 2% 2%;
     width: 18%;
 }
-.askdiv{
+
+.askdiv {
     float: left;
     height: 60%;
     position: relative;
-    /*margin: 1% 1% 1% 2%;*/
     margin-left: 170px;
     margin-top: 12px;
     width: 7%;
@@ -68,10 +62,10 @@ body {
     padding: 10px 10px 0 0;
     font-size: 14px;
     font-weight: bold;
-    /*color: #666;*/
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
-.logoname{
+
+.logoname {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -80,7 +74,8 @@ body {
     width: 100%;
     text-align: right;
 }
-.askname{
+
+.askname {
     position: absolute;
     top: 41%;
     transform: translateY(-45%);
@@ -89,7 +84,8 @@ body {
     width: 100%;
     text-align: center;
 }
-.navname{
+
+.navname {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -98,40 +94,46 @@ body {
     width: 100%;
     text-align: right;
 }
-.navname a{
+
+.navname a {
     color: #1a617c;
     font-weight: bold;
     text-decoration: none;
 }
-.fa-solid a:hover{
+
+.fa-solid a:hover {
     color: #a44122;
     text-decoration: none;
 }
-.logoname a{
+
+.logoname a {
     color: #124850;
     font-weight: bold;
     text-decoration: none;
 }
-.askname a{
+
+.askname a {
     color: #124850;
     text-decoration: none;
 }
 
-.logoimage{
+.logoimage {
     height:auto;
     width: 25%;
     position: absolute;
     top: 50%;
     transform: translateY(-50%)
 }
-.searchdiv{
+
+.searchdiv {
     float: left;
     width: 25%;
     height: 100%;
     position:relative;
     margin: 0 0 0 18%;
 }
-.search{
+
+.search {
     width: 120%;
     position: absolute;
     top: 50%;
@@ -142,23 +144,27 @@ body {
     border: 2px solid #d7d1ba;
     color: #5e4337;
 }
-.search:focus, .search:hover{
+
+.search:focus, .search:hover {
     outline: none !important;
     border:2px solid #1a617c;
 }
-.linkdiv{
+
+.linkdiv {
     float: left;
     height: 100%;
     position: relative;
     width: 15%;
     margin: 0 0 0 2%;
 }
-.linkelement{
+
+.linkelement {
     height: 100%;
     width: 30%;
     float: right;
 }
-.linkimage{
+
+.linkimage {
     height: 40%;
     width: auto;
     position: absolute;
@@ -166,7 +172,8 @@ body {
     transform: translateY(-50%);
     width: auto;
 }
-.profilediv{
+
+.profilediv {
     float: right;
     height: 100%;
     width: 13%;
@@ -174,7 +181,8 @@ body {
     margin: 0 2% 0 0;
     position: relative;
 }
-.userlink{
+
+.userlink {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -183,41 +191,37 @@ body {
     width: 100%;
     text-align: right;
 }
-.profilelink{
+
+.profilelink {
     color: #52B2CF;
 	text-decoration: none;
 }
-.profilelink:hover{
+
+.profilelink:hover {
     color: #a44122;
 	text-decoration: underline;
 }
-.searchresults{
+
+.searchresults {
     position: fixed;
-    display: none; 
+    display: none;
     height: fit-content;
     top: 120px;
     right: 0;
     bottom: 0;
-    /*background-color: #330404;*/
-    /*box-shadow: 0 0 10px 4px rgba(126, 196, 207, 0.25);*/
-    z-index: 2; 
+    z-index: 2;
     border-radius: 30px;
 }
-.searchresults{
-    width: 30%; 
+
+.searchresults {
+    width: 30%;
     max-width: 30%;
-    max-height: 400px; 
+    max-height: 400px;
     left: 35%;
 }
-.notifications{
-    width: 30%; 
-    max-width: 30%;
-    max-height: 500px; 
-    left: 60%;
-}
-.user{
+
+.user {
     height: 56px;
-    /*width: 98%;*/
     padding: 0 2%;
     box-shadow: 0px 0px 4px 0px rgb(66, 96, 84);
     border-radius: 50px;
@@ -225,49 +229,20 @@ body {
     margin-bottom: 5px;
     border: 2px solid rgb(66, 96, 84);
 }
-.userlinks{
+
+.userlinks {
     color: #666666;
     text-decoration: none;
 }
-/*.seauserimagediv{*/
-/*    padding: 3px 0 0 2px;*/
-/*    width: 50px;*/
-/*    height: 50px;*/
-/*    float: left;*/
-/*}*/
-/*.seauserimage{*/
-/*    height: 50px;*/
-/*    width: 50px;*/
-/*    border-radius: 50%;*/
-/*    object-fit: cover;*/
-/*}*/
-.searuserdeet{
+
+.searuserdeet {
     padding: 15px 0 0 15px;
     box-sizing: border-box;
 }
-.noresult{
+
+.noresult {
     text-align: center;
     color: #666666;
     padding-top: 15px;
     box-sizing: border-box;
 }
-/*.notifications div{*/
-/*    width: 100%;*/
-/*    box-sizing: border-box;*/
-/*    padding:10px 0 10px 5%;*/
-/*    height:fit-content;*/
-/*    box-shadow: 0px 0px 4px 0px rgba(82, 178, 207, 0.25)*/
-/*}*/
-/*.notifications a{*/
-/*    color: #666666;*/
-/*    text-decoration: none;*/
-/*}*/
-/*.notifications a:hover{*/
-/*    color: #52B2CF;*/
-/*}*/
-/* .commentspam{
-    font-size: 14px;
-    color: #666666;
-    padding-left: 4px;
-    font-weight: 600;
-} */

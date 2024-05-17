@@ -1,28 +1,36 @@
-.editprofcontainer{
+/* Styles for editprofcontainer */
+.editprofcontainer {
     margin-top: 180px;
     width: 100%;
     display: block;
-    /*overflow: auto;*/
 }
-.texteditdiv{
+
+/* Styles for texteditdiv */
+.texteditdiv {
     width: 50%;
     float: left;
     display: block;
     overflow: auto;
     padding-top: 20px;
 }
-.piceditdiv{
+
+/* Styles for piceditdiv */
+.piceditdiv {
     width: 50%;
     float: right;
     display: block;
     overflow: auto;
     position: relative;
 }
-.editprofdiv{
+
+/* Styles for editprofdiv */
+.editprofdiv {
     width: 100%;
     float: left;
 }
-#editprofile{
+
+/* Styles for editprofile button */
+#editprofile {
     cursor: pointer;
     height: 50px;
     text-align: center;
@@ -35,23 +43,30 @@
     letter-spacing: 1px;
     box-sizing: border-box;
     border-radius: 20px;
-    transform:background-color 4s;
+    transform: background-color 4s;
 }
-#editprofile:hover{
+
+#editprofile:hover {
     background-color: #5e4337;
 }
-.profimagediv{
+
+/* Styles for profimagediv */
+.profimagediv {
     width: 100%;
 }
-#profpicid{
+
+/* Styles for profpicid */
+#profpicid {
     width: 50%;
-    aspect-ratio : 1 / 1;
+    aspect-ratio: 1 / 1;
     border-radius: 10px;
     object-fit: cover;
     border-radius: 50%;
     margin: auto;
     display: block;
 }
+
+/* Styles for input[type=file] */
 input[type=file] {
     margin: 20px 0 0 25%;
     width: 50%;
@@ -59,7 +74,9 @@ input[type=file] {
     opacity: 0%;
     cursor: pointer;
     position: absolute;
-  }
+}
+
+/* Styles for dummy */
 .dummy {
     width: 50%;
     margin: 20px 0 0 25%;
@@ -73,20 +90,28 @@ input[type=file] {
     letter-spacing: 1px;
     color: #ffffff;
 }
-.errormsg{
+
+/* Styles for errormsg */
+.errormsg {
     color: #a44122;
     width: 100%;
     text-align: center;
     font-size: 18px;
     padding-bottom: 10px;
 }
-.namechangediv, .emailchangediv, .biochangediv{
+
+/* Styles for namechangediv, emailchangediv, biochangediv */
+.namechangediv,
+.emailchangediv,
+.biochangediv {
     width: 100%;
     margin-bottom: 20px;
     display: block;
     overflow: auto;
 }
-.labeldiv{
+
+/* Styles for labeldiv */
+.labeldiv {
     font-weight: 600;
     font-size: 24px;
     letter-spacing: 1px;
@@ -95,14 +120,17 @@ input[type=file] {
     margin-left: 20%;
     float: left;
 }
-.inputdiv{
+
+/* Styles for inputdiv */
+.inputdiv {
     font-size: 16px;
     color: #666666;
     width: 62%;
     float: right;
 }
 
-.inputedit{
+/* Styles for inputedit */
+.inputedit {
     width: 90%;
     height: 30px;
     outline: none;
@@ -113,10 +141,13 @@ input[type=file] {
     border-bottom: 2px solid #d7d1ba;
     color: #666666;
 }
-.inputedit:focus{
+
+.inputedit:focus {
     border-bottom: 2px solid #1a617c;
 }
-textarea{
+
+/* Styles for textarea */
+textarea {
     width: 80%;
     height: 100px;
     padding: 12px 20px;
@@ -130,10 +161,13 @@ textarea{
     outline: none;
     font-family: "DM Sans", sans-serif;
 }
-textarea:focus{
+
+textarea:focus {
     border: 2px solid #1a617c;
 }
-.changepwdiv{
+
+/* Styles for changepwdiv */
+.changepwdiv {
     padding-top: 10px;
     margin-left: 20%;
     font-size: 20px;
@@ -141,9 +175,12 @@ textarea:focus{
     line-height: normal;
     color: #666666;
 }
-.changepwdiv a{
+
+/* Styles for changepwdiv links */
+.changepwdiv a {
     color: #1a617c;
 }
-.changepwdiv a:hover{
+
+.changepwdiv a:hover {
     color: #a44122;
 }

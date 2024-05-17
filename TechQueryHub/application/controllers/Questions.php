@@ -12,7 +12,7 @@ class Questions extends \Restserver\Libraries\REST_Controller {
         $this->load->model('QuestionModel');
     }
 
-    // Index route to create post view
+    // Load the add question view and navigation
     public function index_get(){
         if ($this->UserModel->is_logged_in()) {
             $this->load->view('navigation', array('username' => $this->session->username));
@@ -42,7 +42,7 @@ class Questions extends \Restserver\Libraries\REST_Controller {
         }
     }
 
-    // Post request to add a question
+    // API to add a question
     public function addQuestion_post() {
         if ($this->UserModel->is_logged_in()) {
             $username = $this->session->username;

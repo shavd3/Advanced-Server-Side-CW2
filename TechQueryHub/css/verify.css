@@ -1,42 +1,46 @@
+/* Styles for the body */
 body {
 	font-family: "DM Sans", sans-serif;
 	line-height: 1.5;
 	background-color: #ffffff;
-  }
-input:-webkit-autofill,
-input:-webkit-autofill:hover, 
-input:-webkit-autofill:focus, 
-input:-webkit-autofill:active{
-  -webkit-box-shadow: 0 0 0 30px white inset !important;
 }
-.postcontainer{
+
+/* Styles for input autofill */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+	-webkit-box-shadow: 0 0 0 30px white inset !important;
+}
+
+/* Styles for postcontainer */
+.postcontainer {
 	width: 100%;
 	display: block;
-	/*overflow: auto;*/
 	margin-top: 10%;
-	/*margin-left: 6%;*/
 }
-.leftdiv{
+
+/* Styles for leftdiv */
+.leftdiv {
 	margin-top: 4%;
 	margin-left: 18%;
 	width: 30%;
 	max-width: 35%;
 	float: left;
 	position: fixed;
-	/*margin: 1% auto;*/
-	/*box-shadow: 0 0 10px 4px rgba(199, 182, 237, 0.25);*/
 }
-.leftregdiv{
-	/*margin-top: 1%;*/
+
+/* Styles for leftregdiv */
+.leftregdiv {
 	margin-left: 18%;
 	width: 30%;
 	max-width: 35%;
 	float: left;
 	position: fixed;
-	/*margin: 1% auto;*/
-	/*box-shadow: 0 0 10px 4px rgba(199, 182, 237, 0.25);*/
 }
-.rightdiv{
+
+/* Styles for rightdiv */
+.rightdiv {
 	width: 25%;
 	float: right;
 	max-width: 45%;
@@ -44,20 +48,25 @@ input:-webkit-autofill:active{
 	overflow: auto;
 	margin-right: 18%;
 }
-.logodiv  {
-    margin:0 auto 0 auto;
-    height:fit-content;
-    width:fit-content;
+
+/* Styles for logodiv */
+.logodiv {
+	margin: 0 auto 0 auto;
+	height: fit-content;
+	width: fit-content;
 	color: #1a617c;
 	font-weight: bold;
 	font-size: 2.65rem;
 }
-.logoimage  {
-    width: 350px;
-    height: auto;
+
+/* Styles for logoimage */
+.logoimage {
+	width: 350px;
+	height: auto;
 }
 
-.signform, .loginform{
+/* Styles for signform and loginform */
+.signform, .loginform {
 	display: flex;
 	flex-direction: column;
 	width: 100%;
@@ -66,6 +75,8 @@ input:-webkit-autofill:active{
 	border-radius: 10px;
 	padding: 1.5%;
 }
+
+/* Styles for pwform */
 .pwform {
 	display: flex;
 	flex-direction: column;
@@ -74,79 +85,84 @@ input:-webkit-autofill:active{
 	background-color: #fff;
 	border-radius: 10px;
 	padding: 1.5%;
+	margin: 8% auto;
 }
-.signform{
-	margin: 1% auto;
-	box-shadow: 0 0 10px 4px rgba(236, 182, 213, 0.25);
-}
-.loginform{;
-	margin: 1% auto;
-	box-shadow: 0 0 10px 4px rgba(199, 182, 237, 0.25);
-}
-.pwform{
-	margin:8% auto;
-	/*box-shadow: 0 0 10px 4px rgba(199, 182, 237, 0.25);*/
-}
-  
-  .authforms {
+
+/* Styles for authforms */
+.authforms {
 	padding: 0 3%;
-  }
-  
-  .input {
+}
+
+/* Styles for input */
+.input {
 	display: flex;
 	flex-direction: column-reverse;
 	position: relative;
 	padding-top: 1.5rem;
-  }
-  .input + .input {
+}
+
+.input + .input {
 	margin-top: 1.5rem;
-  }
-  
-  .signlabel, .loginlabel {
+}
+
+/* Styles for signlabel and loginlabel */
+.signlabel, .loginlabel {
 	color: #d7d1ba;
 	position: absolute;
 	top: 1.5rem;
 	transition: 0.25s ease;
-  }
-  
-  .signfield, .loginfield {
+}
+
+/* Styles for signfield and loginfield */
+.signfield, .loginfield {
 	border: 0;
 	z-index: 1;
 	background-color: transparent;
 	font: inherit;
 	font-size: 1.125rem;
 	padding: 0.25rem 0;
-  }
-.signfield{
+}
+
+.signfield {
 	border-bottom: 2px solid #1a617c;
 }
-.loginfield{
+
+.loginfield {
 	border-bottom: 2px solid #1a617c;
 }
+
 .signfield:focus, .signfield:valid, .signfield:hover {
 	outline: 0;
 	border-bottom-color: #124850;
 }
+
 .loginfield:focus, .loginfield:valid, .loginfield:hover {
 	outline: 0;
 	border-bottom-color: #124850;
 }
 
-.signfield:focus + .signlabel, .signfield:valid + .signlabel,.signfield:hover + .signlabel{
+.signfield:focus + .signlabel,
+.signfield:valid + .signlabel,
+.signfield:hover + .signlabel {
 	color: #124850;
 	transform: translateY(-1.5rem);
-  }
-.loginfield:focus + .loginlabel, .loginfield:valid + .loginlabel, .loginfield:hover + .loginlabel {
+}
+
+.loginfield:focus + .loginlabel,
+.loginfield:valid + .loginlabel,
+.loginfield:hover + .loginlabel {
 	color: #124850;
 	transform: translateY(-1.5rem);
-  }
-  
-  .action {
+}
+
+/* Styles for action */
+.action {
 	width: 50%;
 	margin: 2rem auto 0 auto;
-  }
-  
-  .signupbtn, .loginbtn{
+}
+
+/* Styles for signupbtn and loginbtn */
+.signupbtn, .loginbtn {
 	font: inherit;
 	font-size: 1.25rem;
 	padding: 0.5rem;
@@ -156,55 +172,68 @@ input:-webkit-autofill:active{
 	color: #fff;
 	border: 0;
 	transition: transform .4s;
-  }
-  .signupbtn:enabled:hover, .loginbtn:enabled:hover{
-	transform: scale(1.05);
-  }
-  .signupbtn:disabled{
-	opacity: 0.4;
-	background-color: #57acab;
-  }
-  .loginbtn:disabled{
-	opacity: 0.4;
-	background-color: #57acab;
-  }
+}
 
-  .signupbtn:enabled{
+.signupbtn:enabled:hover,
+.loginbtn:enabled:hover {
+	transform: scale(1.05);
+}
+
+.signupbtn:disabled {
+	opacity: 0.4;
+	background-color: #57acab;
+}
+
+.loginbtn:disabled {
+	opacity: 0.4;
+	background-color: #57acab;
+}
+
+.signupbtn:enabled {
 	background-color: #426054;
-  }
-  .loginbtn:enabled {
+}
+
+.loginbtn:enabled {
 	background-color: #426054;
-  }
- 
-  .signspandiv, .loginspandiv {
+}
+
+/* Styles for signspandiv and loginspandiv */
+.signspandiv, .loginspandiv {
 	padding: 1rem;
 	text-align: center;
 	color: #585858;
-  }
-  
-  .signspandiv a {
+}
+
+.signspandiv a {
 	color: #1a617c;
 	text-decoration: none;
-  }
-  .signspandiv a:hover {
+}
+
+.signspandiv a:hover {
 	color: #1a617c;
-	text-decoration:underline;
-  }
-  .loginspandiv a {
+	text-decoration: underline;
+}
+
+.loginspandiv a {
 	color: #1a617c;
 	text-decoration: none;
-  }
-  .loginspandiv a:hover {
+}
+
+.loginspandiv a:hover {
 	color: #1a617c;
-	text-decoration:underline;
-  }
-  .logheading, .pwresetheading{
+	text-decoration: underline;
+}
+
+/* Styles for logheading and pwresetheading */
+.logheading, .pwresetheading {
 	font-size: 2.5rem;
-    font-weight: 550;
-    letter-spacing: 1px;
-    color: #426054;
+	font-weight: 550;
+	letter-spacing: 1px;
+	color: #426054;
 	text-align: center;
-  }
-  .errormsg{
+}
+
+/* Styles for errormsg */
+.errormsg {
 	color: #a44122;
-  }
+}

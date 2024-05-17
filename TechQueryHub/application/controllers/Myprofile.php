@@ -10,7 +10,7 @@ class Myprofile extends \Restserver\Libraries\REST_Controller {
 		$this->load->model('UserModel');
         $this->load->model('QuestionModel');
     }
-    //index method to view myProfile page
+    //index method to view myprofile page
     public function index_get(){
         if ($this->UserModel->is_logged_in()) {
             $this->load->view('navigation',array('username' => $this->session->username));
@@ -30,7 +30,7 @@ class Myprofile extends \Restserver\Libraries\REST_Controller {
             $this->load->view('login');
         }
     }
-    //api to get users question details
+    //get questions the user added
     public function myQuestions_get(){
         $username = $this->session->username;
         $result = $this->QuestionModel->getQuestionsfromUsername($username);

@@ -29,7 +29,7 @@ class Users extends \Restserver\Libraries\REST_Controller {
             $this->load->view('login');
         }
     }
-    //set session logged_in to false to logout
+    //logout user
     public function logout_get(){
             $this->session->is_logged_in = False;
             $this->login_get();
@@ -102,11 +102,11 @@ class Users extends \Restserver\Libraries\REST_Controller {
                 $this->response(array('result' => 'failed'));
             }            
         }
-        //if action is searchuser, get user details
+        //if action is searchquestion, get question details
         else if($this->get('action') == 'searchuser') {
             if ($this->UserModel->is_logged_in()) {
                 $title = $this->post('title');
-                $result=$this->UserModel->searchUser($title);
+                $result=$this->UserModel->searchQuestion($title);
                 $this->response($result); 
             }
             else {

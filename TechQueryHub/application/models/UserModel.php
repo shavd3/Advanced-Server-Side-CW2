@@ -73,8 +73,8 @@ class UserModel extends CI_Model
             }
         }
     }
-    //query user table to search users
-    public function searchUser($title){
+    //query user table to search questions
+    public function searchQuestion($title){
         $query=$this->db->query("SELECT * FROM questions WHERE Title LIKE '".$title."%'");
         return $query->result();
     }
