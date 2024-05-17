@@ -11,12 +11,12 @@
 
 <body>
 
-<div class="postcontainer">
-        <div class="locationlistdiv">
+<div class="questioncontainer">
+        <div class="taglistdiv">
             <div class="cattag">CATEGORIES</div>
             <br>
             <br>
-            <div id="locationlist"> </div>
+            <div id="taglist"> </div>
         </div>
     <div class="feedcontainer"></div>
 <div>
@@ -30,10 +30,10 @@
         })
         .done(function (data) {
             for (i = 0; i<data.length; i++) {
-                if(data[i]!=null){//display few other locations in the list for easier browsing
+                if(data[i]!=null){//display few other tags in the list
                     var span ="<a href='<?php echo base_url() ?>index.php/questions/tagView?tagid="
                         +data[i].TagId+"'><span>"+data[i].TagName+"</span></a></br>"
-                    $('#locationlist').append(span);
+                    $('#taglist').append(span);
                 }
             }
         });
@@ -54,18 +54,18 @@
         initialize: function () {
             this.listenTo(this.model, "add", this.showResults);
         },
-        showResults: function (m) {//display all posts in backbone view
+        showResults: function (m) {//display all questions in backbone view
 
             html +=
-                "<div class='postdiv'>" +
-                    "<div class='userlikediv'>" +
+                "<div class='questiondiv'>" +
+                    "<div class='uservotediv'>" +
                         "<div class='titlediv'><a href='<?php echo base_url() ?>index.php/questions/question?questionid=" +
                         m.get('QuestionId') + "'>" + m.get('Title') + "</span></a></div>" +
 
-                    "<div class='likediv' id='likediv"
-                        + m.get('QuestionId') + "'><i onclick='like(" + m.get('QuestionId') + ");' class='fa-regular fa-thumbs-up'></i></div></div>" +
+                    "<div class='votediv' id='votediv"
+                        + m.get('QuestionId') + "'><i onclick='vote(" + m.get('QuestionId') + ");' class='fa-regular fa-thumbs-up'></i></div></div>" +
 
-                    "<div class='captiondiv'>" +
+                    "<div class='descdiv'>" +
                         m.get('Description') + "</div>" +
                     "<br>" +
 
@@ -74,8 +74,8 @@
                         "<span>" + m.get('Username') + "</span></a></div>" +
 
                     "<br>" +
-                    "<div class='locationtag'>" +
-                        "<div class='locationdiv'>" +
+                    "<div class='tagbox'>" +
+                        "<div class='tagdiv'>" +
                         "<a href='<?php echo base_url() ?>index.php/questions/tagView?tagid=" + m.get('TagId') + "'>" +
                         "<span><i class='fa-solid'></i>" + m.get('TagName') +
                     "</span></a></div></div>" +
@@ -88,10 +88,10 @@
                 method: "GET"
             }).done(function (res) {
                 if(res){
-                    document.getElementById("likediv"+m.get('QuestionId')).style.color = "#a44122";
+                    document.getElementById("votediv"+m.get('QuestionId')).style.color = "#a44122";
                 }
                 else{
-                    document.getElementById("likediv"+m.get('QuestionId')).style.color = "#d7d1ba";
+                    document.getElementById("votediv"+m.get('QuestionId')).style.color = "#d7d1ba";
                 }
             });
         }
@@ -99,27 +99,24 @@
     var postCollection = new PostCollection();
     var postDisplay = new PostDisplay({model: postCollection})
 
-    //clicking on like buttons
-    function like($questionid){
-        console.log("like function");
+    //clicking on vote buttons
+    function vote($questionid){
         $.ajax({
                 url: "<?php echo base_url() ?>index.php/home/vote",
                 data: JSON.stringify({username: username, questionid:$questionid}),
                 contentType: "application/json",
                 method: "POST"
         }).done(function (data) {
-            console.log("done func");
             $.ajax({
                 url: "<?php echo base_url() ?>index.php/home/checkVotes?username="+username+"&questionid="+$questionid,
                 method: "GET"
             })
             .done(function (res) {
                 if(res){
-                    console.log("liked");
-                    document.getElementById("likediv"+$questionid).style.color = "#a44122";
+                    document.getElementById("votediv"+$questionid).style.color = "#a44122";
                 }
                 else{
-                    document.getElementById("likediv"+$questionid).style.color = "#d7d1ba";
+                    document.getElementById("votediv"+$questionid).style.color = "#d7d1ba";
                 }
             });
         });

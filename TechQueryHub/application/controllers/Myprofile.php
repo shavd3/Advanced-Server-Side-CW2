@@ -9,10 +9,6 @@ class Myprofile extends \Restserver\Libraries\REST_Controller {
         parent::__construct();
 		$this->load->model('UserModel');
         $this->load->model('QuestionModel');
-
-        Header('Access-Control-Allow-Origin: *');
-        Header('Access-Control-Allow-Headers: *');
-        Header('Access-Control-Allow-Methods: GET, POST, OPTIONS, PUT, DELETE'); 
     }
     //index method to view myProfile page
     public function index_get(){

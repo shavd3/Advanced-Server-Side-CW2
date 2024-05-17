@@ -1,9 +1,9 @@
-.postcontainer{
+.questioncontainer{
     width: 100%;
     display: block;
     overflow: auto;
 }
-.leftdiv{
+.centerdiv{
     margin-top: 150px;
     margin-left: 70px;
     width: 110%;
@@ -11,31 +11,24 @@
     float: none;
     position: fixed;
 }
-/*.rightdiv{*/
-/*    width: 45%;*/
-/*    float: right;*/
-/*    max-width: 45%;*/
-/*    display: block;*/
-/*    overflow: auto;*/
-/*}*/
-.postimagediv, .locationlikediv{
+.tagvotediv{
     margin: auto;
     display: block;
     overflow: auto;
 }
-.postimagediv{
+/* .postimagediv{
     width: 60%;
-}
-.locationlikediv{
+} */
+.tagvotediv{
     width: 100%;
 }
-.postimage{
+/* .postimage{
     width: 100%;
     aspect-ratio : 1 / 1;
     border-radius: 10px;
     object-fit: cover;
-}
-.locationdiv{
+} */
+.tagdiv{
     width: 100%;
     float: none;
     box-sizing: border-box;
@@ -45,7 +38,7 @@
     letter-spacing: 1px;
     padding-top: 4px;
 }
-.locationtag {
+.tagbox {
     display: inline-block;
     background-color: #57acab;
     border-radius: 15px;
@@ -55,12 +48,12 @@
     font-weight: bold;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
-.likediv{
+.votediv{
     width: fit-content;
     float: left;
     font-size: 30px;
 }
-.likecount{
+.votecount{
     width: 20%;
     float: left;
     font-size: 17px;
@@ -69,12 +62,12 @@
     color: #5e4337;
 
 }
-.locationdiv a{
+.tagdiv a{
     color: #124850;
     text-decoration: none;
     transition: color .4s;
 }
-.locationdiv a:hover{
+.tagdiv a:hover{
     color: #5e4337;
     text-decoration: none;
 }
@@ -126,33 +119,33 @@
     font-size: 35px;
     color: #124850;
 }
-.captiondiv{
+.descdiv{
     width: 90%;
     font-size: 25px;
     color: #666666;
 }
-.commentareadiv{
+.answerareadiv{
     margin: 15px 0;
     width: 95%;
     display: block;
     overflow: auto;
 }
-.commentsdiv{
+.answersdiv{
     width: 90%;
     font-size: 16px;
     color: #666666;
 }
-.commentsdiv a{
+.answersdiv a{
     color: #426054;
     text-decoration: none;
     padding-right: 2%;
     padding-left: 10px;
     font-weight: bold;
 }
-.commentsdiv a:hover{
+.answersdiv a:hover{
     color: #a44122;
 }
-.comments{
+.answer{
     padding: 15px 0 12px 0;
     /*border: 2px solid #52B2CF;*/
     box-shadow: 2px 0 2px 1px rgb(26, 97, 124);

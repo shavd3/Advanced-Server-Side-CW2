@@ -9,10 +9,6 @@ class Users extends \Restserver\Libraries\REST_Controller {
 	function __construct() {
         parent::__construct();
 		$this->load->model('UserModel');
-
-        Header('Access-Control-Allow-Origin: *');
-        Header('Access-Control-Allow-Headers: *');
-        Header('Access-Control-Allow-Methods: GET, POST, OPTIONS, PUT, DELETE'); 
     }
     //load login view
     public function index_get(){

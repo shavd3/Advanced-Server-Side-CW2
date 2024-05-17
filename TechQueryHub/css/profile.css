@@ -14,13 +14,12 @@ body {
     margin-top: 150px;
     padding: 2%;
     position: fixed;
-    /*box-shadow: 0px 0px 10px 0px  rgba(152, 162, 203, 0.25) ;*/
     border-radius: 10px;
     display: flex;
     flex-flow: column;
     height: 73%;
 }
-.postsdiv{
+.questionsdiv{
     width: 56%;
     float: right;
     max-width: 60%;
@@ -29,7 +28,7 @@ body {
     margin-left: 4%;
     margin-top: 150px;
 }
-.postimagediv{
+.questionboxdiv{
     width: 70%;
     aspect-ratio : 1 / 0.2;
     float: left;
@@ -42,19 +41,6 @@ body {
     max-width: 1000px;
     box-sizing: border-box;
 }
-/*.postimage{*/
-/*    width: 96%;*/
-/*    aspect-ratio : 1 / 1;*/
-/*    border-radius: 10px;*/
-/*    object-fit: cover;*/
-/*    transition: transform .4s;*/
-/*}*/
-/*.postimage:hover{*/
-/*	transform: scale(1.05);*/
-/*  }*/
-/*  .topdiv{*/
-/*    width: 100%;*/
-/*  }*/
 .profpicdiv{
     width: 62%;
     height: 250px;
@@ -68,25 +54,6 @@ body {
     object-fit: cover;
     border-radius: 50%;
 }
-/*.followdiv{*/
-/*    float: left;*/
-/*    height: 250px;*/
-/*    width: 38%;*/
-/*    text-align: center;*/
-/*}*/
-/*.flabel{*/
-/*    margin-top: 50px;*/
-/*    font-weight: 600;*/
-/*    font-size: 18px;*/
-/*    letter-spacing: 1px;*/
-/*    color: #666666;*/
-/*}*/
-/*.fcount{*/
-/*    font-weight: 600;*/
-/*    font-size: 28px;*/
-/*    letter-spacing: 1px;*/
-/*    color: #90CDD6;*/
-/*}*/
 .usernamediv{
     font-weight: 600;
     font-size: 28px;
@@ -94,7 +61,7 @@ body {
     color: #1a617c;
     margin-top: 20px;
 }
-.captiondiv {
+.descdiv {
     margin-top: 20px;
     font-size: 18px;
     line-height: 1.5;
@@ -129,28 +96,9 @@ body {
     color: #666666;
     margin: 5px 0 40px 0;
 }
-.profbottomdiv{
-    width: 100%;
-}
 a{
     text-decoration: none;
 }
-/*#followbutton{*/
-/*    padding: 10px;*/
-/*    background-color: #90CDD6;*/
-/*    width: 40%;*/
-/*    letter-spacing: 1px;*/
-/*    margin: auto;*/
-/*    font-weight: 500;*/
-/*    font-size: 18px;*/
-/*    text-align: center;*/
-/*    color: #ffffff;*/
-/*    border-radius: 20px;*/
-/*    transition: transform .4s;*/
-/*}*/
-/*#followbutton:hover{*/
-/*    transform: scale(1.05);*/
-/*}*/
 .logoutlink, .editprlink{
     font-size: 16px;
     font-weight: bold;
@@ -165,23 +113,20 @@ a{
     color: #a44122;
     margin-left: 80px;
 }
-.locationdiv a{
+.tagdiv a{
     color: #124850;
     text-decoration: none;
     transition: color .4s;
 }
-.locationdiv a:hover{
+.tagdiv a:hover{
     color: #072127;
     text-decoration: none;
 }
-/* Styles for locationdiv */
-.locationdiv {
+.tagdiv {
     margin-top: 10px;
     font-family: 'Roboto', sans-serif;
 }
-
-/* Styles for locationtag */
-.locationtag {
+.tagbox {
     display: inline-block;
     background-color: #87d3d2;
     border-radius: 15px;

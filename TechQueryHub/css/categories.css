@@ -2,131 +2,111 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    /*box-shadow: 0 0 10px 0 rgba(152, 162, 203, 0.25) ;*/
     width: 95%;
     float: right;
 }
-.locationdiv{
+.tagdiv{
     margin:  1% 5%;
     font-size: 16px;
     letter-spacing: 0.5px;
 }
-.locationdiv a{
+.tagdiv a{
     color: #666666;
     text-decoration: none;
     transition: color .4s;
 }
-.locationdiv a:hover{
+.tagdiv a:hover{
     color: #57acab;
     text-decoration: none;
 }
 .fa-solid{
     margin-right: 3%;
 }
-.captiondiv{
+.descdiv{
     margin-top: 20px;
     font-size: 18px;
     line-height: 1.5;
 }
-.locationcontainer{
+.tagcontainer{
     width: 100%;
     display: block;
     overflow: auto;
     margin-top: 150px;
 }
-.locationlistdiv{
+.taglistdiv{
     width: 20%;
     float: left;
     position: fixed;
     display: flex;
     flex-flow: column;
 }
-.postlocadiv{
-    /*box-shadow: 0px 0px 10px 0px  rgba(152, 162, 203, 0.25) ;*/
+.questiontagdiv{
     width: 80%;
     float: right;
     margin-top: 1%;
 }
-.imagelocdiv{
-    /*aspect-ratio : 1 / 0.2;*/
-    /*margin-left: 4%;*/
-    /*float: none;*/
-    /*border: 1px solid #164795;*/
-    /*border-radius: 30px;*/
-    /*background-color: #ffffff;*/
-    /*box-shadow: 0 2px 4px rgba(22, 6, 69, 0.258);*/
-    /*padding: 20px;*/
-    /*margin-bottom: 20px;*/
-    /*max-width: 1000px;*/
-    /*width: 80%;*/
-    /*box-sizing: border-box;*/
-
-    /*border: 1px solid #164795;*/
-    border-radius: 30px;
-    background-color: #ffffff;
-    /*box-shadow: 0 2px 4px rgba(22, 6, 69, 0.258);*/
-    padding: 20px;
-    margin-bottom: 20px;
-    margin-left: 20px;
-    max-width: 100%;
-    /*width: 95%;*/
-    box-sizing: border-box;
-    box-shadow: 0px 0px 10px 0px rgb(215, 209, 186);
-    width: 100%;
-    /*margin-left: 300px;*/
-    float: right;
-}
-.locpostimage{
-    width: 96%;
-    aspect-ratio : 1 / 1;
-    margin-top: 20px;
-    border-radius: 10px;
-    object-fit: cover;
-    transition: transform .4s;
-}
-.locpostimage:hover{
-    transform: scale(1.03);
-}
-#locationname{
+/*.imagelocdiv{*/
+/*    border-radius: 30px;*/
+/*    background-color: #ffffff;*/
+/*    padding: 20px;*/
+/*    margin-bottom: 20px;*/
+/*    margin-left: 20px;*/
+/*    max-width: 100%;*/
+/*    box-sizing: border-box;*/
+/*    box-shadow: 0px 0px 10px 0px rgb(215, 209, 186);*/
+/*    width: 100%;*/
+/*    float: right;*/
+/*}*/
+/*.locpostimage{*/
+/*    width: 96%;*/
+/*    aspect-ratio : 1 / 1;*/
+/*    margin-top: 20px;*/
+/*    border-radius: 10px;*/
+/*    object-fit: cover;*/
+/*    transition: transform .4s;*/
+/*}*/
+/*.locpostimage:hover{*/
+/*    transform: scale(1.03);*/
+/*}*/
+#tagname{
     font-size: 24px;
     font-weight: 700;
     letter-spacing: 1px;
     margin: 20px 0 0 10%;
     color: #426054;
 }
-#locationlist{
+#taglist{
     font-size: 16px;
     letter-spacing: 1px;
     margin: 20px 0 0 10%;
 }
-#locationlist a{
+#taglist a{
     color: #666666;
     text-decoration: none;
 }
-#locationlist a:hover{
+#taglist a:hover{
     color: #52B2CF;
     text-decoration: none;
 }
-.imagelocdiv {
-    margin-right: 10px;
-    font-weight: bold;
-    text-decoration: none;
-    color: #124363;
-    font-size: 20px;
-}
+/*.imagelocdiv {*/
+/*    margin-right: 10px;*/
+/*    font-weight: bold;*/
+/*    text-decoration: none;*/
+/*    color: #124363;*/
+/*    font-size: 20px;*/
+/*}*/
 
-.imagelocdiv a{
-    color: #124850;
-    text-decoration: none;
-    transition: color .4s;
-}
-.imagelocdiv a:hover{
-    color: #57acab;
-    text-decoration: none;
-}
-.postimagediv{
+/*.imagelocdiv a{*/
+/*    color: #124850;*/
+/*    text-decoration: none;*/
+/*    transition: color .4s;*/
+/*}*/
+/*.imagelocdiv a:hover{*/
+/*    color: #57acab;*/
+/*    text-decoration: none;*/
+/*}*/
+.questionboxdiv{
     width: 80%;
-    /*aspect-ratio : 1 / 0.1;*/
     float: left;
     border: 2px solid #426054;
     border-radius: 30px;
@@ -153,7 +133,7 @@
     color: #57acab;
     text-decoration: none;
 }
-.captiondiv {
+.descdiv {
     margin-top: 20px;
     font-size: 18px;
     line-height: 1.5;

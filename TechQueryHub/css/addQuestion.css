@@ -1,5 +1,5 @@
 /* Styles for uppostcontainer */
-.uppostcontainer {
+.questioncontainer {
     width: 85%;
     margin: auto;
     margin-top: 150px;
@@ -11,14 +11,14 @@
 }
 
 /* Styles for titlediv */
-.titlediv, .captiondiv {
+.titlediv, .descdiv {
     margin-bottom: 20px;
     margin-right: 20px;
     font-family: "DM Sans", sans-serif;
 }
 
 /* Styles for caplabel */
-.caplabel, .titlediv .caplabel {
+.desclabel, .titlediv .desclabel {
     margin-bottom: 5px;
     font-weight: bold;
     color: #1a617c;
@@ -60,21 +60,19 @@ select{
 select:focus{
     border: 2px solid #426054;
 }
-
 .errormsg{
     margin:20px auto;
     width: 40%;
     color: #EB9494;
     text-align: center;
 }
-.postsubmitdiv{
+.questionsubmitdiv{
     margin-top: 40px;
     width: 100%;
     float: left;
 }
-#uploadpost{
+#uploadquestion{
     width: 15%;
-    /*background-color: #e1a271;*/
     background-color: #57acab;
     font-size: 1.3rem;
     padding: 0.8rem 0.5rem;
@@ -84,7 +82,7 @@ select:focus{
     cursor: pointer;
     transition: background-color .4s;
 }
-#uploadpost:hover{
+#uploadquestion:hover{
     background-color: #426054
 }
 

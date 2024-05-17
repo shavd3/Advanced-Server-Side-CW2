@@ -9,14 +9,10 @@ class Home extends \Restserver\Libraries\REST_Controller {
         parent::__construct();
 		$this->load->model('UserModel');
         $this->load->model('QuestionModel');
-
-        Header('Access-Control-Allow-Origin: *');
-        Header('Access-Control-Allow-Headers: *');
-        Header('Access-Control-Allow-Methods: GET, POST, OPTIONS, PUT, DELETE'); 
     }
-    //home page
+    //index method to view home page
     public function index_get()
-    {//check if user is logged in, otherwise redirect to login page
+    {//if user is logged in, load home page and navigation
         if ($this->UserModel->is_logged_in()) {
             $this->load->view('navigation',array('username' => $this->session->username));
             $this->load->view('home',array('username' => $this->session->username));
@@ -25,7 +21,7 @@ class Home extends \Restserver\Libraries\REST_Controller {
             $this->load->view('login');
         }
     }
-    //api to get questions from users
+    //api to get all questions
     public function userQuestions_get(){
         if ($this->UserModel->is_logged_in()) {
             $username = $this->get('username');
@@ -47,7 +43,7 @@ class Home extends \Restserver\Libraries\REST_Controller {
             $this->load->view('login');
         }
     }
-    //api post request to add comments
+    //post request to add answers
     public function answers_post(){
         if ($this->UserModel->is_logged_in()) {
             $username = $this->session->username;
@@ -60,7 +56,7 @@ class Home extends \Restserver\Libraries\REST_Controller {
             $this->load->view('login');
         }
     }
-    //api to check if user has already voted a post
+    //get request to check votes
     public function checkVotes_get(){
         if ($this->UserModel->is_logged_in()) {
             $username = $this->session->username;
@@ -72,10 +68,9 @@ class Home extends \Restserver\Libraries\REST_Controller {
             $this->load->view('login');
         }
     }
-    //post request to vote questions
+    //post request to vote
     public function vote_post(){
         if ($this->UserModel->is_logged_in()) {
-            // $username = $this->session->username;
             $username = $this->post('username');
             $questionid = $this->post('questionid');
             $result=$this->QuestionModel->voteQuestion($username, $questionid);

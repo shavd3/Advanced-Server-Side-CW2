@@ -6,26 +6,26 @@
     <link rel="stylesheet" type="text/css" href="<?php echo base_url()?>css/addQuestion.css">
 </head>
 <body>
-    <div class="uppostcontainer">
-        <div class="captiondiv">
-            <div class="caplabel"> <label for="title">Question Title</label></div>
+    <div class="questioncontainer">
+        <div class="descdiv">
+            <div class="desclabel"> <label for="title">Question Title</label></div>
             <div><textarea name="title" id="title"  maxlength="100" required></textarea></div>
             <!-- Error message for validation -->
             <div id="title-error-msg" style="color: #a44122; display: none;">Please enter a question title.</div>
         </div>
 
         <div class="titlediv">
-            <div class="caplabel"> <label for="caption">Description</label></div>
-            <div><textarea name="caption" id="caption"  maxlength="1000"></textarea></div>
+            <div class="desclabel"> <label for="description">Description</label></div>
+            <div><textarea name="description" id="description" maxlength="1000"></textarea></div>
             <br>
-            <div class="caplabel"><label for="locations">Category</label></div>
+            <div class="desclabel"><label for="tags">Category</label></div>
             <div>
-                <select onchange='getTag();' id="locations">
+                <select onchange='getTag();' id="tags">
                     <option id ='TagName' value=""></option>
                 </select>
             </div>
         </div>
-        <div class="postsubmitdiv"><div id="uploadpost" >POST</div></div>
+        <div class="questionsubmitdiv"><div id="uploadquestion" >POST</div></div>
     </div>
 
 <script type="text/javascript" lang="javascript">
@@ -35,18 +35,18 @@
         url: "<?php echo base_url() ?>index.php/questions/tags/action/all",
         method: "GET"
     }).done(function (data) {
-        $('#locations option').remove();
+        $('#tags option').remove();
         for (i = 0; i < data.length; i++) {
             var option ="<option id ='tagName' value="+data[i].TagId+">"+data[i].TagName+"</option>";
-            $('#locations').append(option);
+            $('#tags').append(option);
         }
     });
     //get tag value from form element
     function getTag() {
-        $tagId = document.getElementById("locations").value;
+        $tagId = document.getElementById("tags").value;
     }
     //function calls when upload button is clicked
-    $("#uploadpost").click(function(event) {
+    $("#uploadquestion").click(function(event) {
         event.preventDefault();
         // Check if the title is empty
         if ($('#title').val().trim() === "") {
@@ -58,7 +58,7 @@
             tagid: $tagId,
             // postImage: $postImage,
             title: $('#title').val(),
-            description: $('#caption').val()
+            description: $('#description').val()
         };
         $.ajax({
             url: "<?php echo base_url() ?>index.php/questions/addQuestion", //sends data to databse

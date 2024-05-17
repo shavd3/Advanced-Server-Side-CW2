@@ -19,7 +19,7 @@
             <div class="biodiv"></div>
         </div>
 
-        <div class="postsdiv" id="postsdiv"></div>
+        <div class="questionsdiv" id="questionsdiv"></div>
     </div>
 
 <script type="text/javascript" lang="javascript">
@@ -50,7 +50,7 @@
         } 
     });
     var PostDisplay = Backbone.View.extend({
-        el: "#postsdiv",
+        el: "#questionsdiv",
         initialize: function () {
             this.listenTo(this.model, "add", this.showResults);
         },
@@ -58,16 +58,16 @@
             var html = "";
             this.model.each(function (m) {
                 html +=
-                    "<div class='postimagediv'><a href='<?php echo base_url() ?>index.php/questions/question?questionid="
+                    "<div class='questionboxdiv'><a href='<?php echo base_url() ?>index.php/questions/question?questionid="
                         + m.get('QuestionId') + "'>"
                         + "<div class='titlediv'><a href='<?php echo base_url() ?>index.php/questions/question?questionid="
                         + m.get('QuestionId') + "'>" + m.get('Title') + "</span></a></div>" +
 
-                    "<div class='captiondiv'>" +
+                    "<div class='descdiv'>" +
                         m.get('Description') + "</div><br>" +
 
-                    "<div class='locationtag'>" +
-                        "<div class='locationdiv'>" +
+                    "<div class='tagbox'>" +
+                        "<div class='tagdiv'>" +
                         "<a href='<?php echo base_url() ?>index.php/questions/tagView?tagid=" + m.get('TagId') + "'>" +
                         "<span><i class='fa-solid'></i>" + m.get('TagName') +
                         "</span></a></div></div>" +

@@ -1,5 +1,5 @@
 /* Styles for feedcontainer */
-.postcontainer {
+.questioncontainer {
     /*display: flex;*/
     flex-direction: column;
     align-items: center;
@@ -18,7 +18,7 @@
 }
 
  /*Styles for postdiv */
-.postdiv {
+.questiondiv {
     /*border: 1px solid #164795;*/
     border-radius: 30px;
     background-color: #ffffff;
@@ -33,21 +33,21 @@
     margin-left: 300px;
     float: right;
 }
-.locationdiv a{
+.tagdiv a{
     color: #124850;
     text-decoration: none;
     transition: color .4s;
 }
-.locationdiv a:hover{
+.tagdiv a:hover{
     color: #072127;
     text-decoration: none;
 }
-.locationcontainer{
+.tagcontainer{
     width: 100%;
     display: block;
     overflow: auto;
 }
-.locationlistdiv{
+.taglistdiv{
     margin-top: 150px;
     /*margin-left: 55px;*/
     width: 25%;
@@ -66,17 +66,17 @@
 }
 
 /* Style for scrollbar */
-.locationlistdiv::-webkit-scrollbar {
+.taglistdiv::-webkit-scrollbar {
     width: 10px;
 }
 
 /* Track */
-.locationlistdiv::-webkit-scrollbar-track {
+.taglistdiv::-webkit-scrollbar-track {
     background: #f1f1f1;
 }
 
 /* Handle */
-.locationlistdiv::-webkit-scrollbar-thumb {
+.taglistdiv::-webkit-scrollbar-thumb {
     background: #e1ddca;
     border-radius: 5px;
 }
@@ -102,7 +102,7 @@
 /*}*/
 
 /* Styles for userlikediv */
-.userlikediv {
+.uservotediv {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -148,12 +148,12 @@
 /*    color: #FC6464;*/
 /*}*/
 
-.likediv i {
+.votediv i {
     font-size: 30px;
 }
 
 /* Styles for captiondiv */
-.captiondiv {
+.descdiv {
     margin-top: 20px;
     font-size: 18px;
     line-height: 1.5;
@@ -162,15 +162,15 @@
 }
 
 /* Styles for locationdiv */
-.locationdiv {
+.tagdiv {
     margin-top: 10px;
     font-family: 'Roboto', sans-serif;
 }
 
 /* Styles for locationtag */
-.locationtag {
+.tagbox {
     display: inline-block;
-    background-color: #87d3d2;
+    background-color: #c0e6e5;
     border-radius: 15px;
     padding: 1px 10px 10px;
     margin-right: 10px;
@@ -197,35 +197,35 @@
 }
 
 /* Styles for commentsdiv */
-.commentsdiv {
-    margin-top: 20px;
-}
+/*.commentsdiv {*/
+/*    margin-top: 20px;*/
+/*}*/
 
-/* Styles for commuserlink */
+/* !*Styles for commuserlink *!*/
 /*.commuserlink {*/
 /*    font-weight: bold;*/
 /*    color: #1a617c;*/
 /*    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;*/
 /*    margin-right: 3%;*/
 /*}*/
-#locationname{
+#tagname{
     font-size: 24px;
     font-weight: 700;
     letter-spacing: 1px;
     margin: 20px 0 0 10%;
     color: #57acab;
 }
-#locationlist{
+#taglist{
     font-size: 16px;
     letter-spacing: 1px;
     /*margin: 10px 0 0 10%;*/
     text-align: center;
 }
-#locationlist a{
+#taglist a{
     color: #666666;
     text-decoration: none;
 }
-#locationlist a:hover{
+#taglist a:hover{
     color: #57acab;
     text-decoration: none;
 }
